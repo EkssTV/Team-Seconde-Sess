@@ -1,5 +1,5 @@
 def consolelog(message) :
     return print(message)
 
-mess = "Test repo pull and push"
+mess = "Test avec fonctions built-in"
 consolelog(mess)
