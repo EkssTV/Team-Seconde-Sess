@@ -1,4 +1,4 @@
-from test.CDELAMERDE import test
+
 
 def consolelog(message) :
     return print(message)
@@ -8,4 +8,3 @@ consolelog(mess)
 
 mess2 = "cc stef"
 consolelog(mess2)
-print(test()

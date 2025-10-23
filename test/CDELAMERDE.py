@@ -1,6 +1,0 @@
-def test():
-    print('helloworld')
-    print('holapenderos')
-    print('anneong yolobun')
-    print("j'sors la becaneeeeeeeeeee dididiiddiid")
-    print('SIUUUUUUU')
