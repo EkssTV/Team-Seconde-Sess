@@ -8,4 +8,4 @@ consolelog(mess)
 
 mess2 = "cc stef"
 consolelog(mess2)
-print(test())
+print(test()
