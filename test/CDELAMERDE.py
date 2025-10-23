@@ -1,4 +1,4 @@
-def test()
+def test():
     print('helloworld')
     print('holapenderos')
     print('anneong yolobun')
