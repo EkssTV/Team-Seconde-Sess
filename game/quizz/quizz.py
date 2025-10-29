@@ -13,9 +13,19 @@ class Quizz:
         print(f"{self.question}")
         for num, reponse in enumerate(self.answers,1):
             print(f"{num} : {reponse}")
-# vérification de la question (in progress)
-    def verify_response(self):
-        pass
+
+
+
+# vérification de la question si réponse du joueur = correct_asnwer => OK / sinon faux !
+    def verify_response(self,player_answer):
+        if player_answer  == self.response :
+            return True
+        else :
+            return False
+
+
+
+
 
 
 
