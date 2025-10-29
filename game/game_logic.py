@@ -23,12 +23,12 @@ class Game:
                 near_places=["place_de_l_ephec"],
                 npc=[],
                 objects=[],
-                description="tu es dans le hall de l'ephec il y a le secretariat a ta droite.",
+                description="tu es dans le hall de l'ephec.",
                 description_more="flemme decrire la"
             )
             return {
-                "place_de_l_ephec": hall_d_entree,
-                "hall_d_entree": place_de_l_ephec
+                "place_de_l_ephec": place_de_l_ephec,
+                "hall_d_entree": hall_d_entree
             }
     def get_current_area(self):
         return self.areas[self.player.current_area]
