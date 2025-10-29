@@ -19,3 +19,8 @@ class Screen:
 #avoir l'ecran
     def get_display(self):
         return self.display
+    def draw_text(self, text, x, y, font_size=12, color=(255, 255, 255)):
+        font = pygame.font.SysFont("Dejavu Sans Mono", font_size)
+        surface = font.render(text, True, color)
+        self.display.blit(surface, (x, y))
+
