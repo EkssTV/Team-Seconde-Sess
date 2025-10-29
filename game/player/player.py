@@ -3,7 +3,7 @@
 #Création de classe player
 class Player():
 #param vie + nom (protégé)
-    def __init__(self, health: int = 100, name: str ):
+    def __init__(self, health: int = 5, name: str ='Student'  ):
         self.__name = name
         self.health = health
 #soigner le joueur
