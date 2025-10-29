@@ -1,6 +1,6 @@
 import tkinter
 from data.assets.fonts.banner.banner import banner
-
+from game.command import Command
 class GameUI:
     def __init__(self):
         # Fenêtre principale
@@ -10,6 +10,7 @@ class GameUI:
         self.root.geometry("1280x720")
         self.root.grid_rowconfigure(0, weight=1)
         self.root.grid_columnconfigure(0, weight=1)
+
 
         # Titre ASCII
         self.title = tkinter.Label(
@@ -58,6 +59,8 @@ class GameUI:
         self.input_zone.grid(column=0, row=2, columnspan=2, pady=10,sticky="nsew")
         self.input_zone.bind("<Return>", self.process_command)
 
+        self.command_handler = Command(self)  # donne la class Command
+
     #pour lancer la loop
     def run(self):
         self.root.mainloop()
@@ -66,4 +69,5 @@ class GameUI:
         command = self.input_zone.get()
         command = command.strip().lower()
         self.output_zone.insert(tkinter.END, f"> {command}\n")
+        self.command_handler.execute(command)
         self.input_zone.delete(0, tkinter.END)

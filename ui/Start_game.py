@@ -5,4 +5,7 @@ class StartGame(GameUI):
         super().__init__()  # Initialise GameUI
 
         # Affiche le message de bienvenue dans output_zone
-        self.output_zone.insert("end", "Bienvenue dans Ephec Quest !\n")
+        self.output_zone.insert("end", "Bienvenue dans Ephec Quest !\n Pour commencer l'aventure taper [start]"
+                                        )
+
+

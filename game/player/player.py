@@ -3,7 +3,7 @@
 #Création de classe player
 class Player:
 #Définition des caractéristiques du player
-    def __init__(self, health: int = 5, name: str ='Student', start_area: str = "place de l'Ephec"):
+    def __init__(self, health: int = 5, name: str ='Student', start_area: str = "place_de_l_ephec"):
         self.__name = name
         self.health = health
         self.current_area = start_area
@@ -23,7 +23,12 @@ class Player:
     #Mort du personnage
     def death(self):
         self.alive = False
-
+    @property
+    def get_name(self):
+        return self.__name
+    @get_name.setter
+    def get_name(self,new_name):
+        self.__name = new_name
     #fct str pour impression
     def __str__(self):
-        return f'blabbla'
+        return f'le jouer est {self.get_name}'
