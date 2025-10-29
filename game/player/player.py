@@ -23,7 +23,7 @@ class Player:
     #Mort du personnage
     def death(self):
         self.alive = False
-        print(f"Ta perdu chacal")
+
     #fct str pour impression
     def __str__(self):
         return f'blabbla'
