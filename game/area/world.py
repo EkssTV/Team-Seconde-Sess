@@ -1,5 +1,6 @@
 from area import Area
 map = {
+
 "PLA01" : Area("place de l'Ephec",
              "PLA01",
              ["Parking", "HAL01"],
@@ -39,5 +40,21 @@ map = {
              ["objects"],
              "Les locaux de l'ancienne aile",
              "ça pue y PA"),
+
+"TOI01" : Area("Les toilettes du rez de chaussée",
+             "TOIL01",
+             ["AIL01"],
+             ["personnage1"],
+             ["objects"],
+             "Toilettes du rdc",
+             "pleins de caca"),
+
+"CAF01" : Area("LA cafetaria",
+             "TOIL01",
+             ["AIL01"],
+             ["personnage1"],
+             ["objects"],
+             "Cafet",
+             "pleins d'étudiants qui mangent"),
 
 }
