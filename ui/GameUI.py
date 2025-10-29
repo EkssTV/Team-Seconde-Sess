@@ -1,38 +1,69 @@
 import tkinter
+from data.assets.fonts.banner.banner import banner
 
 class GameUI:
     def __init__(self):
         # Fenêtre principale
         self.root = tkinter.Tk()
         self.root.title("Ephec Quest")
+        self.root.configure(background="black")
+        self.root.geometry("1280x720")
+        self.root.grid_rowconfigure(0, weight=1)
+        self.root.grid_columnconfigure(0, weight=1)
 
-        # Zone d'affichage (output)
-        self.output_zone = tkinter.Text(self.root, height=20, width=80, bg="black", fg="white", font=("Times new Roman", 12))
-        self.output_zone.pack()
+        # Titre ASCII
+        self.title = tkinter.Label(
+            self.root,
+            text=banner.shw_banner(),
+            font=("Courier", 8),
+            bg="black",
+            fg="white",
+            justify="center",
+        )
+        self.title.grid(column=0, row=0, columnspan=2, sticky="nsew")
+
+        # Cadre principal pour output + scrollbar
+        frame = tkinter.Frame(self.root)
+        frame.grid(column=0, row=1, columnspan=2, padx=10,sticky="nsew")
+        frame.grid_columnconfigure(0, weight=1)
+        frame.grid_columnconfigure(1, weight=0)
 
         # Scrollbar
-        scrollbar = tkinter.Scrollbar(self.root)
-        scrollbar.pack(side=tkinter.RIGHT, fill=tkinter.Y)
+        scrollbar = tkinter.Scrollbar(frame)
+        scrollbar.grid(column=1, row=0,sticky="ns" )
 
-        # Zone de texte avec scroll
-        self.output_zone = tkinter.Text(self.root, height=20, width=80, yscrollcommand=scrollbar.set)
-        self.output_zone.pack(side=tkinter.LEFT, fill=tkinter.BOTH)
+        # Zone d'affichage (output)
+        self.output_zone = tkinter.Text(
+            frame,
+            height=20,
+            width=80,
+            bg="black",
+            fg="white",
+            font=("Courier", 12),
+            yscrollcommand=scrollbar.set
+        )
+        self.output_zone.grid(column=0, row=0,columnspan=1,sticky='nsew')
 
-        # Lien entre scrollbar et zone de texte
         scrollbar.config(command=self.output_zone.yview)
 
         # Zone de saisie (input)
-        self.input_zone = tkinter.Entry(self.root, width=80)
-        self.input_zone.pack()
+        self.input_zone = tkinter.Entry(
+            self.root,
+            width=80,
+            font=("Courier", 12),
+            bg="gray15",
+            fg="white",
+            insertbackground="white"  # curseur blanc
+        )
+        self.input_zone.grid(column=0, row=2, columnspan=2, pady=10,sticky="nsew")
         self.input_zone.bind("<Return>", self.process_command)
 
+    #pour lancer la loop
     def run(self):
         self.root.mainloop()
-
+    #pour pull la commande
     def process_command(self, event):
-        # Récupère le texte tapé
         command = self.input_zone.get()
-
-        # Affiche la commande dans la zone d'output
-        self.output_zone.insert(tkinter.END, f"{command}\n")
+        command = command.strip().lower()
+        self.output_zone.insert(tkinter.END, f"> {command}\n")
         self.input_zone.delete(0, tkinter.END)
