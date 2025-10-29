@@ -3,7 +3,7 @@
 #Création de classe player
 class Player:
 #Définition des caractéristiques du player
-    def __init__(self, health: int = 5, name: str ='Student', start_area: str = "place_de_l_ephec"):
+    def __init__(self, health: int = 5, name: str ='Student', start_area: str = "pla01"):
         self.__name = name
         self.health = health
         self.current_area = start_area

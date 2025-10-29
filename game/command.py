@@ -9,7 +9,7 @@ class Command:
         command = command.strip().lower()
 
         if command == "help":
-            self.ui.output_zone.insert("end", "Commandes disponibles : help,caca,look\n")
+            self.ui.output_zone.insert("end", "Commandes disponibles : help,caca,look,move + direction\n")
         elif command == "start":
             self.ui.output_zone.insert("end", "La Partie va se lancer\n")
         elif command == "caca":
@@ -18,11 +18,11 @@ class Command:
             txt = ''
             for i in self.game.areas[self.game.player.current_area].near_places:
                txt += str(i) + ' '
-
             self.ui.output_zone.insert("end",f"{self.game.look()}\n tu peux aller {txt}")
         elif command.startswith("move"):
             direction = command.split(" ")[1]
             result = self.game.move(self.game.areas[direction])
+            self.game.player.current_area = result
             self.ui.output_zone.insert("end", self.game.player.current_area + "\n")
         else:
             self.ui.output_zone.insert("end", f"Commande inconnue : {command}\n")

@@ -1,6 +1,6 @@
 from game.player.player import Player
 from game.area.area import Area
-
+from game.area.world import map
 class Game:
     def __init__(self):
         self.player = Player()
@@ -8,28 +8,7 @@ class Game:
 
     def load_areas(self):
             # Les zones
-            place_de_l_ephec = Area(
-                name="Place de L'Ephec ",
-                ident="place_de_l_ephec",
-                near_places=["hall_d_entree"],
-                npc=[],
-                objects=["id Etu"],
-                description="Tu es à l'entrée de L'Ephec .",
-                description_more="L'Ephec se fait grande devant toi."
-            )
-            hall_d_entree = Area(
-                name="Hall d'entrée",
-                ident="hall_d_entree",
-                near_places=["place_de_l_ephec"],
-                npc=[],
-                objects=[],
-                description="tu es dans le hall de l'ephec.",
-                description_more="flemme decrire la"
-            )
-            return {
-                "place_de_l_ephec": place_de_l_ephec,
-                "hall_d_entree": hall_d_entree
-            }
+        return map
     def get_current_area(self):
         return self.areas[self.player.current_area]
 
