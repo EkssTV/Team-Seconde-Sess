@@ -16,11 +16,11 @@ schema2 ="""
 Donne moi la résistance équivalente dans ce schéma :
 
 +----------------------+  LEGENDE :
-|        3 Ohm            |
+|        3 Ohms        |
 |     ┌───[ R ]──┐     |    (+) borne positive
 |     |          |     |    [ R ] Résistance
 |     └───[ R ]──┘     |  
-|        6 Ohm         |
+|        6 Ohms        |
 +----------------------+
 
 
@@ -48,5 +48,6 @@ question2= Quizz(" Defini moi La loi d'Ohm :",
                  "Ohmlette"
                  )
 
-question3= Quizz(schema2,["3 Ohm","6 Ohm","9 Ohm","12 Ohm"],3,"Ohmlette")
-question3.ask()
+question3= Quizz(schema2,["3 Ohms","6 Ohms","9 Ohms","12 Ohms"],3,"Ohmlette")
+#question3.ask()
+#print(question2.verify_response(1))
