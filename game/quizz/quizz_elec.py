@@ -1,6 +1,14 @@
 from quizz import Quizz
-#utilisation de la classe QUIZZ pour créer les différentes questions
-
+"""
+===============================================
+ EPHEC QUEST - quizz_elec.py
+-----------------------------------------------
+ Description : quizz anglais
+ Auteur      : Stefan
+ Date        : 2025-10-30
+ noms NPC    : Ohmlette : se leve tjs du bon courant
+===============================================
+"""
 
 schema1= """
 Voici le schéma n1 
