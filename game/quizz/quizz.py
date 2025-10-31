@@ -7,34 +7,28 @@ class Quizz:
         self.response = correct_response
         self.npc = npc
 
-#méthod poser la question : for enumerate pour générer des numéros de questions / et on démarre a 1
+#méthod ask()
     def ask(self):
-        print(f" Le professeur {self.npc} te pose la question suivante :")
-        print(f"{self.question}")
-        for num, reponse in enumerate(self.answers,1):
-            print(f"{num} : {reponse}")
+        print(f" Le professeur {self.npc} te pose la question suivante :") #le npc
+        print(f"{self.question}")                                          # te pose la question
+        for num, reponse in enumerate(self.answers,1):                     # génère n de question + question
+            print(f"{num} : {reponse}")                                    # print du for enumerate
 
 
 
-# vérification de la question si réponse du joueur = correct_asnwer => OK / sinon faux !
+# method verify_response()
     def verify_response(self,player_answer):
-        if player_answer  == self.response :
+        if player_answer  == self.response :   # boolean  comparatif réponse entrée par joeur / self.reponse
             return True
         else :
             return False
 
 
 
+"""Template
+question0 = Quizz("Question",
+                  ["1","2","3","4"],
+                  3,
+                  "npc")
 
-
-
-
-
-
-
-
-
-#test perso / sera supprimé par ma part
-    """def __str__(self):
-        return f"{self.question},{self.answers}{self.response},{self.npc}"
-    """
+"""
