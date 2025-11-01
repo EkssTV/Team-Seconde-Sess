@@ -1,0 +1,5 @@
+id;name;list_npc;near_area;simple_desc;long_desc
+PLA01;La place de l'Ephec;test;PAR01,HAL01;La place externe de l'EPhec;Grande Description
+HAL01;Le hall d'entrée;test;PLA01,AIL01,AIL02;Le hall d'entrée principal;Grande description test
+AIL01;Ancienne aile RDC;test;Toilettes,Cafétéria,Escalier principal,Hall d'entrée,Zone distributeur,Locaux RDC,Learning Lab;Ancienne aile du cul;Grande description de l'ancienne aile du rez-de-chaussée
+AIL02;Nouvelle aile RDC;test;LA01,LA02,Logette bois,Escalier secondaire,Secrétariat,Hall d'entrée;nouvelle aile du cul;Grande description de la nouvelle aile du rez-de-chaussée
