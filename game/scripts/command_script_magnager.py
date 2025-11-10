@@ -1,3 +1,4 @@
+from .script_debut import debut_script
 
 """
 ===============================================
@@ -8,7 +9,7 @@
  Date        : 2025
 ===============================================
 """
-
+current_handler = None
 
 def handle_command_from_gui(command: str, gui):
     """
@@ -19,6 +20,11 @@ def handle_command_from_gui(command: str, gui):
         command (str): The command entered by the player
         gui (GameGUI): The GUI instance to send output to
     """
-#exemple de test
-    response = f"> {command}\nYou said: {command}"
-    gui.display(response)
+    global current_handler
+    if command == "start":
+        current_handler = debut_script
+        debut_script(gui,None)
+    elif current_handler:
+        current_handler(gui, command)
+    else:
+        gui.display("Commande inconnue.")

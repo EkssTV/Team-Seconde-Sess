@@ -1,5 +1,7 @@
 import tkinter as tk
 from ..scripts.command_script_magnager import handle_command_from_gui
+from ..player.player_class import Player
+player = Player()
 """
 ===============================================
  EPHEC QUEST - gui_class.py

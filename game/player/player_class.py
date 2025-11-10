@@ -24,7 +24,7 @@ class Player:
     """
 
     def __init__(self, name: str = 'student', inv: list = None, health: int = 5,
-                 current_area: str = 'PLA01', current_script: str = 'start', save_path=None):
+                 current_area: str = 'PLA01', current_script: str = 'script_debut', save_path=None):
         """
         Initializes a new player with base attributes and creates a save file if it doesn't exist.
 
@@ -43,12 +43,6 @@ class Player:
         self.save_path = f'saves/{name}.json'
 
         Path('saves').mkdir(exist_ok=True)
-        if Path(self.save_path).exists():
-            print('already exist')
-        else:
-            with open(self.save_path, 'w') as f:
-                pass
-
     def add_inv(self, id_obj: str):
         """
         Adds an object to the player's inventory.
