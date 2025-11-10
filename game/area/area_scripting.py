@@ -31,8 +31,6 @@ def load_csv_area():
     return world
 
 
-load_csv_area()
-
 
 
 
