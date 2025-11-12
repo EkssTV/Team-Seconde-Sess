@@ -9,7 +9,7 @@
 
 """
 
-from npc_class import Npc
+from .npc_class import Npc
 
 
 def get_data_in_file(filename):

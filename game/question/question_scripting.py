@@ -8,7 +8,7 @@
 ===============================================
 """
 
-from question_class import Question
+from .question_class import Question
 
 def get_data_in_file(filename):
     dico_questions={}
