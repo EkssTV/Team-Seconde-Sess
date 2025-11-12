@@ -1,5 +1,4 @@
 idNPC	Question	answers	correct_answer	
-1	Donne moi la résistance nécéssaire pour faire fonctionne ce schéma schéma1	350Ohm,1kOhm,10A,4V	2	
-2	Defini moi La loi d'Ohm	"donne la relation entre la différence de potentiel aux bornes d'une résistance et le courant la traversant. La différence de potentiel est proportionnelle au courant.,donne la relation entre la différence de potentiel aux bornes d'une résistance et le courant la traversant. La différence de potentiel est inversement proportionnelle au courant,donne la relation entre la différence de potentiel aux bornes de n'importe quel dipôle électrique et le courant le traversant. La différence de potentiel est inversement proportionnelle au courant.,donne la relation entre la différence de potentiel aux bornes de n'importe quel dipôle électrique et le courant le traversant. La différence de potentiel est proportionnelle au courant
-    "	1	
-3	schemas? Le 2	3 Ohms,6 Ohms,9 Ohms,12 Ohms	3	
+1	Question 1	"réponse 1; réponse 2; réponse 3; réponse 4"	2	
+2	Defini moi La loi d'Ohm	"réponse 1; réponse 2; réponse 3; réponse 4"	1	
+3	schemas? Le 2	"3 Ohms;6 Ohms;9 Ohms;12 Ohms"	3	
