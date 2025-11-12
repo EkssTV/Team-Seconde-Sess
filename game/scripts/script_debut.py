@@ -25,6 +25,7 @@ def debut_script(gui, command=None):
         player.save_path = f'saves/{command}.json'
         player.save()
         player.load()
+        gui.update_info(player)
         gui.display(f"Enchanté, {command} ! L’aventure commence maintenant.")
         step = 2
         return

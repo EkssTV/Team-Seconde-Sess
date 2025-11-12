@@ -1,4 +1,4 @@
-from .script_debut import debut_script
+from .loading_saves import loading_saves,step
 
 """
 ===============================================
@@ -22,9 +22,11 @@ def handle_command_from_gui(command: str, gui):
     """
     global current_handler
     if command == "start":
-        current_handler = debut_script
-        debut_script(gui,None)
+        current_handler = loading_saves
+        loading_saves(gui, None)
     elif current_handler:
         current_handler(gui, command)
+    elif command == "help":
+        gui.display("Tape 'start' pour commencer")
     else:
         gui.display("Commande inconnue.")

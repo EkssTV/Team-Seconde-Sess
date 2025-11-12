@@ -31,6 +31,8 @@ class GameGUI:
         """
         self.current_text = ""
         self.char_index = 0
+        self.display_queue = []
+        self.is_displaying = False
         self.root = tk.Tk()
         self.root.geometry("1280x720")
         self.root.title("EPHEC QUEST")
@@ -66,23 +68,36 @@ class GameGUI:
         self.output_frame.pack(side="top", fill="both", expand=True)
         self.input_frame.pack(side="bottom", fill="x")
 
-    def display(self, text):
+    def _start_next_display(self):
+        if self.display_queue:
+            self.is_displaying = True
+            text, time_to_show = self.display_queue.pop(0)
+            self.current_text = text
+            self.char_index = 0
+            self.text_speed = time_to_show
+
+            self.output_zone.config(state="normal")
+            self.output_zone.insert("end", "\n")
+            self.output_zone.config(state="disabled")
+
+            self.animate_text()
+        else:
+            self.is_displaying = False
+
+    def display(self, text,time_to_show=30):
         """
         Displays a string in the output zone with a typewriter effect.
         Disables the input zone during animation.
 
         Args:
             text (str): The text to display in the output zone
+            time_to_show (int) : The time of writing text
         """
-        self.input_zone.config(state="disabled")
-        self.current_text = text
-        self.char_index = 0
+        self.display_queue.append((text, time_to_show))
+        if not self.is_displaying:
+            self._start_next_display()
 
-        self.output_zone.config(state="normal")
-        self.output_zone.insert("end", "\n")
-        self.output_zone.config(state="disabled")
 
-        self.animate_text()
 
     def animate_text(self):
         """
@@ -95,9 +110,11 @@ class GameGUI:
             self.output_zone.config(state="disabled")
             self.output_zone.see("end")
             self.char_index += 1
-            self.root.after(30, self.animate_text)
+            self.root.after(self.text_speed, self.animate_text)
         else:
             self.input_zone.config(state="normal")
+            self.is_displaying = False
+            self._start_next_display()
 
     def handle_command(self, event):
         """
@@ -107,3 +124,54 @@ class GameGUI:
         command = self.input_zone.get()
         self.input_zone.delete(0, "end")
         handle_command_from_gui(command,self)
+
+    def update_info(self, player):
+        """
+        Called when the info must be updated
+        """
+        self.name_player.config(text=f"Name: {player.name}")
+        self.health_player.config(text=f"Health: {player.health}")
+        self.area_player.config(text=f"Area: {player.current_area}")
+
+    def clear_output(self):
+        """Called when output must be cleared"""
+        self.output_zone.config(state="normal")
+        self.output_zone.delete("1.0", "end")
+        self.output_zone.config(state="disabled")
+    def starting_game(self):
+        intro_logo = intro_logo = '''
+  ▄████████    ▄███████▄    ▄█    █▄       ▄████████  ▄████████      ████████▄   ███    █▄     ▄████████    ▄████████     ███
+  ███    ███   ███    ███   ███    ███     ███    ███ ███    ███      ███    ███  ███    ███   ███    ███   ███    ███ ▀█████████▄
+  ███    █▀    ███    ███   ███    ███     ███    █▀  ███    █▀       ███    ███  ███    ███   ███    █▀    ███    █▀     ▀███▀▀██
+ ▄███▄▄▄       ███    ███  ▄███▄▄▄▄███▄▄  ▄███▄▄▄     ███             ███    ███  ███    ███  ▄███▄▄▄       ███            ███   ▀
+▀▀███▀▀▀     ▀█████████▀  ▀▀███▀▀▀▀███▀  ▀▀███▀▀▀     ███             ███    ███  ███    ███ ▀▀███▀▀▀     ▀███████████     ███
+  ███    █▄    ███          ███    ███     ███    █▄  ███    █▄       ███    ███  ███    ███   ███    █▄           ███     ███
+  ███    ███   ███          ███    ███     ███    ███ ███    ███      ███  ▀ ███  ███    ███   ███    ███    ▄█    ███     ███
+  ██████████  ▄████▀        ███    █▀      ██████████ ████████▀        ▀██████▀▄█ ████████▀    ██████████  ▄████████▀     ▄████▀
+'''
+        intro_text = '''
+        Bienvenue dans EPHEC QUEST 🎓
+
+        Le projet Ephec Quest propose au joueur d’incarner un étudiant plongé dans une aventure textuelle à travers les bâtiments de la Haute École EPHEC.
+
+        🎯 **Votre mission** : partir à la rencontre des professeurs légendaires de la section IT, résoudre leurs énigmes et percer les secrets du campus.
+
+        🧠 Chaque professeur représente une discipline :
+        - Programmation
+        - Réseaux
+        - Bases de données
+        - Et bien plus...
+
+        💡 Le ton du jeu se veut humoristique, immersif et légèrement parodique, tout en rendant hommage à la vie étudiante et à l’apprentissage.
+
+        👨‍💻 Créateurs :
+        - Ekss (Matthieu Decreme)
+        - GraindeRiz (Gregory Ly)
+        - stefantroch (Stefan Torch)
+        - Boureym0 (Benjamin Junion)
+
+        Prépare-toi à vivre une aventure unique… et à prouver que tu es digne de devenir un maître de l’IT !
+        
+        Entre [start]
+        '''
+        self.display(intro_logo + "\n" + intro_text,1)
