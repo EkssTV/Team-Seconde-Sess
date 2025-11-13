@@ -18,6 +18,6 @@ def saved_player():
         if os.path.isfile(full_path):
             nom_sans_ext = os.path.splitext(file)[0]
             list_saved_player_cleared.append(nom_sans_ext)
-            sorted(list_saved_player_cleared,key=lambda x:x[1],reverse=False)
-    return list_saved_player_cleared
+
+    return sorted(list_saved_player_cleared,key=lambda x:x[1],reverse=False)
 
