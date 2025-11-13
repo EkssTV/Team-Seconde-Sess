@@ -1,3 +1,5 @@
+id,nom,questions,description
+SECR,Secretaire,'Quel est ton prénom ?',Dame du secrétariat qui s'occupe des inscriptions. Allez la voir pour récuperer votre carte d'étudiant
 idNPC	Nom	Pr�nom	Description	IdQuestions
 1	Ohmlette	 Maitre	Une resistance bien cook	3
 2	Professeur	Magonagal	description du prof	1
