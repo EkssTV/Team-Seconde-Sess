@@ -1,5 +1,5 @@
 import os
-
+sorted_list = []
 def saved_player():
     """
     Returns a list of saved player names (without file extensions) found in the save directory.
@@ -10,6 +10,7 @@ def saved_player():
     Returns:
         list[str]: A list of saved player names without file extensions.
     """
+    global sorted_list
     path_to_saves = 'saves'
     list_saved_player = os.listdir(path_to_saves)
     list_saved_player_cleared = []
@@ -18,6 +19,5 @@ def saved_player():
         if os.path.isfile(full_path):
             nom_sans_ext = os.path.splitext(file)[0]
             list_saved_player_cleared.append(nom_sans_ext)
-
-    return sorted(list_saved_player_cleared,key=lambda x:x[1],reverse=False)
-
+        sorted_list = sorted(list_saved_player_cleared,key=lambda x:str(x).lower(),reverse=False)
+    return sorted_list
