@@ -105,6 +105,7 @@ class GameGUI:
         Re-enables the input zone once the animation is complete.
         """
         if self.char_index < len(self.current_text):
+            self.input_zone.config(state="disabled")
             self.output_zone.config(state="normal")
             self.output_zone.insert("end", self.current_text[self.char_index])
             self.output_zone.config(state="disabled")

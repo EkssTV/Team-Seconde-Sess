@@ -9,8 +9,8 @@ from .loading_saves import loading_saves,step
  Date        : 2025
 ===============================================
 """
-current_handler = None
 
+current_handler = None
 def handle_command_from_gui(command: str, gui):
     """
     Receives a command from the GUI and processes it.
@@ -21,11 +21,11 @@ def handle_command_from_gui(command: str, gui):
         gui (GameGUI): The GUI instance to send output to
     """
     global current_handler
-    if command == "start":
+    if current_handler :
+        current_handler(gui, command)
+    elif  command == "start":
         current_handler = loading_saves
         loading_saves(gui, None)
-    elif current_handler:
-        current_handler(gui, command)
     elif command == "help":
         gui.display("Tape 'start' pour commencer")
     else:
