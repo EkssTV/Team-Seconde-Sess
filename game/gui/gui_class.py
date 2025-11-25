@@ -140,6 +140,9 @@ class GameGUI:
         self.output_zone.config(state="normal")
         self.output_zone.delete("1.0", "end")
         self.output_zone.config(state="disabled")
+    def quit_game(self):
+        """Called when game must be quit"""
+        self.root.destroy()
     def starting_game(self):
         intro_logo = intro_logo = '''
   ▄████████    ▄███████▄    ▄█    █▄       ▄████████  ▄████████      ████████▄   ███    █▄     ▄████████    ▄████████     ███

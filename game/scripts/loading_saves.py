@@ -14,7 +14,7 @@ step = 0
 player = Player()
 def loading_saves(gui, command=None):
     global step
-
+    global player
     if command is None:
         # step 0 : choose player
         str_of_saved_player = ""
