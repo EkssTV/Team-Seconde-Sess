@@ -7,10 +7,89 @@ from ..object.object_class import *
 from ..object.object_scripting import *
 from ..question.question_class import *
 from ..question.question_scripting import *
+"""
+===============================================
+ EPHEC QUEST - area_deplacement.py
+-----------------------------------------------
+ Description : scripting area
+ Auteur      : Ekss
+ Date        : 2025
+===============================================
+
+"""
 player = Player()
 
 step = 0
 def area_deplacement(gui, command):
+    def area_deplacement(gui, command):
+        """
+        ===============================================
+         EPHEC QUEST - area_deplacement
+        -----------------------------------------------
+         Description : Gère les interactions du joueur
+                       dans une zone (Area).
+        -----------------------------------------------
+         Paramètres :
+            gui (GameGUI) :
+                Instance de l'interface graphique utilisée
+                pour afficher les informations au joueur.
+            command (str) :
+                La commande saisie par le joueur (ex: "look",
+                "move hal01", "help").
+
+        -----------------------------------------------
+         Fonctionnement :
+            - Utilise la variable globale `step` pour suivre
+              l'état du script (progression dans la zone).
+            - Récupère la zone actuelle du joueur via
+              `player.current_area` et les données chargées
+              par `load_csv_area()`.
+
+            Étape 0 :
+                - Nettoie l'affichage (`gui.clear_output()`).
+                - Affiche la description simple de la zone
+                  (`area.simple_desc`).
+                - Passe à l'étape 1.
+
+            Étape 1 :
+                - Si la commande est "look" :
+                    → Affiche la description détaillée de la zone
+                      (`area.long_desc`).
+                    → Liste les zones accessibles depuis la zone
+                      actuelle (`area.near_area`) avec leur nom
+                      et leur identifiant.
+                - Si la commande commence par "move <zone_id>" :
+                    → Vérifie si la zone demandée est dans
+                      `area.near_area`.
+                    → Si oui :
+                        * Déplace le joueur avec `player.move_area()`.
+                        * Recharge la nouvelle zone.
+                        * Affiche un message de déplacement et la
+                          description simple de la nouvelle zone.
+                    → Sinon :
+                        * Affiche un message d'erreur.
+                - Si la commande est "help" :
+                    → Affiche les commandes disponibles ("look",
+                      "move ...").
+                - Sinon :
+                    → Affiche "Commande inconnue dans ce contexte".
+
+        -----------------------------------------------
+         Retour :
+            None (les résultats sont affichés via l'objet `gui`).
+
+        -----------------------------------------------
+         Notes :
+            - La logique repose sur une variable globale `step`
+              pour gérer la progression.
+            - `player` est une instance globale de Player,
+              utilisée pour suivre la zone actuelle et les
+              déplacements.
+            - `load_csv_area()` recharge les données des zones
+              à chaque appel, ce qui garantit que les infos
+              sont toujours à jour mais peut être optimisé.
+        ===============================================
+        """
     global step
     area = load_csv_area()[player.current_area]
     if step == 0 :
