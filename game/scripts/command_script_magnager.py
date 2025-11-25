@@ -1,3 +1,4 @@
+from .area_deplacement import area_deplacement
 from .loading_saves import loading_saves,step
 
 """
@@ -9,7 +10,6 @@ from .loading_saves import loading_saves,step
  Date        : 2025
 ===============================================
 """
-
 current_handler = None
 def handle_command_from_gui(command: str, gui):
     """
@@ -21,12 +21,16 @@ def handle_command_from_gui(command: str, gui):
         gui (GameGUI): The GUI instance to send output to
     """
     global current_handler
-    if current_handler :
-        current_handler(gui, command)
-    elif  command == "start":
+
+    if current_handler:
+        result = current_handler(gui, command)
+        if result == "area_deplacement":
+            current_handler = area_deplacement
+    elif command == "start":
         current_handler = loading_saves
         loading_saves(gui, None)
     elif command == "help":
         gui.display("Tape 'start' pour commencer")
     else:
         gui.display("Commande inconnue.")
+

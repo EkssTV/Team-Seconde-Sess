@@ -155,12 +155,12 @@ class Player:
             }
             json.dump(data, f, indent=4)
 
-    def load(self):
+    def load(self,path):
         """
         Loads the player's state from a JSON file, if it exists and is valid.
         """
         try:
-            with open(self.save_path, 'r') as f:
+            with open(path, 'r') as f:
                 data = json.load(f)
             self.name = data["name"]
             self.health = data["health"]

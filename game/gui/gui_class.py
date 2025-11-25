@@ -34,7 +34,8 @@ class GameGUI:
         self.display_queue = []
         self.is_displaying = False
         self.root = tk.Tk()
-        self.root.geometry("1280x720")
+        #self.root.geometry("1280x720")
+        self.root.attributes('-fullscreen', True)
         self.root.title("EPHEC QUEST")
 
         # === MAIN FRAMES ===
