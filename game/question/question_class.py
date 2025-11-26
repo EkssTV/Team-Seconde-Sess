@@ -16,7 +16,7 @@ class Question:
         self.correct_answer = int(correct_answer)
 
 
-    #méthode ASK
+
     def ask(self):
         print(f'{self.question}')         #print la question
         for num, rep in enumerate(self.answers,1): #boucle print Question + générer n° Question
