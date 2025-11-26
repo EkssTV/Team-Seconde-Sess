@@ -164,7 +164,7 @@ class Player:
                 "save_path": self.save_path
             }
             json.dump(data, f, indent=4)
-            z
+
     def load(self,path):
         """
         Loads the player's state from a JSON file, if it exists and is valid.

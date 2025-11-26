@@ -12,7 +12,7 @@ import os
 from .npc_class import Npc
 
 
-def load_csv():
+def load_csv_npc():
     dico_npc ={}
     base_path = os.path.dirname(__file__)
     file_path = os.path.join(base_path, "npc_data.csv")
