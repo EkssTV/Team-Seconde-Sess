@@ -13,10 +13,9 @@
 
 #Class area
 class Npc:
-    def __init__(self,id :int, nom: str,prenom:str,description : str,idQuestion:int):
+    def __init__(self,id :int, nom: str,description : str,idQuestion:int):
         self.id = id
         self.nom = nom
-        self.prenom = prenom
         self.description = description
         self.idQuestion = idQuestion
 

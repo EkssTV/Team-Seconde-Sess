@@ -14,24 +14,28 @@ from .npc_class import Npc
 
 def get_data_in_file(filename):
     dico_npc ={}
-    with open(filename,'r',encoding='utf-8') as file:
+    with open(filename,'r',encoding='latin-1') as file:
         next(file)  # SAUTE L'en-tete (premiere ligne)
         for line in file:  # boucle itérative sur chaque ligne
-            colonnes = line.rstrip().split("\t")  # je split sur la tabulation / saut de ligne
-            colonnes[4] = colonnes[4].rstrip().split(";")
+            colonnes = line.rstrip().split(";")  # je split sur ;
+            colonnes = [c.strip().replace('"', '') for c in colonnes]
+            colonnes[3] = colonnes[3].rstrip().split(",")
+
 
             npc = Npc(
                 id = colonnes[0],
                 nom = colonnes[1],
-                prenom=colonnes[2],
-                description=colonnes[3],
-                idQuestion=colonnes[4]
+                description=colonnes[2],
+                idQuestion=colonnes[3],
+
 
             )
             dico_npc[colonnes[0]] = npc
-
     return dico_npc
 
 
 
-
+if __name__ == "__main__":
+    d = get_data_in_file("npc_data.csv")
+    for k, v in d.items():
+        print(k, v.nom,v.idQuestion,v.description)
