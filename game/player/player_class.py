@@ -24,7 +24,7 @@ class Player:
     """
 
     def __init__(self, name: str = 'student', inv: list = None, health: int = 5,
-                 current_area: str = 'PLA01', current_script: str = 'script_debut', save_path=None):
+                 current_area: str = 'PLACEEPHEC', current_script: str = 'script_debut', save_path=None):
         """
         Initializes a new player with base attributes and creates a save file if it doesn't exist.
 
