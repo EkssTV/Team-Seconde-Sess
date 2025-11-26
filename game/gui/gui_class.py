@@ -65,7 +65,7 @@ class GameGUI:
         self.area_player.pack(anchor="w", padx=10, pady=5)
 
         # === FRAME PLACEMENT ===
-        self.info_frame.pack(side="left", fill="y")
+        self.info_frame.pack(side="left", fill="y",)
         self.output_frame.pack(side="top", fill="both", expand=True)
         self.input_frame.pack(side="bottom", fill="x")
 
@@ -145,21 +145,32 @@ class GameGUI:
         self.root.destroy()
     def starting_game(self):
         intro_logo = intro_logo = '''
-  ▄████████    ▄███████▄    ▄█    █▄       ▄████████  ▄████████      ████████▄   ███    █▄     ▄████████    ▄████████     ███
-  ███    ███   ███    ███   ███    ███     ███    ███ ███    ███      ███    ███  ███    ███   ███    ███   ███    ███ ▀█████████▄
-  ███    █▀    ███    ███   ███    ███     ███    █▀  ███    █▀       ███    ███  ███    ███   ███    █▀    ███    █▀     ▀███▀▀██
- ▄███▄▄▄       ███    ███  ▄███▄▄▄▄███▄▄  ▄███▄▄▄     ███             ███    ███  ███    ███  ▄███▄▄▄       ███            ███   ▀
-▀▀███▀▀▀     ▀█████████▀  ▀▀███▀▀▀▀███▀  ▀▀███▀▀▀     ███             ███    ███  ███    ███ ▀▀███▀▀▀     ▀███████████     ███
-  ███    █▄    ███          ███    ███     ███    █▄  ███    █▄       ███    ███  ███    ███   ███    █▄           ███     ███
-  ███    ███   ███          ███    ███     ███    ███ ███    ███      ███  ▀ ███  ███    ███   ███    ███    ▄█    ███     ███
-  ██████████  ▄████▀        ███    █▀      ██████████ ████████▀        ▀██████▀▄█ ████████▀    ██████████  ▄████████▀     ▄████▀
+          ▄████████    ▄███████▄    ▄█    █▄       ▄████████  ▄████████      
+          ███    ███   ███    ███   ███    ███     ███    ███ ███    ███      
+          ███    █▀    ███    ███   ███    ███     ███    █▀  ███    █▀       
+         ▄███▄▄▄       ███    ███  ▄███▄▄▄▄███▄▄  ▄███▄▄▄     ███            
+        ▀▀███▀▀▀     ▀█████████▀  ▀▀███▀▀▀▀███▀  ▀▀███▀▀▀     ███             
+          ███    █▄    ███          ███    ███     ███    █▄  ███    █▄       
+          ███    ███   ███          ███    ███     ███    ███ ███    ███      
+          ██████████  ▄████▀        ███    █▀      ██████████ ████████▀        
+        
+         ████████▄   ███    █▄     ▄████████    ▄████████     ███
+         ███    ███  ███    ███   ███    ███   ███    ███ ▀█████████▄
+         ███    ███  ███    ███   ███    █▀    ███    █▀     ▀███▀▀██
+         ███    ███  ███    ███  ▄███▄▄▄       ███            ███   ▀
+         ███    ███  ███    ███ ▀▀███▀▀▀     ▀███████████     ███
+         ███    ███  ███    ███   ███    █▄           ███     ███
+         ███  ▀ ███  ███    ███   ███    ███    ▄█    ███     ███
+         ▀██████▀▄█ ████████▀    ██████████  ▄████████▀     ▄████▀
 '''
         intro_text = '''
         Bienvenue dans EPHEC QUEST 🎓
 
-        Le projet Ephec Quest propose au joueur d’incarner un étudiant plongé dans une aventure textuelle à travers les bâtiments de la Haute École EPHEC.
+        Le projet Ephec Quest propose au joueur d’incarner un étudiant plongé dans une aventure textuelle à travers 
+        les bâtiments de la Haute École EPHEC.
 
-        🎯 **Votre mission** : partir à la rencontre des professeurs légendaires de la section IT, résoudre leurs énigmes et percer les secrets du campus.
+        🎯 **Votre mission** : partir à la rencontre des professeurs légendaires de la section IT, 
+        résoudre leurs énigmes et percer les secrets du campus.
 
         🧠 Chaque professeur représente une discipline :
         - Programmation
@@ -167,7 +178,8 @@ class GameGUI:
         - Bases de données
         - Et bien plus...
 
-        💡 Le ton du jeu se veut humoristique, immersif et légèrement parodique, tout en rendant hommage à la vie étudiante et à l’apprentissage.
+        💡 Le ton du jeu se veut humoristique, immersif et légèrement parodique, tout en rendant hommage à 
+        la vie étudiante et à l’apprentissage.
 
         👨‍💻 Créateurs :
         - Ekss (Matthieu Decreme)

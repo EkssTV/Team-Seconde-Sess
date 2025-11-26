@@ -178,7 +178,7 @@ def area_deplacement(gui, command):
 
             ===============================================
             """
-            gui.display(help_text,500)
+            gui.display(help_text,1)
         elif command == 'inventory' :
             gui.display(f'Voici ce que tu as dans ton inventaire:\n{player.show_inv()}')
         elif command =='UIA': #code de triche (pour test l'inventory)
