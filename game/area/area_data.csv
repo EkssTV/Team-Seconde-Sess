@@ -1,6 +1,32 @@
 id;name;list_npc;near_area;simple_desc;long_desc
-PLA01;La place de l'Ephec;test;HAL01,PAR01;La place externe de l'EPhec;UN MAGNIFIQUE HALL LA MAMAMAMMAMAMA
-HAL01;Le hall d'entrée;test;PLA01,AIL01,AIL02;Le hall d'entrée principal;Grande description test
-AIL01;Ancienne aile RDC;test;Toilettes,Cafétéria,Escalier principal,Hall d'entrée,Zone distributeur,Locaux RDC,Learning Lab;Ancienne aile du cul;Grande description de l'ancienne aile du rez-de-chaussée
-AIL02;Nouvelle aile RDC;test;LA01,LA02,Logette bois,Escalier secondaire,Secrétariat,Hall d'entrée;nouvelle aile du cul;Grande description de la nouvelle aile du rez-de-chaussée
-PAR01;test;test;PLA01;le parking;un parking
+PLACEEPHEC;La place de l'Ephec;test;PARKI,HALLENTREE;La place externe de l'EPhec;UN MAGNIFIQUE HALL LA MAMAMAMMAMAMA
+HALLENTREE;Le hall d'entrée;test;PLACEEPHEC,RDCANCIAILE,RDCNOUVAILE;Le hall d'entrée principal;Grande description test
+RDCANCIAILE;Ancienne aile RDC;test;RDCTOIL,CAFET,ESCALIERPRINCI,HALLENTREE,DISTRIB,RDCLOCAUX,LEARNLAB;RDC ancienne aile;Grande description de l'ancienne aile du rez-de-chaussée
+RDCNOUVAILE;Nouvelle aile RDC;test;LA01,LA02,LOGBOIS,ESCALIERSECOND,HALLENTREE;RDC nouvelle aile;Grande description de la nouvelle aile du rez-de-chaussée
+PARK;Parking;test;PLA01;le parking;un parking
+RDCTOIL;Toilette RDC;test;RDCANCIAILE;;
+CAFET;Cafétaria;test;RDCANCIAILE;;
+DISTRIB;Distributeurs;test;RDCANCIAILE;;
+LEARNLAB;Learning Lab;test;RDCANCIAILE;;
+LA01;LA01;test;RDCNOUVAILE;;
+LA02;LA02;test;RDCNOUVAILE;;
+LOGBOIS;Logette en bois;test;RDCNOUVAILE;;
+SECRETA;Secretariat;test;RDCNOUVAILE;;
+ESCALIERPRINCI;Escalier principal;test;RDCANCIAILE,1ANCIAILE,2ANCIAILE;;
+ESCALIERSECOND;Escalier secondaire;test;1NOUVAILE,RDCNOUVAILE;;
+1ANCIAILE;Ancienne aile 1er;test;SALPROF,1LOCAUX,1NOUVAILE,ZONEEAU,ESCALIERPRINCI,1LOCAUX;;
+2ANCIAILE;Ancienne aile 2e;test;LABOS,2LOCAUX,ESCALIERPRINCI,CREATLAB,2LOCAUX;;
+1NOUVAILE;Nouvelle aile 1er;test;1ANCIAILE,ZONEEAU,ESCALIERSECOND;;
+2LOCAUX;Locaux du 2e;test;2ANCIAILE,L201,L202;;
+1LOCAUX;Locaux du 1er;test;1ANCIAILE,L101,L102;;
+L101;L101;test;1LOCAUX;;
+L102;L102;test;1LOCAUX;;
+L201;L201;test;2LOCAUX;;
+L202;L202;test;2LOCAUX;;
+LABOS;Laboratoires;test;2ANCIAILE;;
+CREATLAB;Creative Lab;test;2ANCIAILE;;
+ZONEEAU;Zone fontaine à eau;test;1ANCIAILE,1NOUVAILE;;
+SALPROF;Salle des profs;test;1ANCIAILE;;
+RDCLOCAUX;Locaux du RDC;test;RDCANCIAILE;;
+LR01;LR01;test;RDCLOCAUX;;
+LR02;LR02;test;RDCLOCAUX;;
