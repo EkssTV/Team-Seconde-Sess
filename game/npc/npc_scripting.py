@@ -8,13 +8,15 @@
 ===============================================
 
 """
-
+import os
 from .npc_class import Npc
 
 
-def get_data_in_file(filename):
+def load_csv():
     dico_npc ={}
-    with open(filename,'r',encoding='latin-1') as file:
+    base_path = os.path.dirname(__file__)
+    file_path = os.path.join(base_path, "npc_data.csv")
+    with open(file_path,'r',encoding='latin-1') as file:
         next(file)  # SAUTE L'en-tete (premiere ligne)
         for line in file:  # boucle itérative sur chaque ligne
             colonnes = line.rstrip().split(";")  # je split sur ;
