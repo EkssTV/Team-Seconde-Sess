@@ -23,10 +23,11 @@ def load_csv_area():
 
         next(reader) #saute la première ligne
 
-        #remplissage du dictionnaire
+        #lecture des données du reader
         for row in reader:
             list_near_area = row[3].split(",")
-            area = CreaArea(row[0],row[1],row[2],list_near_area,row[4],row[5]) #Création de l'objet
+            list_npc = row[2].split(",")
+            area = CreaArea(row[0],row[1],list_npc,list_near_area,row[4],row[5]) #Création de l'objet
             world[row[0]] = area #Remplissage du dictionnaire world
 
     return world
