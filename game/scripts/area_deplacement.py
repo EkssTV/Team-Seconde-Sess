@@ -1,6 +1,7 @@
 from ..player.player_class import Player
 from ..area.area_class import CreaArea
 from ..area.area_scripting import load_csv_area
+from ..area.exceptions import InvalidAreaException
 from ..npc.npc_class import *
 from ..npc.npc_scripting import *
 from ..object.object_class import *
@@ -91,7 +92,13 @@ def area_deplacement(gui, command):
             """
 
     global step
-    area = load_csv_area()[player.current_area]
+    try:
+        world = load_csv_area()
+    except InvalidAreaException as e:
+        gui.display(f"[ERREUR CSV] {e}")
+        return None
+
+    area = world[player.current_area]
     if step == 0 :
         gui.clear_output()
         gui.display(area.simple_desc)

@@ -10,6 +10,7 @@
 """
 import csv
 import os
+from game.area.exceptions import InvalidAreaException
 from game.area.area_class import CreaArea
 
 def load_csv_area():
@@ -25,10 +26,18 @@ def load_csv_area():
 
         #lecture des données du reader
         for row in reader:
-            list_near_area = row[3].split(",")
-            list_npc = row[2].split(",")
-            area = CreaArea(row[0],row[1],list_npc,list_near_area,row[4],row[5]) #Création de l'objet
-            world[row[0]] = area #Remplissage du dictionnaire world
+            if len(row) < 6:
+                raise InvalidAreaException(f"Ligne CSV invalide : {row}")
+
+            try:
+                list_near_area = list(map(lambda x: x.strip(), row[3].split(",")))
+                list_npc = list(map(lambda x: x.strip(), row[2].split(",")))
+
+                area = CreaArea(
+                    row[0], row[1], list_npc, list_near_area, row[4], row[5])
+                world[row[0]] = area
+            except Exception as e:
+                raise InvalidAreaException(f"Erreur lors de la création de l'area {row[0]} : {e}")
 
     return world
 
