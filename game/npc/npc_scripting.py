@@ -9,12 +9,14 @@
 
 """
 
-from .npc_class import Npc
+from game.npc.npc_class  import Npc
+import os
 
-
-def get_data_in_file(filename):
+def load_csv_npc():
     dico_npc ={}
-    with open(filename,'r',encoding='latin-1') as file:
+    base_path = os.path.dirname(__file__)  # dossier courant
+    file_path = os.path.join(base_path, "npc_data.csv")  # vient chercher le dossier
+    with open(file_path,'r',encoding='latin-1') as file:
         next(file)  # SAUTE L'en-tete (premiere ligne)
         for line in file:  # boucle itérative sur chaque ligne
             colonnes = line.rstrip().split(";")  # je split sur ;
@@ -32,10 +34,4 @@ def get_data_in_file(filename):
             )
             dico_npc[colonnes[0]] = npc
     return dico_npc
-
-
-
-if __name__ == "__main__":
-    d = get_data_in_file("npc_data.csv")
-    for k, v in d.items():
-        print(k, v.nom,v.idQuestion,v.description)
+print(load_csv_npc())

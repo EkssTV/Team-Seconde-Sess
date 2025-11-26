@@ -19,3 +19,5 @@ class Npc:
         self.description = description
         self.idQuestion = idQuestion
 
+    def __str__(self):
+        return f"le NPC a qui tu parle : \n{self.nom} {self.description}"

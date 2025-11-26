@@ -49,10 +49,12 @@ def loading_saves(gui, command=None):
         player.load(player.save_path)
         gui.update_info(player)
         gui.display(f"Enchanté, {command} ! L’aventure commence maintenant.")
-        gui.display(f"Voici tes stat actuel : {player} ")
-        gui.display(f"Chargement du script : {player.current_script}")
-        step = 2
-        return None
+        gui.display(f"Voici tes stat actuel : \n{player} ")
+        gui.clear_output()
+        player.change_script('area_deplacement')
+        gui.display(f"Chargement du script : {player.current_script}",300)
+        gui.display("Tape [continue]")
+        return 'area_deplacement'
     if step == 2:
         if command in saved_player():
             player.name = command

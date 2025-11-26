@@ -1,6 +1,7 @@
 from pathlib import Path
 import json
-
+from ..object.object_class import CreaObject
+from ..object.object_scripting import load_csv_object
 
 """
 ===============================================
@@ -139,7 +140,16 @@ class Player:
             f"📍 Current Area : {self.current_area}\n"
             f"🎬 Current Script : {self.current_script}"
         )
-
+    def show_inv(self):
+        bag=""
+        if len(self.inv) == 0:
+            bag = 'Rien ne se trouve dans ton sac'
+        else :
+            str_of_name_object = ""
+            for i in self.inv:
+                str_of_name_object+= f'{load_csv_object()[i].nom}[{i}] : {load_csv_object()[i].descri}\n{load_csv_object()[i].utilite}'
+            bag = f'Dans ton sac il y a :\n{str_of_name_object}'
+        return bag
     def save(self):
         """
         Saves the player's current state to a JSON file.
@@ -154,7 +164,7 @@ class Player:
                 "save_path": self.save_path
             }
             json.dump(data, f, indent=4)
-
+            z
     def load(self,path):
         """
         Loads the player's state from a JSON file, if it exists and is valid.

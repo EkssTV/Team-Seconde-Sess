@@ -19,18 +19,18 @@ def load_csv_object():
     objects = {} #dictionnaire objects
 
     with open(file_path,'r',encoding="utf-8") as csv_file:
-        reader = csv.reader(csv_file,delimiter=";")
+        reader = csv.reader(csv_file,delimiter=",")
 
         next(reader) #saute la première ligne
 
         #remplissage du dictionnaire
         for row in reader:
-            obje = CreaObject(row[0],row[1],row[2],row[3]) #Création de l'objet
-            objects[row[0]] = obje #Remplissage du dictionnaire objects
+            objet = CreaObject(row[0],row[1],row[2],row[3]) #Création de l'objet
+            objects[row[0]] = objet #Remplissage du dictionnaire objects
 
     return objects
 
-
+print(load_csv_object())
 
 
 
