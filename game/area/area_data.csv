@@ -4,7 +4,7 @@ HALLENTREE;Le hall d'entrée;test;PLACEEPHEC,RDCANCIAILE,RDCNOUVAILE;Le hall d'e
 RDCANCIAILE;Ancienne aile RDC;test;RDCTOIL,CAFET,ESCALIERPRINCI,HALLENTREE,DISTRIB,RDCLOCAUX,LEARNLAB;RDC ancienne aile;Grande description de l'ancienne aile du rez-de-chaussée
 RDCNOUVAILE;Nouvelle aile RDC;test;LA01,LA02,LOGBOIS,ESCALIERSECOND,HALLENTREE;RDC nouvelle aile;Grande description de la nouvelle aile du rez-de-chaussée
 PARK;Parking;test;PLA01;le parking;un parking
-RDCTOIL;Toilette RDC;test;RDCANCIAILE;;
+RDCTOIL;Toilette RDC;test;RDCANCIAILE;toilettes du rdc;
 CAFET;Cafétaria;test;RDCANCIAILE;;
 DISTRIB;Distributeurs;test;RDCANCIAILE;;
 LEARNLAB;Learning Lab;test;RDCANCIAILE;;
