@@ -1,8 +1,10 @@
-id;nom;description;idQuestion
-1;Ohmlette;On dit qu’il peut allumer une ampoule rien qu’en fronçant les sourcils. Personne ne l’a jamais vu débrancher un câble sans murmurer “que le courant soit avec toi”.;3
-2;Kernelov Distrovich;Il change de distribution Linux aussi souvent qu’il change d’humeur. Certains pensent qu’il a un dual-boot… dans sa tête.;1
-3;Rootella Sudoqueen;Personne ne l’a jamais vue se connecter sans être en root. Elle accorde ou refuse les permissions dans un silence glacial… sauf quand quelqu’un écrit chmod 777. Là, elle hurle. j'aime la description mais le nom est un peu trop grand, cest pas mal quand meme;2
-4;Indexa;Elle connaît chaque document avant même qu’il n’existe. Un mot oublié, un formulaire mal rempli… et elle sait exactement où le placer dans sa mémoire infaillible. Les dossiers se déplacent d’eux-mêmes quand elle entre dans la pièce, et personne n’ose jamais chercher quelque chose sans sa permission.;5
-5;Cacheline;Très carré, très logique, parfois un peu… binaire dans ses humeurs. Il ne se déplace jamais sans son « bus personnel », un vieux chariot rempli de cartes mères ressuscitées.;8
-6;Bytespeech;Chaque mot qu’elle prononce semble compressé, puis décompressé en haute fidélité. Elle comprend même les élèves qui parlent en RFC incompréhensibles.;9
-7;Hyper Tex;Elle relie tout, même ce que tu pensais isolé. Un mot mal placé et elle te téléporte mentalement ailleurs dans le DOM. Ses cours sont des pages vivantes : tu cliques, tu apprends… et tu ne sais jamais où tu atterris.;11
+id,nom,description,idQuestion
+1,Ohmlette,On dit qu'il peut allumer une ampoule rien qu'en fronÃ§ant les sourcils. Personne ne l'a jamais vu dÃ©brancher un cÃ¢ble sans murmurer Â« que le courant soit avec toi Â».,3
+"2
+",Kernelov Distrovich,Il change de distribution Linux aussi souvent qu'il change d'humeur. Certains pensent qu'il a un dual-boot dans sa tÃªte.,1
+"3
+",Rootella Sudoqueen,"Personne ne l'a jamais vue se connecter sans Ãªtre en root. Elle accorde ou refuse les permissions dans un silence glacial, sauf quand quelqu'un Ã©crit chmod 777.",3
+4;Indexa;Elle connaï¿½t chaque document avant mï¿½me quï¿½il nï¿½existe. Un mot oubliï¿½, un formulaire mal rempliï¿½ et elle sait exactement oï¿½ le placer dans sa mï¿½moire infaillible. Les dossiers se dï¿½placent dï¿½eux-mï¿½mes quand elle entre dans la piï¿½ce, et personne nï¿½ose jamais chercher quelque chose sans sa permission.;5
+5;Cacheline;Trï¿½s carrï¿½, trï¿½s logique, parfois un peuï¿½ binaire dans ses humeurs. Il ne se dï¿½place jamais sans son ï¿½ bus personnel ï¿½, un vieux chariot rempli de cartes mï¿½res ressuscitï¿½es.;8
+6;Bytespeech;Chaque mot quï¿½elle prononce semble compressï¿½, puis dï¿½compressï¿½ en haute fidï¿½litï¿½. Elle comprend mï¿½me les ï¿½lï¿½ves qui parlent en RFC incomprï¿½hensibles.;9
+7;Hyper Tex;Elle relie tout, mï¿½me ce que tu pensais isolï¿½. Un mot mal placï¿½ et elle te tï¿½lï¿½porte mentalement ailleurs dans le DOM. Ses cours sont des pages vivantes : tu cliques, tu apprendsï¿½ et tu ne sais jamais oï¿½ tu atterris.;11
