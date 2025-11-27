@@ -85,7 +85,7 @@ class GameGUI:
         else:
             self.is_displaying = False
 
-    def display(self, text,time_to_show=30):
+    def display(self, text,time_to_show=2):
         """
         Displays a string in the output zone with a typewriter effect.
         Disables the input zone during animation.
