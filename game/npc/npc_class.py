@@ -13,7 +13,7 @@
 
 #Class area
 class Npc:
-    def __init__(self,id :int, nom: str,description : str,idQuestion:int):
+    def __init__(self,id :str, nom: str,description : str,idQuestion:int):
         self.id = id
         self.nom = nom
         self.description = description
