@@ -1,8 +1,0 @@
-{
-    "name": "MOI",
-    "health": 5,
-    "inv": [],
-    "current_area": "PLA01",
-    "current_script": "script_debut",
-    "save_path": "saves/MOI.json"
-}
