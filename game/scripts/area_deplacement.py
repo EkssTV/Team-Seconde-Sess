@@ -69,25 +69,14 @@ def area_deplacement(gui, command):
                         → Sinon :
                             * Affiche un message d'erreur.
                     - Si la commande est "help" :
-                        → Affiche les commandes disponibles ("look",
-                          "move ...").
+                        → Affiche les commandes disponibles
                     - Sinon :
                         → Affiche "Commande inconnue dans ce contexte".
 
             -----------------------------------------------
              Retour :
-                None (les résultats sont affichés via l'objet `gui`).
-
-            -----------------------------------------------
-             Notes :
-                - La logique repose sur une variable globale `step`
-                  pour gérer la progression.
-                - `player` est une instance globale de Player,
-                  utilisée pour suivre la zone actuelle et les
-                  déplacements.
-                - `load_csv_area()` recharge les données des zones
-                  à chaque appel, ce qui garantit que les infos
-                  sont toujours à jour mais peut être optimisé.
+                - None
+                - délégation/changement de script
             ===============================================
             """
 
@@ -123,8 +112,7 @@ def area_deplacement(gui, command):
                 gui.display("Tu n'observe pas de lieu portant ce nom")
             return None
         elif command == 'interact':
-
-            if len(area.list_npc) :
+            if len(area.list_npc) and isinstance(area.list_npc,list) :
                 str_of_npc = ""
                 for el in area.list_npc:
                     npc = load_csv_npc()[el]

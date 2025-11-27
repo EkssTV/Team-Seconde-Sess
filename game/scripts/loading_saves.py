@@ -48,7 +48,7 @@ def loading_saves(gui, command=None):
         player.save()
         player.load(player.save_path)
         gui.update_info(player)
-        gui.display(f"Enchanté, {command} ! L’aventure commence maintenant.")
+        gui.display(f" Enchanté, {command} ! L’aventure commence maintenant.")
         gui.display(f"Voici tes stat actuel : \n{player} ")
         gui.clear_output()
         player.change_script('area_deplacement')
