@@ -52,12 +52,16 @@ LEARNLAB;Learning Lab;test;RDCANCIAILE;;"Grand espace calme, le Learning Lab res
 Des gradins en bois permettent de s’installer pour travailler seul, tandis que des tables rondes accueillent les petits groupes en pleine discussion.
 Un projecteur sur roulettes et des casiers alignés complètent le décor.
 L’atmosphère y est studieuse, apaisante, rythmée par le son feutré des claviers et des pages tournées."
-LA01;LA01;test;RDCNOUVAILE;;"Des salles classiques, aux murs blancs et aux grandes fenêtres.
-Chaque espace est équipé d’un projecteur, d’un tableau vert et de rangées de chaises et tables.
-Les Locaux du 1er étage et du 2e étage reprennent la même disposition, où l’odeur de craie et de plastique neuf se mêle au murmure des cours en cours."
-LA02;LA02;test;RDCNOUVAILE;;"Des salles classiques, aux murs blancs et aux grandes fenêtres.
-Chaque espace est équipé d’un projecteur, d’un tableau vert et de rangées de chaises et tables.
-Les Locaux du 1er étage et du 2e étage reprennent la même disposition, où l’odeur de craie et de plastique neuf se mêle au murmure des cours en cours."
+LA01;LA01;test;RDCNOUVAILE;;"Tu entres dans le LA01, et une fraîcheur saisissante t’enveloppe aussitôt. L’espace est vaste, moderne, avec des murs aux couleurs sobres et actuelles qui amplifient le moindre son : un sac posé, un pas, un chuchotement.
+Face à toi, un immense mur blanc trône, prêt à accueillir les projections qui illuminent d’habitude la salle. Les gradins descendent doucement, et l’écho discret donne une ambiance presque solennelle, comme si chaque cours ici devenait important par nature.
+L’air y est calme, figé, presque trop silencieux.
+En ressortant par la porte latérale, tu rejoins la Nouvelle aile RDC
+."
+LA02;LA02;test;RDCNOUVAILE;;"Tu entres dans le LA02, et une fraîcheur saisissante t’enveloppe aussitôt. L’espace est vaste, moderne, avec des murs aux couleurs sobres et actuelles qui amplifient le moindre son : un sac posé, un pas, un chuchotement.
+Face à toi, un immense mur blanc trône, prêt à accueillir les projections qui illuminent d’habitude la salle. Les gradins descendent doucement, et l’écho discret donne une ambiance presque solennelle, comme si chaque cours ici devenait important par nature.
+L’air y est calme, figé, presque trop silencieux.
+En ressortant par la porte latérale, tu rejoins la Nouvelle aile RDC
+."
 LOGBOIS;Logette en bois;test;RDCNOUVAILE;;"Sept ou huit petites alcôves en bois clair s’alignent le long du couloir de la Nouvelle aile RDC.
 Chaque logette accueille quatre personnes autour d’une table, offrant un espace idéal pour travailler ou discuter en petit groupe.
 L’éclairage tamisé et le bois chaleureux en font l’un des lieux les plus appréciés pour étudier tranquillement."
@@ -116,5 +120,9 @@ RDCLOCAUX;Locaux du RDC;test;RDCANCIAILE;;"Un alignement de salles de classe s�
 Chaque pièce est équipée d’un rétroprojecteur suspendu, d’un tableau vert à craies et de trois rangées de bancs de trois places.
 Un petit podium surélevé attend le professeur, tandis qu’un vieux projecteur fait face au tableau.
 Les bruits d’écriture, les pages qu’on tourne et le cliquetis des stylos forment la bande-son familière du travail quotidien."
-LR01;LR01;test;RDCLOCAUX;;
-LR02;LR02;test;RDCLOCAUX;;
+LR01;LR01;test;RDCLOCAUX;;"Des salles classiques, aux murs blancs et aux grandes fenêtres.
+Chaque espace est équipé d’un projecteur, d’un tableau vert et de rangées de chaises et tables.
+Les Locaux du 1er étage et du 2e étage reprennent la même disposition, où l’odeur de craie et de plastique neuf se mêle au murmure des cours en cours."
+LR02;LR02;test;RDCLOCAUX;;"Des salles classiques, aux murs blancs et aux grandes fenêtres.
+Chaque espace est équipé d’un projecteur, d’un tableau vert et de rangées de chaises et tables.
+Les Locaux du 1er étage et du 2e étage reprennent la même disposition, où l’odeur de craie et de plastique neuf se mêle au murmure des cours en cours."
