@@ -15,7 +15,7 @@ from game.npc.npc_class  import Npc
 def load_csv_npc():
     dico_npc ={}
     base_path = os.path.dirname(__file__)
-    file_path = os.path.join(base_path, "npc_data.csv")
+    file_path = os.path.join(base_path, "npc_data3.csv")
     with open(file_path,'r',encoding='latin-1') as file:
         next(file)  # SAUTE L'en-tete (premiere ligne)
         for line in file:  # boucle itérative sur chaque ligne
