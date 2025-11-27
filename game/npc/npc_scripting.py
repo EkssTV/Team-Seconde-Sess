@@ -38,6 +38,6 @@ def load_csv_npc():
 
 
 if __name__ == "__main__":
-    d = get_data_in_file("npc_data.csv")
+    d = load_csv_npc()
     for k, v in d.items():
         print(k, v.nom,v.idQuestion,v.description)
