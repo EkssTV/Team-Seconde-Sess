@@ -4,7 +4,11 @@ PROFOHM,Ohmlette,On dit qu'il peut allumer une ampoule rien qu'en fronçant les 
 ",Kernelov Distrovich,Il change de distribution Linux aussi souvent qu'il change d'humeur. Certains pensent qu'il a un dual-boot dans sa tête.,1
 "PROFSUDO
 ",Rootella Sudoqueen,"Personne ne l'a jamais vue se connecter sans être en root. Elle accorde ou refuse les permissions dans un silence glacial, sauf quand quelqu'un écrit chmod 777.",3
-PROFSECRE;Indexa;Elle conna�t chaque document avant m�me qu�il n�existe. Un mot oubli�.., un formulaire mal rempli� et elle sait exactement o� le placer dans sa m�moire infaillible. Les dossiers se d�placent d�eux-m�mes quand elle entre dans la pi�ce, et personne n�ose jamais chercher quelque chose sans sa permission.;5
-PROFTECH;Cacheline;Tr�s carr�, tr�s logique, parfois un peu� binaire dans ses humeurs. Il ne se d�place jamais sans son � bus personnel �, un vieux chariot rempli de cartes m�res ressuscit�es.;8
-PROFANGL;Bytespeech;Chaque mot qu�elle prononce semble compress�, puis d�compress� en haute fid�lit�. Elle comprend m�me les �l�ves qui parlent en RFC incompr�hensibles.;9
-PROFWEB;Hyper Tex;Elle relie tout, m�me ce que tu pensais isol�. Un mot mal plac� et elle te t�l�porte mentalement ailleurs dans le DOM. Ses cours sont des pages vivantes : tu cliques, tu apprends� et tu ne sais jamais o� tu atterris.;11
+PROFSECRE,Indexa,;Elle conna�t chaque document avant m�me qu�il n�existe. Un mot oubli�..,1
+PROFTECH,Cacheline,"Il apparaît toujours juste avant que tu aies besoin de lui, comme s’il anticipait tes pensées. Personne ne l’a jamais vu chercher quoi que ce soit : il sait déjà où tout se trouve, et surtout où ça devrait être.
+Quand il t’explique un concept, c’est tellement rapide que certains élèves pensent avoir halluciné.
+On raconte que s’il t’ignore, c’est simplement parce que tu n’étais pas… dans sa ligne.",3
+PROFANGL,Bytespeech,Chaque mot qu�elle prononce semble compress�,5
+PROFWEB,Hypertext,"Elle relie absolument tout. Tu lui donnes n’importe quel sujet, elle te renvoie vers trois autres, comme si ta vie entière n’était qu’un gigantesque maillage de liens cliquables.
+Elle déteste qu’on parle sans contexte : elle exige toujours une structure, une hiérarchie, et surtout une bonne balise d’ouverture.
+Quand elle entre dans une pièce, les élèves jurent sentir une connexion immédiate… parfois même un peu trop profonde.",4
