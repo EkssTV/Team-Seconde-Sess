@@ -9,7 +9,7 @@
 
 """
 import os
-from .npc_class import Npc
+from npc_class import Npc
 
 
 def load_csv_npc():
