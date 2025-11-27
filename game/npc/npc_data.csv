@@ -1,10 +1,10 @@
 id,nom,description,idQuestion
-1,Ohmlette,On dit qu'il peut allumer une ampoule rien qu'en fronçant les sourcils. Personne ne l'a jamais vu débrancher un câble sans murmurer « que le courant soit avec toi ».,3
-"2
+PROFOHM,Ohmlette,On dit qu'il peut allumer une ampoule rien qu'en fronçant les sourcils. Personne ne l'a jamais vu débrancher un câble sans murmurer « que le courant soit avec toi ».,3
+"PROFDISTRO
 ",Kernelov Distrovich,Il change de distribution Linux aussi souvent qu'il change d'humeur. Certains pensent qu'il a un dual-boot dans sa tête.,1
-"3
+"PROFSUDO
 ",Rootella Sudoqueen,"Personne ne l'a jamais vue se connecter sans être en root. Elle accorde ou refuse les permissions dans un silence glacial, sauf quand quelqu'un écrit chmod 777.",3
-4;Indexa;Elle conna�t chaque document avant m�me qu�il n�existe. Un mot oubli�, un formulaire mal rempli� et elle sait exactement o� le placer dans sa m�moire infaillible. Les dossiers se d�placent d�eux-m�mes quand elle entre dans la pi�ce, et personne n�ose jamais chercher quelque chose sans sa permission.;5
+PROFSECRE;Indexa;Elle conna�t chaque document avant m�me qu�il n�existe. Un mot oubli�, un formulaire mal rempli� et elle sait exactement o� le placer dans sa m�moire infaillible. Les dossiers se d�placent d�eux-m�mes quand elle entre dans la pi�ce, et personne n�ose jamais chercher quelque chose sans sa permission.;5
 5;Cacheline;Tr�s carr�, tr�s logique, parfois un peu� binaire dans ses humeurs. Il ne se d�place jamais sans son � bus personnel �, un vieux chariot rempli de cartes m�res ressuscit�es.;8
-6;Bytespeech;Chaque mot qu�elle prononce semble compress�, puis d�compress� en haute fid�lit�. Elle comprend m�me les �l�ves qui parlent en RFC incompr�hensibles.;9
-7;Hyper Tex;Elle relie tout, m�me ce que tu pensais isol�. Un mot mal plac� et elle te t�l�porte mentalement ailleurs dans le DOM. Ses cours sont des pages vivantes : tu cliques, tu apprends� et tu ne sais jamais o� tu atterris.;11
+PROFANGL;Bytespeech;Chaque mot qu�elle prononce semble compress�, puis d�compress� en haute fid�lit�. Elle comprend m�me les �l�ves qui parlent en RFC incompr�hensibles.;9
+PROFWEB;Hyper Tex;Elle relie tout, m�me ce que tu pensais isol�. Un mot mal plac� et elle te t�l�porte mentalement ailleurs dans le DOM. Ses cours sont des pages vivantes : tu cliques, tu apprends� et tu ne sais jamais o� tu atterris.;11
