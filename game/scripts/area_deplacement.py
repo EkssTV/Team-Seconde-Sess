@@ -101,15 +101,19 @@ def area_deplacement(gui, command):
                 list_of_next_area_name += load_csv_area()[el].name
                 list_of_next_area_name += f' [{el}]\n '
             gui.display(list_of_next_area_name)
-        elif command.split(' ')[0] == 'move' :
-            if command.split(' ')[1] in area.near_area :
-                player.move_area(command.split(' ')[1])
+        elif command.split(' ')[0].lower() == 'move':
+            if len(command.split(' ')) < 2:
+                return None
+            target = command.split(' ')[1].upper()
+
+            if target in area.near_area:
+                player.move_area(target)
                 area = load_csv_area()[player.current_area]
-                gui.display('TU te déplace')
+                gui.display("Tu te déplaces")
                 gui.display(area.simple_desc)
                 gui.update_info(player)
-            else :
-                gui.display("Tu n'observe pas de lieu portant ce nom")
+            else:
+                gui.display("Tu n'observes pas de lieu portant ce nom")
             return None
         elif command == 'interact':
             if len(area.list_npc) and isinstance(area.list_npc,list) :
@@ -119,25 +123,25 @@ def area_deplacement(gui, command):
                     str_of_npc += f"[{el}]\n{npc.description}\n"
                 gui.display(str_of_npc)
             else :
-                gui.display("Tu ne remarque pas de personne ou chose pour lequel tu pourrais intéragir")
+                gui.display("Tu ne remarques pas de personne ou chose avec lesquelles tu pourrais intéragir")
         elif command.split(' ')[0] == 'speak' :
             if command.split(' ')[1] in area.list_npc:
-                gui.display("Prochain MAJ mais tu peux voir ça en attendant :")
+                gui.display("Prochaine MAJ mais tu peux voir ça en attendant :")
                 npc = load_csv_npc()[command.split(' ')[1]]
                 gui.display(f'{npc}')
             else:
-                gui.display("Tu n'observe pas de personne ou chose portant ce nom")
+                gui.display("Tu n'observes pas de personne ou chose portant ce nom")
         elif command == 'save' :
             player.save()
-            gui.display('Partie sauvegarder')
-            gui.display(f"Voici tes stat actuel : {player} ")
+            gui.display('Partie sauvegardée')
+            gui.display(f"Voici tes stats actuelles : {player} ")
             gui.update_info(player)
         elif command =='quit' :
             gui.quit_game()
         elif command =='clear':
             gui.clear_output()
         elif command == 'who' :
-            gui.display(f"Voici tes stat actuel : {player} ")
+            gui.display(f"Voici tes stats actuelles : {player} ")
         elif command == 'help':
             help_text = """
             ===============================================

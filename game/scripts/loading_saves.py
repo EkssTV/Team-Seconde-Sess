@@ -22,7 +22,7 @@ def loading_saves(gui, command=None):
             str_of_saved_player += f'[{save}] '
         gui.clear_output()
         gui.display("=== MENU DE CHARGEMENT ===")
-        gui.display("Tape la save que tu choisis ! Sinon [new] pour crée la nouvelle partie")
+        gui.display("Tape la save que tu choisis ! Sinon [new] pour créer une nouvelle partie")
         gui.display(f'Voici les saves disponibles : {str_of_saved_player}')
         step = 1
         return None
@@ -49,7 +49,7 @@ def loading_saves(gui, command=None):
         player.load(player.save_path)
         gui.update_info(player)
         gui.display(f" Enchanté, {command} ! L’aventure commence maintenant.")
-        gui.display(f"Voici tes stat actuel : \n{player} ")
+        gui.display(f"Voici tes stats actuelles : \n{player} ")
         gui.clear_output()
         player.change_script('area_deplacement')
         gui.display(f"Chargement du script : {player.current_script}",300)
@@ -61,7 +61,7 @@ def loading_saves(gui, command=None):
             player.save_path = f'saves/{command}.json'
             player.load(player.save_path)
             gui.update_info(player)
-            gui.display(f" Bienvenue dans ta partie sauvegardée {player.name}. Voici tes stat actuel : \n{player} ")
+            gui.display(f" Bienvenue dans ta partie sauvegardée {player.name}. Voici tes stats actuelles : \n{player} ")
             gui.clear_output()
             player.change_script('area_deplacement')
             gui.display(f"Chargement du script : {player.current_script}",300)
