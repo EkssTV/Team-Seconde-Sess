@@ -1,4 +1,27 @@
 id;nom;description;idQuestion
-PROFOHM;Ohmlette;On dit qu'il peut allumer une ampoule rien qu'en fron�ant les sourcils. Personne ne l'a jamais vu d�brancher un c�ble sans murmurer � que le courant soit avec toi �.;3
-PROFDISTRO;Kernelov Distrovich;Il change de distribution Linux aussi souvent qu'il change d'humeur. Certains pensent qu'il a un dual-boot dans sa t�te.;1
-;;;
+PROFOHM;Ohmlette;On dit qu'il peut allumer une ampoule rien qu'en fron�ant les sourcils. Personne ne l'a jamais vu d�brancher un c�ble sans murmurer � que le courant soit avec toi �.;3
+PROFDISTRO;Kernelov Distrovich;Il change de distribution Linux aussi souvent qu'il change d'humeur. Certains pensent qu'il a un dual-boot dans sa t�te.;1
+PROFSUDO;Rootella Sudoqueen;Personne ne l'a jamais vue se connecter sans être en root. Elle accorde ou refuse les permissions dans un silence glacial, sauf quand quelqu'un écrit chmod 777.;2
+PROFTECH;Cacheline;"Il apparaît toujours juste avant que tu aies besoin de lui, comme s’il anticipait tes pensées. Personne ne l’a jamais vu chercher quoi que ce soit : il sait déjà où tout se trouve, et surtout où ça devrait être.
+Quand il t’explique un concept, c’est tellement rapide que certains élèves pensent avoir halluciné.
+On raconte que s’il t’ignore, c’est simplement parce que tu n’étais pas… dans sa ligne.";1
+PROFANGL;Bytespeech;Chaque mot qu'elle prononce semble compressé;1
+PROFWEB;Hypertext;"Elle relie absolument tout. Tu lui donnes n’importe quel sujet, elle te renvoie vers trois autres, comme si ta vie entière n’était qu’un gigantesque maillage de liens cliquables.
+Elle déteste qu’on parle sans contexte : elle exige toujours une structure, une hiérarchie, et surtout une bonne balise d’ouverture.
+Quand elle entre dans une pièce, les élèves jurent sentir une connexion immédiate… parfois même un peu trop profonde.";2
+PROFSQL;Tupleman;"Le professeur Tuple considère que chaque étudiant n’est qu’un enregistrement temporaire dans sa salle de classe.
+Il se déplace par lignes droites, parle par champs, et supporte très mal les valeurs NULL. Il pose toujours ses questions dans un ordre précis, et si tu réponds hors schéma, il te regarde comme une donnée non conforme.";1
+PROFSIGN;Porteuse;"Le professeur Porteuse ne transmet jamais l’information directement.
+Il parle autour du sujet, module le ton, change de fréquence… et attend que les étudiants extraient le message eux-mêmes.
+Ses explications semblent claires, mais personne ne sait exactement ce qui était le signal et ce qui était le support.
+Il prétend que comprendre, c’est savoir démêler l’utile du bruit.";2
+PROFMATH;Modulo;"Le Professeur Modulo enseigne que toute réponse est correcte… jusqu’à ce qu’on enlève ce qu’il y a en trop.
+Il aime les cycles, les pièges simples et les résultats qui retombent toujours au même endroit.
+Ses contrôles sont réputés : peu importe le calcul, tout finit par avoir le même reste.";1
+PROFLEG;Le Vieux Compileur;"Né avant Internet, le Vieux Compileur écrivait déjà du code quand les machines n’avaient pas d’écran.
+Il a appris à programmer quand chaque erreur coûtait une nuit entière.
+On dit qu’il n’aide jamais personne.
+C’est faux : il aide seulement les élèves qui ont déjà essayé.";2
+ELEVLEG;Gildas Pythonus;"L’année dernière, malgré la bataille contre l’administration et une secrétaire impossible à cerner, Gildas Pythonus s’est battu pour continuer en tant qu’élève libre.
+Rarement vu dans les couloirs, il semble tomber du ciel dès qu’un problème dépasse les autres élèves.
+Prodige de la programmation, discret mais toujours prêt à aider, il guide ceux qui sont motivés et curieux.";0
