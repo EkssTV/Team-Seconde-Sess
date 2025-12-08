@@ -1,3 +1,2 @@
 we'll use it for telling if we use extern package
-
-pip install pygame
+pytest
