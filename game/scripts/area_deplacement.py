@@ -103,9 +103,7 @@ def area_deplacement(gui, command):
             gui.display(list_of_next_area_name)
         elif command.split(' ')[0].lower() == 'move':
             if len(command.split(' ')) < 2:
-                gui.display("Format : move <zone_id>")
                 return None
-
             target = command.split(' ')[1].upper()
 
             if target in area.near_area:
