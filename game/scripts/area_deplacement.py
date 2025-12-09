@@ -9,6 +9,7 @@ from ..object.object_scripting import *
 from ..question.question_class import *
 from ..question.question_scripting import *
 from .loading_saves import player
+import re
 """
 ===============================================
  EPHEC QUEST - area_deplacement.py
@@ -42,30 +43,32 @@ def area_deplacement(gui, command):
         return None
     if step == 1 :
 
+        # Regex pour expression régulière (move, go, aller, avancer)
+        regex_command = re.match(r"(move|go|aller|avancer?)\s+([A-Za-z0-9]+)", command.lower())
+
+        if regex_command:
+            # On récupère la destination trouvée par la regex
+            dest = regex_command.group(2).upper()
+
+            if dest in area.near_area:
+                player.move_area(dest)
+                new_area = world[player.current_area]
+                gui.display("Tu te déplaces")
+                gui.display(new_area.simple_desc)
+                gui.update_info(player)
+            else:
+                gui.display("Tu n'observes pas de lieu portant ce nom")
+
+            return None
+
         # LOOK
+
         if cmd == 'look' :
             gui.display(area.long_desc)
             text =" Tu peux aller :\n"
             for el in area.near_area :
                 text += f"{world[el].name} [{el}]\n"
             gui.display(text)
-            return None
-
-        # MOVE
-        elif command.split(' ')[0].lower() == 'move':
-            if not arg:
-                gui.display("Usage : move <zone_id>")
-                return None
-
-            if arg in area.near_area:
-                player.move_area(arg)
-                new_area = world[player.current_area]
-                gui.display("Tu te déplaces")
-                gui.display(new_area.simple_desc)
-                gui.update_info(player)
-
-            else:
-                gui.display("Tu n'observes pas de lieu portant ce nom")
             return None
 
         # INTERACT
