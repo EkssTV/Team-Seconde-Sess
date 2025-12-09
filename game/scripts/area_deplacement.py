@@ -22,63 +22,6 @@ from .loading_saves import player
 current_player = player
 step = 0
 def area_deplacement(gui, command):
-    """
-            ===============================================
-             EPHEC QUEST - area_deplacement
-            -----------------------------------------------
-             Description : Gère les interactions du joueur
-                           dans une zone (Area).
-            -----------------------------------------------
-             Paramètres :
-                gui (GameGUI) :
-                    Instance de l'interface graphique utilisée
-                    pour afficher les informations au joueur.
-                command (str) :
-                    La commande saisie par le joueur (ex: "look",
-                    "move hal01", "help").
-
-            -----------------------------------------------
-             Fonctionnement :
-                - Utilise la variable globale `step` pour suivre
-                  l'état du script (progression dans la zone).
-                - Récupère la zone actuelle du joueur via
-                  `player.current_area` et les données chargées
-                  par `load_csv_area()`.
-
-                Étape 0 :
-                    - Nettoie l'affichage (`gui.clear_output()`).
-                    - Affiche la description simple de la zone
-                      (`area.simple_desc`).
-                    - Passe à l'étape 1.
-
-                Étape 1 :
-                    - Si la commande est "look" :
-                        → Affiche la description détaillée de la zone
-                          (`area.long_desc`).
-                        → Liste les zones accessibles depuis la zone
-                          actuelle (`area.near_area`) avec leur nom
-                          et leur identifiant.
-                    - Si la commande commence par "move <zone_id>" :
-                        → Vérifie si la zone demandée est dans
-                          `area.near_area`.
-                        → Si oui :
-                            * Déplace le joueur avec `player.move_area()`.
-                            * Recharge la nouvelle zone.
-                            * Affiche un message de déplacement et la
-                              description simple de la nouvelle zone.
-                        → Sinon :
-                            * Affiche un message d'erreur.
-                    - Si la commande est "help" :
-                        → Affiche les commandes disponibles
-                    - Sinon :
-                        → Affiche "Commande inconnue dans ce contexte".
-
-            -----------------------------------------------
-             Retour :
-                - None
-                - délégation/changement de script
-            ===============================================
-            """
 
     global step
     try:
@@ -88,61 +31,87 @@ def area_deplacement(gui, command):
         return None
 
     area = world[player.current_area]
+    # Découpage propre de la commande
+    parts = command.split()
+    cmd = parts[0].lower() if parts else ""
+    arg = parts[1].upper() if len(parts) > 1 else None
     if step == 0 :
         gui.clear_output()
         gui.display(area.simple_desc)
         step = 1
         return None
     if step == 1 :
-        if command == 'look' :
-            gui.display(area.long_desc)
-            list_of_next_area_name =" Tu peux aller :\n"
-            for el in area.near_area :
-                list_of_next_area_name += load_csv_area()[el].name
-                list_of_next_area_name += f' [{el}]\n '
-            gui.display(list_of_next_area_name)
-        elif command.split(' ')[0].lower() == 'move':
-            if len(command.split(' ')) < 2:
-                return None
-            target = command.split(' ')[1].upper()
 
-            if target in area.near_area:
-                player.move_area(target)
-                area = load_csv_area()[player.current_area]
+        # LOOK
+        if cmd == 'look' :
+            gui.display(area.long_desc)
+            text =" Tu peux aller :\n"
+            for el in area.near_area :
+                text += f"{world[el].name} [{el}]\n"
+            gui.display(text)
+            return None
+
+        # MOVE
+        elif command.split(' ')[0].lower() == 'move':
+            if not arg:
+                gui.display("Usage : move <zone_id>")
+                return None
+
+            if arg in area.near_area:
+                player.move_area(arg)
+                new_area = world[player.current_area]
                 gui.display("Tu te déplaces")
-                gui.display(area.simple_desc)
+                gui.display(new_area.simple_desc)
                 gui.update_info(player)
+
             else:
                 gui.display("Tu n'observes pas de lieu portant ce nom")
             return None
-        elif command == 'interact':
-            if len(area.list_npc) and isinstance(area.list_npc,list) :
-                str_of_npc = ""
+
+        # INTERACT
+
+        elif cmd == 'interact':
+            if isinstance(area.list_npc, list) and len(area.list_npc):
+                text = ""
+                npc_data = load_csv_npc()
                 for el in area.list_npc:
-                    npc = load_csv_npc()[el]
-                    str_of_npc += f"[{el}]\n{npc.description}\n"
-                gui.display(str_of_npc)
-            else :
-                gui.display("Tu ne remarques pas de personne ou chose avec lesquelles tu pourrais intéragir")
-        elif command.split(' ')[0] == 'speak' :
-            if command.split(' ')[1] in area.list_npc:
-                gui.display("Prochaine MAJ mais tu peux voir ça en attendant :")
-                npc = load_csv_npc()[command.split(' ')[1]]
-                gui.display(f'{npc}')
+                    npc = npc_data[el]
+                    text += f"[{el}]\n{npc.description}\n"
+                gui.display(text)
             else:
-                gui.display("Tu n'observes pas de personne ou chose portant ce nom")
-        elif command == 'save' :
+                gui.display("Tu ne remarques pas de personne ou chose avec lesquelles tu pourrais interagir")
+            return None
+
+        #SPEAK
+        elif cmd == 'speak':
+            if arg in area.list_npc:
+                return f"speak_script {arg}"
+            else:
+                gui.display("Tu n'observes pas de personne portant ce nom")
+            return None
+
+        # SAVE
+        elif cmd == "save":
             player.save()
-            gui.display('Partie sauvegardée')
-            gui.display(f"Voici tes stats actuelles : {player} ")
+            gui.display("Partie sauvegardée")
+            gui.display(f"Voici tes stats actuelles : {player}")
             gui.update_info(player)
-        elif command =='quit' :
+            return None
+
+        # QUIT
+        elif cmd =='quit' :
             gui.quit_game()
-        elif command =='clear':
+
+        # CLEAR
+        elif cmd =='clear':
             gui.clear_output()
-        elif command == 'who' :
+        # WHO
+        elif cmd == 'who' :
             gui.display(f"Voici tes stats actuelles : {player} ")
-        elif command == 'help':
+
+        # HELP
+
+        elif cmd == 'help':
             help_text = """
             ===============================================
              EPHEC QUEST - Manuel des Commandes
@@ -178,11 +147,20 @@ def area_deplacement(gui, command):
             ===============================================
             """
             gui.display(help_text,1)
+
+        # INVENTORY
+
         elif command == 'inventory' :
             gui.display(f'Voici ce que tu as dans ton inventaire:\n{player.show_inv()}')
+            return None
+
+        # CHEAT
+
         elif command =='UIA': #code de triche (pour test l'inventory)
             player.add_inv("CARETU")
             player.save()
+
+        # LE RESTE
         else :
             gui.display("Commande inconnue dans ce contexte")
     return None
