@@ -9,30 +9,38 @@
 
 """
 import os
-from game.npc.npc_class  import Npc
-
+from game.npc.npc_class  import Npc, InvalidNpcException
+import csv
 
 def load_csv_npc():
     dico_npc ={}
     base_path = os.path.dirname(__file__)
     file_path = os.path.join(base_path, "npc_data3.csv")
-    with open(file_path,'r',encoding='latin-1') as file:
-        next(file)  # SAUTE L'en-tete (premiere ligne)
-        for line in file:  # boucle itérative sur chaque ligne
-            colonnes = line.rstrip().split(";")  # je split sur ;
-            colonnes = [c.strip().replace('"', '') for c in colonnes]
-            colonnes[3] = colonnes[3].rstrip().split(",")
+    try:
+        with open(file_path,'r',encoding='utf-8') as file:
+            reader =  csv.reader(file, delimiter=';')
+            next(reader)  # SAUTE L'en-tete (premiere ligne)
+
+            for line_number, line in enumerate(reader, start=2):  # compte les lignes
+                # vérifier que la ligne a exactement 4 colonnes
+                if len(line) != 4:
+                    print(f"Ligne {line_number} ignorée, format incorrect : {line}")
+                    continue
 
 
-            npc = Npc(
-                id = colonnes[0],
-                nom = colonnes[1],
-                description=colonnes[2],
-                idQuestion=colonnes[3],
+                npc = Npc(
+                    id = line[0],
+                    nom = line[1],
+                    description=line[2],
+                    idQuestion=line[3],
 
 
-            )
-            dico_npc[colonnes[0]] = npc
+                )
+                dico_npc[line[0]] = npc
+    except FileNotFoundError:
+        print(f"Fichier CSV introuvable : {file_path}")
+
+
     return dico_npc
 
 
