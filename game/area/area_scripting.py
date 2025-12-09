@@ -1,13 +1,45 @@
 """
 ===============================================
- EPHEC QUEST - area_class.py
+ EPHEC QUEST - area_scripting.py
 -----------------------------------------------
- Description : scripting area
- Auteur      : Greg
- Date        : 2025
-===============================================
+ Description :
+     Charge les zones (areas) du jeu depuis le fichier
+     CSV area_data.csv. Chaque ligne du fichier est
+     transformée en un objet CreaArea, puis stockée
+     dans un dictionnaire indexé par l'id de la zone.
 
+     L’idée de séparer ce module dans un fichier dédié
+     vient d’un conseil reçu via une IA afin d’améliorer
+     la clarté et l’organisation du projet.
+
+ Fonctionnement :
+     - Lecture du fichier CSV.
+     - Vérification du bon format de chaque ligne.
+     - Conversion des champs en structures Python.
+     - Création des objets CreaArea.
+     - Construction du dictionnaire world.
+
+ Préconditions :
+     - Le fichier area_data.csv doit exister dans le
+       même dossier que ce script.
+     - Chaque ligne du CSV doit contenir au minimum
+       6 colonnes valides.
+     - Les listes (PNJ, zones voisines) doivent être
+       correctement séparées par des virgules.
+     - La classe CreaArea doit être importable.
+
+ Postconditions :
+     - Retourne un dictionnaire : { id_area : CreaArea }.
+     - Chaque élément retourné est une instance valide
+       de CreaArea.
+     - Une InvalidAreaException est levée si une ligne
+       du CSV est invalide.
+
+ Auteur : Gregory Ly
+ Date   : 2025
+===============================================
 """
+
 import csv
 import os
 from game.area.exceptions import InvalidAreaException

@@ -106,7 +106,7 @@ def run_console():
         👨‍💻 Créateurs :
         - Ekss (Matthieu Decreme)
         - GraindeRiz (Gregory Ly)
-        - stefantroch (Stefan Torch)
+        - stefantroch (Stefan Troch)
         - Boureym0 (Benjamin Junion)
 
         Prépare-toi à vivre une aventure unique… et à prouver que tu es digne de devenir un maître de l’IT !
