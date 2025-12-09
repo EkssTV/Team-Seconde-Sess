@@ -8,41 +8,42 @@
 ===============================================
 """
 
-from .question_class import Question
+from game.question.question_class import Question
+import csv
+import os
 
-def get_data_in_file(filename):
+def load_csv_question():
     dico_questions={}
-    id_question = 1
+    base_path = os.path.dirname(__file__)
+    file_path = os.path.join(base_path, "questions_data2.csv")
 
+    try:
+        with open(file_path,'r',encoding='utf-8') as file:
+            reader = csv.reader(file, delimiter=';')
+            next(reader)
 
-    with open(filename,'r',encoding='latin-1') as file:
-        next(file)# SAUTE L'en-tete (premiere ligne)
-        for line in file:                               #boucle itérative sur chaque ligne
-            colonnes = line.rstrip().split(";")# je split sur la ;
-            colonnes_nettoyees =[]
-            for c in colonnes:
-                c = c.replace('"', '')
-                c = c.strip()
-                colonnes_nettoyees.append(c)
-            colonnes = colonnes_nettoyees
-            answers = []   # je craye une liste pour la colonne réponses
-            for rep in colonnes[2:-1]:
-                answers.append(rep.strip())
+            for line_number, line in enumerate(reader,start=2):
+                if len(line) != 4:
+                    print(f"Ligne {line_number} ignorée, format incorrect : {line}")
+                    continue
+                question_id = int(line[0])
+                question_text = line[1]
+                answers = line[2].split(',')  # transformer la chaîne en liste
+                correct_answer = int(line[3])
 
-            q = Question(
-                idNPC=colonnes[0],
-                question=colonnes[1],
-                answers=answers,
-                correct_answer=colonnes[-1]
-            )
-
-            dico_questions[id_question] = q
-            id_question += 1
+                questions = Question(
+                    idQuestion = question_id,
+                    question = question_text,
+                    answers=answers,
+                    correct_answer=correct_answer
+                )
+                dico_questions[question_id] = questions
+    except FileNotFoundError:
+        print(f"Fichier CSV introuvable : {file_path}")
 
     return dico_questions
 
 if __name__ == "__main__":
-    d = get_data_in_file("question_data.csv")
-    for k, q in d.items():
-        print(k, q.question, q.answers, q.correct_answer)
-
+    d = load_csv_question()
+    for k,q in d.items():
+        print(q.id, q.question, q.answers, q.correct_answer)
