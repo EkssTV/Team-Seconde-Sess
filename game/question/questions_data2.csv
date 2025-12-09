@@ -1,0 +1,7 @@
+id;Question;answers;correct_answer
+1;Soit un ampèremètre avec les calibres 5 mA, 10 mA, 0,1 A, 1 A et 5 A. Si je n'ai aucune idée de l'ordre de grandeur du courant qui circule dans le circuit, il vaut mieux commencer par tester le calibre le plus grand.;Vrai,Faux;2
+2;"Defini moi La loi d'Ohm
+
+";Donne la relation entre la différence de potentiel aux bornes d'une résistance et le courant la traversant. La différence de potentiel est proportionnelle au courant.,Donne la relation entre la différence de potentiel aux bornes d'une résistance et le courant la traversant. La différence de potentiel est inversement proportionnelle au courant.,Donne la relation entre la différence de potentiel aux bornes de n'importe quel dipôle électrique et le courant le traversant. La différence de potentiel est inversement proportionnelle au courant.,Donne la relation entre la différence de potentiel aux bornes de n'importe quel dipôle électrique et le courant le traversant. La différence de potentiel est proportionnelle au courant.;1
+3;La résistance est un dipôle électrique actif, c'est-à-dire capable de fournir de l'énergie au circuit.;Vrai,Faux;2
+4;Le potentiomètre est une résistance variable;Vrai,Faux;2

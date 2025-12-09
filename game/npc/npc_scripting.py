@@ -32,7 +32,7 @@ def load_csv_npc():
                     id = line[0],
                     nom = line[1],
                     description=line[2],
-                    idQuestion=line[3],
+                    idQuestion=[int(x.strip()) for x in line[3].split(',')]
 
 
                 )

@@ -9,8 +9,8 @@
 """
 import random
 class Question:
-    def __init__(self,idNPC : int,question: str,answers : list, correct_answer: int):
-        self.idNPC = int(idNPC)
+    def __init__(self,idQuestion: int,question: str,answers : list, correct_answer: int):
+        self.id = idQuestion
         self.question = question
         self.answers = answers
         self.correct_answer = int(correct_answer)
