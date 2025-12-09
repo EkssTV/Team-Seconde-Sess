@@ -1,5 +1,6 @@
 from .area_deplacement import area_deplacement
-from .loading_saves import loading_saves,step
+from .loading_saves import loading_saves, step
+from .speak_script import speak_script
 
 """
 ===============================================
@@ -10,27 +11,45 @@ from .loading_saves import loading_saves,step
  Date        : 2025
 ===============================================
 """
-current_handler = None
-def handle_command_from_gui(command: str, gui):
-    """
-    Receives a command from the GUI and processes it.
-    Sends back a response to be displayed in the GUI.
 
-    Args:
-        command (str): The command entered by the player
-        gui (GameGUI): The GUI instance to send output to
-    """
+# Mapping des transitions possibles
+HANDLER_MAP = {
+    "area_deplacement": area_deplacement,
+    "speak_script": speak_script,
+    "loading_saves": loading_saves,
+}
+
+current_handler = None
+
+
+def handle_command_from_gui(command: str, gui):
     global current_handler
 
+    # Si un handler est actif → on lui délègue la commande
     if current_handler:
-        result = current_handler(gui, command)
-        if result == "area_deplacement":
-            current_handler = area_deplacement
-    elif command == "start":
-        current_handler = loading_saves
-        loading_saves(gui, None)
-    elif command == "help":
-        gui.display("Tape 'start' pour commencer")
-    else:
-        gui.display("Commande inconnue.")
+        try:
+            result = current_handler(gui, command)
+            if result and result.startswith("speak_script"):
+                _, npc_id = result.split()
+                current_handler = lambda g, c: speak_script(g, c, npc_id)
+            # Si le handler renvoie une transition valide
+            if result in HANDLER_MAP:
+                current_handler = HANDLER_MAP[result]
 
+        except Exception as e:
+            gui.display(f"Erreur dans le script : {e}")
+            current_handler = None
+
+        return
+
+    # Aucun handler actif → commandes globales
+    if command == "start":
+        current_handler = loading_saves
+        current_handler(gui, None)
+        return
+
+    if command == "help":
+        gui.display("Tape 'start' pour commencer")
+        return
+
+    gui.display("Commande inconnue.")

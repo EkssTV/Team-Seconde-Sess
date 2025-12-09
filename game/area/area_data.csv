@@ -7,7 +7,7 @@ Un grand panneau d’accueil, planté non loin de l’entrée, affiche en lettre
 Les portes vitrées laissent filtrer un rai de lumière à travers lequel les silhouettes passent et disparaissent dans le Hall d’entrée.
 Un peu plus loin, au fond de la place, l’accès vers le Parking s’ouvre dans la pénombre des arbres, où l’ombre fraîche contraste avec l’éclat du soleil sur les pavés.
 Entre ces espaces, les chemins s’entrecroisent, invitant à choisir une direction — vers le mouvement, vers la découverte, ou vers le calme."
-HALLENTREE;Le hall d'entrée;test;PLACEEPHEC,RDCANCIAILE,RDCNOUVAILE;Le hall d'entrée principal;"Le hall d’entrée s’ouvre devant toi, vaste et baigné de lumière naturelle. Les murs clairs reflètent la clarté du jour, et le sol carrelé résonne doucement sous les pas.
+HALLENTREE;Le hall d'entrée;ELEVLEG;PLACEEPHEC,RDCANCIAILE,RDCNOUVAILE;Le hall d'entrée principal;"Le hall d’entrée s’ouvre devant toi, vaste et baigné de lumière naturelle. Les murs clairs reflètent la clarté du jour, et le sol carrelé résonne doucement sous les pas.
 
 Un grand écran d’informations trône face à l’entrée. Un tableau d’affichage déborde d’annonces colorées, de clubs, de soirées et de propositions de covoiturage.
 À droite, un couloir s’étire vers la Nouvelle aile RDC, lumineuse et moderne.
@@ -35,7 +35,7 @@ L’air y est plus frais, empreint d’odeurs de métal chaud et de terre humide
 À l’écart, une voiture attire l’attention. Les vitres sont embuées, les portières closes. À travers la buée, une silhouette : un étudiant, les épaules secouées par de discrets sanglots. Le contraste entre le silence ambiant et cette présence troublante crée une tension presque palpable.
 
 Un chemin pavé remonte vers la Place de l’Ephec, où la lumière du jour et le murmure des étudiants ramènent la vie et le mouvement."
-RDCTOIL;Toilette RDC;test;RDCANCIAILE;les toilettes du RDC;"Une simple porte blanche mène aux toilettes.
+RDCTOIL;Toilette RDC;ELEVLEG;RDCANCIAILE;les toilettes du RDC;"Une simple porte blanche mène aux toilettes.
 L’écho des pas sur le carrelage, le bruit intermittent de l’eau et l’odeur caractéristique des produits d’entretien en font un lieu sans surprise ni mystère.
 Elles se trouvent à proximité directe de l’Ancienne aile RDC."
 CAFET;Cafétaria;test;RDCANCIAILE;la cafétaria;"Derrière une large baie vitrée, la cafétéria grouille de vie dès les premières heures du matin.
