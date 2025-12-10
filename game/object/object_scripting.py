@@ -1,6 +1,6 @@
 """
 ===============================================
- EPHEC QUEST - object_class.py
+ EPHEC QUEST - object_scripting.py
 -----------------------------------------------
  Description : scripting objects
  Auteur      : Benjamin
@@ -10,6 +10,7 @@
 """
 import csv
 import os
+from game.object.object_exceptions import InvalidObjectException
 from game.object.object_class import CreaObject
 
 def load_csv_object():
@@ -25,9 +26,16 @@ def load_csv_object():
 
         #remplissage du dictionnaire
         for row in reader:
-            objet = CreaObject(row[0],row[1],row[2],row[3]) #Création de l'objet
-            objects[row[0]] = objet #Remplissage du dictionnaire objects
+            if len(row) < 4:
+                raise InvalidObjectException(f"Ligne CSV invalide : {row}")
+            try:
+                if not row[0] or not row[1]:
+                    raise ValueError("Champs obligatoires manquants")
 
+                objet = CreaObject(row[0],row[1],row[2],row[3]) #Création de l'objet
+                objects[row[0]] = objet #Remplissage du dictionnaire objects
+            except Exception as e:
+                raise InvalidObjectException(f"Erreur lors de la création de l'objet {row[0]} : {e}")
     return objects
 
 print(load_csv_object())
