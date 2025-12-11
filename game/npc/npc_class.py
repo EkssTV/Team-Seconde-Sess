@@ -23,9 +23,11 @@ class Npc:
        name (str) : nom du PNJ
        description (str) : description du PNJ
        idQuestion (list[int]) : liste des IDs de questions associées au PNJ
+       State (int) : état du PNJ. Defini si une interaction est possible ou non
+           Badge(int) : Defini l'id du badge si réussite de l'interaction
     """
 
-    def __init__(self,id :str, name: str,description : str,idQuestion:int):
+    def __init__(self,id :str, name: str,description : str,idQuestion:int, state:int, badge: int):
         """
        Initialise un objet PNJ.
 
@@ -34,12 +36,16 @@ class Npc:
            name (str) : nom du PNJ
            description (str) : description du PNJ
            idQuestion (list[int]) : liste des IDs de questions liées au PNJ
+           State (int) : état du PNJ. Defini si une interaction est possible ou non
+           Badge(int) : Defini l'id du badge si réussite de l'interaction
         """
 
         self.id = id
         self.name = name
         self.description = description
         self.idQuestion = idQuestion
+        self.state = state
+        self.badge = badge
 
     def __str__(self):
         """Retourne une représentation textuelle du PNJ (nom et description)."""
