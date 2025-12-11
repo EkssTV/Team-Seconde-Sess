@@ -9,19 +9,16 @@
 
 """
 import os
-
-from win32comext.axscript.client.framework import state_map
-
 from game.npc.npc_class  import Npc, InvalidNpcException
 import csv
-
+from npc_logger import logger
 def load_csv_npc():
 
     """
     Charge les données des PNJ (NPC) depuis un fichier CSV
     et retourne un dictionnaire d’objets `Npc`.
 
-    Le fichier CSV doit contenir 4 colonnes :
+    Le fichier CSV doit contenir 6 colonnes :
         - id (str) : identifiant unique du PNJ
         - name (str) : nom du PNJ
         - description (str) : description PNJ
@@ -39,37 +36,43 @@ def load_csv_npc():
     try:
         with open(file_path,'r',encoding='utf-8') as file:
             reader =  csv.reader(file, delimiter=';')
+            """Skip du header"""
+            next(reader)
 
-            next(reader)                                                                # Skip de header line
-
-
-            for line_number, line in enumerate(reader, start=2):                        #iterer sur chaque line du csv (line_number sert au debug)
-                if len(line) != 6:                                                      #Chaque ligne doit contenir 4 colonnes
-                    print(f"Ligne {line_number} ignorée, format incorrect : {line}")
+            """itérer sur chaque ligne du CSV, sert au debut si erreur de data dans le fichier"""
+            for line_number, line in enumerate(reader, start=2):
+                if len(line) != 6:
+                    logger.warning(f"Ligne {line_number} ignorée, format incorrect : {line}")
                     continue
 
-                idQuestion = []                                                         # Creer liste des id questions
+                idQuestion = []
+                """Creer la liste des Questions. On split sur les ','"""
+                for x in line[3].split(','):
+                    try:
+                        x = x.strip()
+                        x = int(x)
+                        idQuestion.append(x)
+                    except ValueError:
+                        logger.error(f"ligne {line_number}, idQuestion {x} invalide")
 
-                for x in line[3].split(','):                                            # On split sur les , et on ajoute a la liste
-                    x = x.strip()
-                    x = int(x)
-                    idQuestion.append(x)
-
-                npc = Npc(
-                    id = line[0],
-                    name = line[1],
-                    description=line[2],
-                    idQuestion=idQuestion,
-                    state =line[4],
-                    badge=line[5]
-                )
+                try:
+                    npc = Npc(
+                        id = line[0],
+                        name = line[1],
+                        description=line[2],
+                        idQuestion=idQuestion,
+                        state =line[4],
+                        badge=line[5]
+                    )
 
 
-                dico_npc[line[0]] = npc                                                 # On insère tout dans le dico NPC
-
-
-    except FileNotFoundError:                                                           # Erreur de fihier introuvable
-        print(f"Fichier CSV introuvable : {file_path}")
+                    dico_npc[line[0]] = npc
+                    logger.info(f'NPC [{npc.id}]{npc.name} à été créé avec succes')
+                except InvalidNpcException as Invalid:
+                    logger.error(f"la ligne {line_number} : Le NPC {Invalid} est incorrect")
+    #Gestion des erreurs de fichiers introuvable --> fichier log
+    except FileNotFoundError:
+        logger.error(f"Fichier CSV introuvable : {file_path}")
 
     return dico_npc
 
