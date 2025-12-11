@@ -5,3 +5,30 @@ id;Question;answers;correct_answer
 ";Donne la relation entre la différence de potentiel aux bornes d'une résistance et le courant la traversant. La différence de potentiel est proportionnelle au courant.,Donne la relation entre la différence de potentiel aux bornes d'une résistance et le courant la traversant. La différence de potentiel est inversement proportionnelle au courant.,Donne la relation entre la différence de potentiel aux bornes de n'importe quel dipôle électrique et le courant le traversant. La différence de potentiel est inversement proportionnelle au courant.,Donne la relation entre la différence de potentiel aux bornes de n'importe quel dipôle électrique et le courant le traversant. La différence de potentiel est proportionnelle au courant.;1
 3;La résistance est un dipôle électrique actif, c'est-à-dire capable de fournir de l'énergie au circuit.;Vrai,Faux;2
 4;Le potentiomètre est une résistance variable;Vrai,Faux;2
+"5";"Dans un circuit en série comportant trois résistances R1, R2 et R3, le courant qui circule dans chacune d’elles est :";"Différent dans chaque résistance, Identique dans toute la chaîne, Nul dans la première mais non nul dans les autres
+
+, Toujours égal à 5 A
+
+
+
+, ";"2"
+"6";"Une résistance de 120 Ω est traversée par un courant de 0,25 A. Quelle est la tension à ses bornes ?";"30 V, 480 V, 120.25, 0.00208 V";"1"
+"7";"On augmente la tension dans un circuit composé uniquement d’une résistance. Que se passe-t-il pour le courant ?";"Il reste constant, Il diminue, Il augmente, Il devient infini
+
+
+
+
+";"3"
+"8";;;
+"9";;;
+"10";;;
+"11";"Comment traduit-on ""keyboard"" en français ?";"Une souris, Un clavier, Un écran, Une Carte mère";"2"
+"12";"Quel est le mot anglais pour « logiciel » ?";"Hardware, Network, Software, Database";"3"
+"13";"Choose the correct sentence:";"The program run correctly., The program runs correctly., The program running correctly., The program is runs correctly., ";"2"
+"14";"Choose the correct preposition: “The data is stored ___ the cloud.”";"in, on, at, to";"2"
+"15";"Which word describes a physical component of a computer?";"Software, Hardware, Firmware, Shareware";"2"
+"16";"Choose the correct sentence:";"The server is restarting now., The server restarting now., The server is restart now., The server are restarting now., ";"1"
+"17";"Choose the correct preposition: “He is working ___ a new mobile application.”";"in ,about, of, on";"4"
+"18";"What does “update” mean in computing?";"Remove a program, Add new hardware, Install improvements or corrections, Copy system files";"3"
+"19";"Which word refers to a harmful program?";"Patch, Malware, Backup, Protocol";"2"
+"20";"Comment traduit-on “to troubleshoot” ?";"Programmer, Déboguer / résoudre un problème, Installer un logiciel, Éteindre un ordinateur";"2"
