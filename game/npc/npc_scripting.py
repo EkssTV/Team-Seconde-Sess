@@ -9,8 +9,6 @@
 
 """
 import os
-
-
 from game.npc.npc_class  import Npc, InvalidNpcException
 import csv
 
