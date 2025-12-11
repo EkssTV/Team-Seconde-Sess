@@ -1,5 +1,5 @@
 id;name;list_npc;near_area;simple_desc;long_desc
-PLACEEPHEC;La place de l'Ephec;test;PARK,HALLENTREE;La place externe de l'EPhec;"Le soleil caresse doucement la petite place pavée qui s’étend devant le bâtiment moderne de l’EPHEC. Des groupes d’étudiants discutent à voix basse, certains riant aux éclats, d’autres pressés de rejoindre un cours. Le parfum du café qui s’échappe du distributeur voisin se mêle à l’air frais de Louvain-la-Neuve.
+PLACEEPHEC;La place de l'Ephec;IT01;PARK,HALLENTREE;La place externe de l'EPhec;"Le soleil caresse doucement la petite place pavée qui s’étend devant le bâtiment moderne de l’EPHEC. Des groupes d’étudiants discutent à voix basse, certains riant aux éclats, d’autres pressés de rejoindre un cours. Le parfum du café qui s’échappe du distributeur voisin se mêle à l’air frais de Louvain-la-Neuve.
 
 Un grand panneau d’accueil, planté non loin de l’entrée, affiche en lettres blanches :
 “Bienvenue à l’EPHEC – L’aventure commence ici !”
@@ -13,7 +13,7 @@ Un grand écran d’informations trône face à l’entrée. Un tableau d’affi
 À droite, un couloir s’étire vers la Nouvelle aile RDC, lumineuse et moderne.
 À gauche, l’Ancienne aile RDC s’enfonce dans des couloirs plus étroits et chargés d’histoire.
 Derrière, les portes vitrées ouvrent sur la Place de l’EPHEC."
-RDCANCIAILE;Ancienne aile RDC;test;RDCTOIL,CAFET,ESCALIERPRINCI,HALLENTREE,DISTRIB,RDCLOCAUX,LEARNLAB;le RDC de l'ancienne aile;"Les couloirs de l’Ancienne aile s’ouvrent sur un espace vaste, baigné d’une lumière douce filtrée par les hautes fenêtres.
+RDCANCIAILE;Ancienne aile RDC;IT03;RDCTOIL,CAFET,ESCALIERPRINCI,HALLENTREE,DISTRIB,RDCLOCAUX,LEARNLAB;le RDC de l'ancienne aile;"Les couloirs de l’Ancienne aile s’ouvrent sur un espace vaste, baigné d’une lumière douce filtrée par les hautes fenêtres.
 Le plafond, étonnamment élevé, résonne au moindre bruit de pas.
 Sur la gauche, un escalier de pierre monte lentement vers les étages supérieurs — l’Escalier principal, patiné par le passage des années.
 
@@ -22,13 +22,13 @@ L’odeur du café provenant de la Cafétéria se mêle à celle, plus âcre, de
 Un courant d’air passe par la Zone distributeur, transportant la fraîcheur du couloir qui mène aux Locaux du RDC.
 
 Derrière une cloison vitrée, le Learning Lab attire le regard. À l’intérieur, quelques silhouettes studieuses travaillent dans une atmosphère feutrée."
-RDCNOUVAILE;Nouvelle aile RDC;test;LA01,LA02,LOGBOIS,ESCALIERSECOND,HALLENTREE;le RDC de la nouvelle aile;"Tu pénètres dans le rez-de-chaussée de la nouvelle aile de l’EPHEC. L’odeur de peinture fraîche flotte encore dans l’air, légère et entêtante. Le soleil s’invite par les grandes fenêtres, dessinant des carrés de lumière sur le sol clair et poli.
+RDCNOUVAILE;Nouvelle aile RDC;PROFWEB;LA01,LA02,LOGBOIS,ESCALIERSECOND,HALLENTREE;le RDC de la nouvelle aile;"Tu pénètres dans le rez-de-chaussée de la nouvelle aile de l’EPHEC. L’odeur de peinture fraîche flotte encore dans l’air, légère et entêtante. Le soleil s’invite par les grandes fenêtres, dessinant des carrés de lumière sur le sol clair et poli.
 
 Le couloir s’étend devant toi, long et lumineux. Sur la droite, la porte vitrée du Secrétariat laisse entrevoir quelques bureaux bien ordonnés.
 Plus loin, deux grandes salles s’alignent : LA01 et LA02, vastes et prêtes à accueillir les cours.
 
 Sur la gauche, un Escalier secondaire en béton s’élève vers le premier étage. Tout le long du passage, les Logettes bois accueillent des étudiants concentrés sur leurs écrans."
-PARK;Parking;test;PLACEEPHEC;le parking;"Le pavé de la Place de l’Ephec s’efface progressivement sous les pneus et les pas, laissant place à l’asphalte légèrement craquelé du parking.
+PARK;Parking;PROFLEG;PLACEEPHEC;le parking;"Le pavé de la Place de l’Ephec s’efface progressivement sous les pneus et les pas, laissant place à l’asphalte légèrement craquelé du parking.
 Sous les arbres, quelques voitures reposent, alignées dans un calme presque solennel. Le bruissement des feuilles se mêle au son lointain des moteurs sur la nationale, comme un murmure constant qui borde l’endroit.
 
 L’air y est plus frais, empreint d’odeurs de métal chaud et de terre humide.
@@ -38,91 +38,91 @@ Un chemin pavé remonte vers la Place de l’Ephec, où la lumière du jour et l
 RDCTOIL;Toilette RDC;ELEVLEG;RDCANCIAILE;les toilettes du RDC;"Une simple porte blanche mène aux toilettes.
 L’écho des pas sur le carrelage, le bruit intermittent de l’eau et l’odeur caractéristique des produits d’entretien en font un lieu sans surprise ni mystère.
 Elles se trouvent à proximité directe de l’Ancienne aile RDC."
-CAFET;Cafétaria;test;RDCANCIAILE;la cafétaria;"Derrière une large baie vitrée, la cafétéria grouille de vie dès les premières heures du matin.
+CAFET;Cafétaria;CAFE,EB01,MKT02;RDCANCIAILE;la cafétaria;"Derrière une large baie vitrée, la cafétéria grouille de vie dès les premières heures du matin.
 Le bruit des tasses, les éclats de voix et les odeurs de café chaud emplissent la pièce.
 À midi, les tables se remplissent d’étudiants affamés, tandis que d’autres profitent de la pause pour travailler en groupe, leurs ordinateurs ouverts parmi les plateaux-repas.
 
 Des machines à café bourdonnent dans un coin, et les discussions se croisent dans une ambiance à la fois bruyante et conviviale.
 La lumière naturelle inonde la salle, contrastant avec l’ombre du couloir de l’Ancienne aile RDC toute proche."
-DISTRIB;Distributeurs;test;RDCANCIAILE;la zone des distributeurs;"Juste devant les marches de l’Escalier principal, trois distributeurs alignés clignotent doucement.
+DISTRIB;Distributeurs;DISTRIBUTEUR;RDCANCIAILE;la zone des distributeurs;"Juste devant les marches de l’Escalier principal, trois distributeurs alignés clignotent doucement.
 Le bip régulier de leurs touches résonne dans le couloir.
 Les machines proposent boissons fraîches, biscuits et chocolats, offrant une halte bienvenue entre deux cours.
 L’odeur du sucre et du café instantané flotte discrètement dans l’air."
-LEARNLAB;Learning Lab;test;RDCANCIAILE;le Learning lab;"Grand espace calme, le Learning Lab respire la concentration.
+LEARNLAB;Learning Lab;IT01;RDCANCIAILE;le Learning lab;"Grand espace calme, le Learning Lab respire la concentration.
 Des gradins en bois permettent de s’installer pour travailler seul, tandis que des tables rondes accueillent les petits groupes en pleine discussion.
 Un projecteur sur roulettes et des casiers alignés complètent le décor.
 L’atmosphère y est studieuse, apaisante, rythmée par le son feutré des claviers et des pages tournées."
-LA01;LA01;test;RDCNOUVAILE;le LA01;"Tu entres dans le LA01, et une fraîcheur saisissante t’enveloppe aussitôt. L’espace est vaste, moderne, avec des murs aux couleurs sobres et actuelles qui amplifient le moindre son : un sac posé, un pas, un chuchotement.
+LA01;LA01;IT01;RDCNOUVAILE;le LA01;"Tu entres dans le LA01, et une fraîcheur saisissante t’enveloppe aussitôt. L’espace est vaste, moderne, avec des murs aux couleurs sobres et actuelles qui amplifient le moindre son : un sac posé, un pas, un chuchotement.
 Face à toi, un immense mur blanc trône, prêt à accueillir les projections qui illuminent d’habitude la salle. Les gradins descendent doucement, et l’écho discret donne une ambiance presque solennelle, comme si chaque cours ici devenait important par nature.
 L’air y est calme, figé, presque trop silencieux.
 En ressortant par la porte latérale, tu rejoins la Nouvelle aile RDC
 ."
-LA02;LA02;test;RDCNOUVAILE;le LA02;"Tu entres dans le LA02, et une fraîcheur saisissante t’enveloppe aussitôt. L’espace est vaste, moderne, avec des murs aux couleurs sobres et actuelles qui amplifient le moindre son : un sac posé, un pas, un chuchotement.
+LA02;LA02;PROFSECR;RDCNOUVAILE;le LA02;"Tu entres dans le LA02, et une fraîcheur saisissante t’enveloppe aussitôt. L’espace est vaste, moderne, avec des murs aux couleurs sobres et actuelles qui amplifient le moindre son : un sac posé, un pas, un chuchotement.
 Face à toi, un immense mur blanc trône, prêt à accueillir les projections qui illuminent d’habitude la salle. Les gradins descendent doucement, et l’écho discret donne une ambiance presque solennelle, comme si chaque cours ici devenait important par nature.
 L’air y est calme, figé, presque trop silencieux.
 En ressortant par la porte latérale, tu rejoins la Nouvelle aile RDC
 ."
-LOGBOIS;Logette en bois;test;RDCNOUVAILE;les logettes en bois;"Sept ou huit petites alcôves en bois clair s’alignent le long du couloir de la Nouvelle aile RDC.
+LOGBOIS;Logette en bois;IT02;RDCNOUVAILE;les logettes en bois;"Sept ou huit petites alcôves en bois clair s’alignent le long du couloir de la Nouvelle aile RDC.
 Chaque logette accueille quatre personnes autour d’une table, offrant un espace idéal pour travailler ou discuter en petit groupe.
 L’éclairage tamisé et le bois chaleureux en font l’un des lieux les plus appréciés pour étudier tranquillement."
-SECRETA;Secretariat;test;RDCNOUVAILE;le secretariat;"Derrière la porte vitrée, une chaleur douce t’enveloppe aussitôt. L’air sent le café et le papier neuf.
+SECRETA;Secretariat;PROFSECR;RDCNOUVAILE;le secretariat;"Derrière la porte vitrée, une chaleur douce t’enveloppe aussitôt. L’air sent le café et le papier neuf.
 La pièce abrite plusieurs bureaux alignés, encombrés de dossiers et d’ordinateurs.
 Les secrétaires discutent à voix basse, concentrées sur leurs écrans.
 
 C’est ici qu’on obtient sa carte d’étudiant, qu’on pose ses questions administratives ou qu’on trouve un sourire bienveillant.
 Une fois la paperasse réglée, on ressort vers la Nouvelle aile RDC, où l’attend la vie du campus."
-ESCALIERPRINCI;Escalier principal;test;RDCANCIAILE,1ANCIAILE,2ANCIAILE;les escaliers principaux;"Vingt marches réparties en deux volées mènent aux étages supérieurs.
+ESCALIERPRINCI;Escalier principal;IT01;RDCANCIAILE,1ANCIAILE,2ANCIAILE;les escaliers principaux;"Vingt marches réparties en deux volées mènent aux étages supérieurs.
 Les conversations montent et descendent, résonnant dans l’espace ouvert sur le Hall d’entrée.
 Les marches en pierre, polies par les années, racontent à elles seules le passage de milliers d’étudiants."
-ESCALIERSECOND;Escalier secondaire;test;1NOUVAILE,RDCNOUVAILE;les escaliers secondaires;"Un escalier de béton brut, raide et froid.
+ESCALIERSECOND;Escalier secondaire;IT01;1NOUVAILE,RDCNOUVAILE;les escaliers secondaires;"Un escalier de béton brut, raide et froid.
 Les pas y résonnent fortement, créant un écho métallique.
 Il relie le Rez-de-chaussée de la Nouvelle aile au Premier étage, discrètement à l’écart du passage principal."
-1ANCIAILE;Ancienne aile 1er;test;SALPROF,1LOCAUX,1NOUVAILE,ZONEEAU,ESCALIERPRINCI,1LOCAUX;l'ancienne aile du 1er étage;"Un long couloir aux murs blancs et aux portes jaunes mène à une série de salles de cours.
+1ANCIAILE;Ancienne aile 1er;IT01;SALPROF,1LOCAUX,1NOUVAILE,ZONEEAU,ESCALIERPRINCI,1LOCAUX;l'ancienne aile du 1er étage;"Un long couloir aux murs blancs et aux portes jaunes mène à une série de salles de cours.
 La lumière artificielle domine, légèrement tamisée.
 Le silence règne, ponctué parfois du grincement d’une porte ou d’un éclat de voix venu d’une salle voisine."
-2ANCIAILE;Ancienne aile 2e;test;LABOS,2LOCAUX,ESCALIERPRINCI,CREATLAB,2LOCAUX;l'ancienne aile du 2e étage;
-1NOUVAILE;Nouvelle aile 1er;test;1ANCIAILE,ZONEEAU,ESCALIERSECOND;la nouvelle aile du 1er étage;"Un large couloir au sol en béton et aux murs blancs s’étire dans un silence presque clinique.
+2ANCIAILE;Ancienne aile 2e;IT01;LABOS,2LOCAUX,ESCALIERPRINCI,CREATLAB,2LOCAUX;l'ancienne aile du 2e étage;
+1NOUVAILE;Nouvelle aile 1er;MKT02;1ANCIAILE,ZONEEAU,ESCALIERSECOND;la nouvelle aile du 1er étage;"Un large couloir au sol en béton et aux murs blancs s’étire dans un silence presque clinique.
 L’ambiance y est froide, rationnelle, accentuée par les néons blancs.
 Des salles modernes s’alignent tout du long, et la lumière naturelle filtre à travers de grandes baies vitrées."
-2LOCAUX;Locaux du 2e;test;2ANCIAILE,L201,L202;les locaux du 2e étage;"Des salles classiques, aux murs blancs et aux grandes fenêtres.
+2LOCAUX;Locaux du 2e;MKT02;2ANCIAILE,L201,L202;les locaux du 2e étage;"Des salles classiques, aux murs blancs et aux grandes fenêtres.
 Chaque espace est équipé d’un projecteur, d’un tableau vert et de rangées de chaises et tables.
 Les Locaux du 1er étage et du 2e étage reprennent la même disposition, où l’odeur de craie et de plastique neuf se mêle au murmure des cours en cours."
-1LOCAUX;Locaux du 1er;test;1ANCIAILE,L101,L102;les locaux du 1er étage;"Des salles classiques, aux murs blancs et aux grandes fenêtres.
+1LOCAUX;Locaux du 1er;IT01;1ANCIAILE,L101,L102;les locaux du 1er étage;"Des salles classiques, aux murs blancs et aux grandes fenêtres.
 Chaque espace est équipé d’un projecteur, d’un tableau vert et de rangées de chaises et tables.
 Les Locaux du 1er étage et du 2e étage reprennent la même disposition, où l’odeur de craie et de plastique neuf se mêle au murmure des cours en cours."
-L101;L101;test;1LOCAUX;le L101 ;"Des salles classiques, aux murs blancs et aux grandes fenêtres.
+L101;L101;IT01;1LOCAUX;le L101 ;"Des salles classiques, aux murs blancs et aux grandes fenêtres.
 Chaque espace est équipé d’un projecteur, d’un tableau vert et de rangées de chaises et tables.
 Les Locaux du 1er étage et du 2e étage reprennent la même disposition, où l’odeur de craie et de plastique neuf se mêle au murmure des cours en cours."
-L102;L102;test;1LOCAUX;le L102 ;"Des salles classiques, aux murs blancs et aux grandes fenêtres.
+L102;L102;PROFDISTRO;1LOCAUX;le L102 ;"Des salles classiques, aux murs blancs et aux grandes fenêtres.
 Chaque espace est équipé d’un projecteur, d’un tableau vert et de rangées de chaises et tables.
 Les Locaux du 1er étage et du 2e étage reprennent la même disposition, où l’odeur de craie et de plastique neuf se mêle au murmure des cours en cours."
-L201;L201;test;2LOCAUX;le L201;"Des salles classiques, aux murs blancs et aux grandes fenêtres.
+L201;L201;PROFTECH;2LOCAUX;le L201;"Des salles classiques, aux murs blancs et aux grandes fenêtres.
 Chaque espace est équipé d’un projecteur, d’un tableau vert et de rangées de chaises et tables.
 Les Locaux du 1er étage et du 2e étage reprennent la même disposition, où l’odeur de craie et de plastique neuf se mêle au murmure des cours en cours."
-L202;L202;test;2LOCAUX;le L202;"Des salles classiques, aux murs blancs et aux grandes fenêtres.
+L202;L202;IT01;2LOCAUX;le L202;"Des salles classiques, aux murs blancs et aux grandes fenêtres.
 Chaque espace est équipé d’un projecteur, d’un tableau vert et de rangées de chaises et tables.
 Les Locaux du 1er étage et du 2e étage reprennent la même disposition, où l’odeur de craie et de plastique neuf se mêle au murmure des cours en cours."
-LABOS;Laboratoires;test;2ANCIAILE;les labos;"Un court couloir s’ouvre sur une série de petites salles étroites.
+LABOS;Laboratoires;PROFOHM;2ANCIAILE;les labos;"Un court couloir s’ouvre sur une série de petites salles étroites.
 Deux bancs longent les murs, et des armoires pleines de composants électroniques occupent l’espace.
 Les odeurs de métal, de poussière et de plastique chauffé s’y mêlent.
 C’est ici que les projets techniques prennent forme, souvent dans un silence concentré."
-CREATLAB;Creative Lab;test;2ANCIAILE;le creative lab;"Petite salle souvent vide, fermée sauf à la demande d’un professeur.
+CREATLAB;Creative Lab;IT03,IT02,IT01;2ANCIAILE;le creative lab;"Petite salle souvent vide, fermée sauf à la demande d’un professeur.
 À l’intérieur, quelques tables et chaises colorées apportent une touche vivante.
 Un projecteur mobile et un tableau vert à craies rappellent que la créativité a aussi besoin d’outils simples.
 L’endroit sent le calme et l’inspiration en sommeil."
-ZONEEAU;Zone fontaine à eau;test;1ANCIAILE,1NOUVAILE;la zone fontaine à eau;"Petite mezzanine surplombant le Hall d’entrée.
+ZONEEAU;Zone fontaine à eau;ELEVLEG;1ANCIAILE,1NOUVAILE;la zone fontaine à eau;"Petite mezzanine surplombant le Hall d’entrée.
 Une simple fontaine à eau y est installée, souvent entourée d’étudiants en pause.
 L’écho du hall résonne doucement depuis en bas."
-SALPROF;Salle des profs;test;1ANCIAILE;la salle des profs;"Un espace calme où règnent l’odeur du café et le murmure des conversations.
+SALPROF;Salle des profs;PROFSQL,PROFANGL,PROFSIGN;1ANCIAILE;la salle des profs;"Un espace calme où règnent l’odeur du café et le murmure des conversations.
 Des bureaux équipés d’ordinateurs occupent la pièce, accompagnés d’un canapé usé par le temps.
 C’est ici que les professeurs préparent leurs cours ou discutent entre collègues."
-RDCLOCAUX;Locaux du RDC;test;RDCANCIAILE;les locaux du RDC;"Un alignement de salles de classe s’étend dans un couloir au sol clair.
+RDCLOCAUX;Locaux du RDC;MKT01,MKT02;RDCANCIAILE;les locaux du RDC;"Un alignement de salles de classe s’étend dans un couloir au sol clair.
 Chaque pièce est équipée d’un rétroprojecteur suspendu, d’un tableau vert à craies et de trois rangées de bancs de trois places.
 Un petit podium surélevé attend le professeur, tandis qu’un vieux projecteur fait face au tableau.
 Les bruits d’écriture, les pages qu’on tourne et le cliquetis des stylos forment la bande-son familière du travail quotidien."
-LR01;LR01;test;RDCLOCAUX;le LR01;"Des salles classiques, aux murs blancs et aux grandes fenêtres.
+LR01;LR01;PROFSUDO;RDCLOCAUX;le LR01;"Des salles classiques, aux murs blancs et aux grandes fenêtres.
 Chaque espace est équipé d’un projecteur, d’un tableau vert et de rangées de chaises et tables.
 Les Locaux du 1er étage et du 2e étage reprennent la même disposition, où l’odeur de craie et de plastique neuf se mêle au murmure des cours en cours."
-LR02;LR02;test;RDCLOCAUX;le LR02;"Des salles classiques, aux murs blancs et aux grandes fenêtres.
+LR02;LR02;IT01,IT02;RDCLOCAUX;le LR02;"Des salles classiques, aux murs blancs et aux grandes fenêtres.
 Chaque espace est équipé d’un projecteur, d’un tableau vert et de rangées de chaises et tables.
 Les Locaux du 1er étage et du 2e étage reprennent la même disposition, où l’odeur de craie et de plastique neuf se mêle au murmure des cours en cours."

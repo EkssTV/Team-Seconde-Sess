@@ -87,6 +87,7 @@ def area_deplacement(gui, command):
 
         #SPEAK
         elif cmd == 'speak':
+            gui.display("tu es en route pour intéragir avec quelqu'un \n [continue]")
             if arg in area.list_npc:
                 return f"speak_script {arg}"
             else:
