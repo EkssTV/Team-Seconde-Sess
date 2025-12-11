@@ -9,9 +9,11 @@
 
 """
 #Class objet
+import re
+
 class CreaObject:
     def __init__(self, id, nom, descri, utilite):
-        self.__id = id
+        self.__id = [re.sub(r'(.*)', lambda m: m.group(1).upper(), a) for a in id]
         self.__nom = nom
         self.descri = descri
         self.utilite = utilite
