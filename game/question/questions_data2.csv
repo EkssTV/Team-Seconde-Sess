@@ -19,9 +19,22 @@ id;Question;answers;correct_answer
 
 
 ";"3"
-"8";;;
-"9";;;
-"10";;;
+"8";"Sur un multimètre placé en mode voltmètre, on doit brancher les pointes de test :";"En série dans le circuit, En parallèle aux bornes du dipôle à mesurer, À l’envers pour éviter d’abîmer l’appareil, Sur la masse uniquement";"2"
+"9";"Dans une alimentation continue (DC), la borne marquée « + » correspond :";"À la masse du système, Au potentiel le plus élevé, À une tension variable, À un courant alternatif";"2"
+"10";"Voici un schéma électrique, quel serait la résistance équivalente de ce circuit en sachant que R1 vaut 220 Ohms et que R2 vaut 540 Ohms
+
++ ─────────┐
+           │
+       ┌───┴───┐
+       │  R1   │
+       └───┬───┘
+           │
+       ┌───┴───┐
+       │  R2   │
+       └───┬───┘
+           │
+- ─────────┘
+";"156.3157 Ohms, 780 Ohms, 320 Ohms, 3.1415 Ohms";"2"
 "11";"Comment traduit-on ""keyboard"" en français ?";"Une souris, Un clavier, Un écran, Une Carte mère";"2"
 "12";"Quel est le mot anglais pour « logiciel » ?";"Hardware, Network, Software, Database";"3"
 "13";"Choose the correct sentence:";"The program run correctly., The program runs correctly., The program running correctly., The program is runs correctly., ";"2"
