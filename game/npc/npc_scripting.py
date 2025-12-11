@@ -9,6 +9,9 @@
 
 """
 import os
+
+from win32comext.axscript.client.framework import state_map
+
 from game.npc.npc_class  import Npc, InvalidNpcException
 import csv
 
@@ -21,7 +24,7 @@ def load_csv_npc():
     Le fichier CSV doit contenir 4 colonnes :
         - id (str) : identifiant unique du PNJ
         - name (str) : nom du PNJ
-        - description (str) : description du PNJ
+        - description (str) : description PNJ
         - idQuestion (str) : liste d’IDs de questions séparées par des virgules
 
     Returns:
@@ -41,7 +44,7 @@ def load_csv_npc():
 
 
             for line_number, line in enumerate(reader, start=2):                        #iterer sur chaque line du csv (line_number sert au debug)
-                if len(line) != 4:                                                      #Chaque ligne doit contenir 4 colonnes
+                if len(line) != 6:                                                      #Chaque ligne doit contenir 4 colonnes
                     print(f"Ligne {line_number} ignorée, format incorrect : {line}")
                     continue
 
@@ -56,7 +59,9 @@ def load_csv_npc():
                     id = line[0],
                     name = line[1],
                     description=line[2],
-                    idQuestion=idQuestion
+                    idQuestion=idQuestion,
+                    state =line[4],
+                    badge=line[5]
                 )
 
 
@@ -73,4 +78,4 @@ def load_csv_npc():
 if __name__ == "__main__":
     d = load_csv_npc()
     for k, v in d.items():
-        print(k, v.name,v.idQuestion,v.description)
+        print(k, v.name,v.idQuestion,v.description,v.badge,v.state)
