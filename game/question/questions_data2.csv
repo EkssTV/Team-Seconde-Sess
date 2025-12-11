@@ -35,8 +35,8 @@ id;Question;answers;correct_answer
            │
 - ─────────┘
 ";"156.3157 Ohms, 780 Ohms, 320 Ohms, 3.1415 Ohms";"2"
-"11";"Comment traduit-on ""keyboard"" en français ?";"Une souris, Un clavier, Un écran, Une Carte mère";"2"
-"12";"Quel est le mot anglais pour « logiciel » ?";"Hardware, Network, Software, Database";"3"
+"11";"How do you translate ""keyboard"" in French";"Une souris, Un clavier, Un écran, Une Carte mère";"2"
+"12";"What's the English word for « logiciel » ?";"Hardware, Network, Software, Database";"3"
 "13";"Choose the correct sentence:";"The program run correctly., The program runs correctly., The program running correctly., The program is runs correctly., ";"2"
 "14";"Choose the correct preposition: “The data is stored ___ the cloud.”";"in, on, at, to";"2"
 "15";"Which word describes a physical component of a computer?";"Software, Hardware, Firmware, Shareware";"2"
@@ -44,4 +44,4 @@ id;Question;answers;correct_answer
 "17";"Choose the correct preposition: “He is working ___ a new mobile application.”";"in ,about, of, on";"4"
 "18";"What does “update” mean in computing?";"Remove a program, Add new hardware, Install improvements or corrections, Copy system files";"3"
 "19";"Which word refers to a harmful program?";"Patch, Malware, Backup, Protocol";"2"
-"20";"Comment traduit-on “to troubleshoot” ?";"Programmer, Déboguer / résoudre un problème, Installer un logiciel, Éteindre un ordinateur";"2"
+"20";"How do you translate “to troubleshoot” ?";"Programmer, Déboguer / résoudre un problème, Installer un logiciel, Éteindre un ordinateur";"2"
