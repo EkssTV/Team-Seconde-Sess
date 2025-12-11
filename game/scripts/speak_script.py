@@ -15,5 +15,5 @@ def speak_script(gui, command, npc_id):
     if cmd == "look":
         gui.display(npc.description)
     if cmd == "who":
-        gui.display(npc.nom)
+        gui.display(npc.name)
     return f'speak_script {npc_id}'

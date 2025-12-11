@@ -31,7 +31,7 @@ def test_npc_str_and_attributes():
 
     assert npc.id == "npc1"
     assert npc.name == "PNJ Test"
-    assert npc.description == "Description PNJ"
+    assert npc.description == "Description du PNJ"
     assert npc.idQuestion == [1,2,3]
 
     # Vérifie le __str__, qu'il n'y ai pas d'erreurs
