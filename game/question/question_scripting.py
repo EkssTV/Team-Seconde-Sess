@@ -11,6 +11,7 @@
 from game.question.question_class import Question
 import csv
 import os
+from question_logger import logger
 
 def load_csv_question():
     """
@@ -38,23 +39,27 @@ def load_csv_question():
 
             for line_number, line in enumerate(reader, start=2):
                 if len(line) != 4:
-                    print(f"Ligne {line_number} ignorée, format incorrect : {line}")
+                    logger.warning(f"Ligne {line_number} ignorée, format incorrect : {line}")
                     continue
+                try:
 
-                question_id = int(line[0])
-                question_text = line[1]
-                answers = line[2].split(',')
-                correct_answer = int(line[3])
+                    question_id = int(line[0])
+                    question_text = line[1]
+                    answers = line[2].split(',')
+                    correct_answer = int(line[3])
 
-                questions = Question(
-                    idQuestion=question_id,
-                    question=question_text,
-                    answers=answers,
-                    correct_answer=correct_answer
-                )
-                dico_questions[question_id] = questions
+                    questions = Question(
+                        idQuestion=question_id,
+                        question=question_text,
+                        answers=answers,
+                        correct_answer=correct_answer
+                    )
+                    dico_questions[question_id] = questions
+                    logger.info(f"Question {question_id} chargéé avec success")
+                except Exception as Error:
+                    logger.error(f"Une erreur est survenue lors de la création de la question  à la {line_number}")
     except FileNotFoundError:
-        print(f"Fichier CSV introuvable : {file_path}")
+        logger.error("Fichier CSV introuvable : {file_path}")
 
     return dico_questions
 
