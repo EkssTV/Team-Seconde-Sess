@@ -10,7 +10,6 @@
 """
 import os
 
-from win32comext.axscript.client.framework import state_map
 
 from game.npc.npc_class  import Npc, InvalidNpcException
 import csv
