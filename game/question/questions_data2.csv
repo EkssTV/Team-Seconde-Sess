@@ -45,3 +45,56 @@ id;Question;answers;correct_answer
 "18";"What does “update” mean in computing?";"Remove a program, Add new hardware, Install improvements or corrections, Copy system files";"3"
 "19";"Which word refers to a harmful program?";"Patch, Malware, Backup, Protocol";"2"
 "20";"How do you translate “to troubleshoot” ?";"Programmer, Déboguer / résoudre un problème, Installer un logiciel, Éteindre un ordinateur";"2"
+"21";"Quelle commande permet d’afficher la liste des fichiers dans un répertoire ?";"cd, ls, rm, pwd";"2"
+"22";"Quelle commande permet de se déplacer dans un autre dossier ?";"goto, cd, open, path";"2"
+"23";"Quel répertoire contient normalement les exécutables essentiels du système ?";"/usr/share, /bin, /tmp, /home/root";"2"
+"24";"Quelle commande permet de copier un fichier ?";"cp, mv, rename, clone";"1"
+"25";"Que signifie le droit “x” dans les permissions Linux ?";"Lecture, Exécution, Suppression, Modification";"2"
+"26";"Quel utilisateur possède tous les droits sur le système ?";"guest, admin, root, super";"3"
+"27";"Quelle commande permet d’afficher les processus en cours ?";"scanproc, ls -p, ps, procview";"3"
+"28";"Quelle commande permet de tester la connectivité avec une adresse IP ?";"connect, ping, iptest, ifup";"2"
+"29";"À quoi sert un gestionnaire de paquets (package manager) ?";"À créer un nouvel OS, À télécharger, installer et mettre à jour des programmes, À gérer les partitions du disque, À sécuriser le noyau";"2"
+"30";"Quel répertoire contient généralement les fichiers de configuration système ?";"/etc, /run, /opt, /srv";"1"
+"31";"Que signifie le sigle HTTP ?";"HyperText Transfer Protocol, High Transfer Text Program, Hyper Terminal Transport Process, Host Transfer Protocol Package";"1"
+"32";"Quelle est la réponse HTTP indiquant “Document trouvé, tout va bien” ?";"301, 200, 404, 503";"2"
+"33";"Quel est le rôle principal du DNS ?";"Distribuer des adresses IP automatiquement, Convertir un nom de domaine en adresse IP, Accélérer la vitesse d’un site web, Bloquer les mails non désirés";"2"
+"34";"Dans une zone DNS, la ressource SOA contient :
+";"Le serveur web du domaine, Les paramètres principaux de la zone (TTL, serveur maître, serial…), L’adresse mail de l’administrateur système uniquement, Les enregistrements MX du domaine";"2"
+"35";"Quel est le rôle du serveur DHCP ?";"Gérer les connexions HTTP, Fournir automatiquement des adresses IP et des paramètres réseau, Crypter les communications entre machines, Héberger des sites web";"2"
+"36";"Quel protocole est utilisé pour envoyer un email ?";"FTP, POP3, SMTP, IMAP";"3"
+"37";"Quel protocole permet de consulter ses e-mails sans les télécharger définitivement et en gardant la synchronisation ?";"IMAP, SMTP, SSH, DHCP";"1"
+"38";"Dans l’URI “https://example.com:443/home/index.html”, la partie “443” correspond :";"Au sous-domaine, Au port utilisé, Au protocole, À la ressource demandée";"2"
+"39";"Quel type d’enregistrement DNS indique le serveur de messagerie d’un domaine ?";"A, AAAA, MX, CNAME";"3"
+"40";"Quel protocole sécurisé est utilisé pour accéder à une page web en cryptant les échanges ?";"HTTP, HTTPS, FTP, TELNET";"2"
+"41";"Que renvoie l’expression suivante ?
+
+""5"" - 2";"""3"", 3, ""52"", NaN";"2"
+"42";"Quel est le résultat ?
+
+let a = [1, 2, 3]; a[3] = 10; console.log(a.length);";"3, 4, 10, undefined";"2"
+"43";"Laquelle des comparaisons est vraie ?";"0 == ""0"", 0 === ""0"", "" "" === 0, false === 0";"1"
+"44";"Quel est le résultat de :
+
+typeof null";"""null"", ""undefined"", ""object"", ""primitive""";"3"
+"45";"Quelle boucle permet de parcourir directement les valeurs d’un tableau ?";"for (let i = 0; i < arr.length; i++), for (let key in arr), for (let value of arr), foreach(arr)";"3"
+"46";"Quelle ligne extrait le premier élément d’un tableau dans une variable x ?";"let { x } = array;, let [ x ] = array;, let ( x ) = array;, let array -> x;";"2"
+"47";"Lequel de ces éléments est considéré comme “falsy” ?";"""false"", [], 0, {}";"3"
+"48";"Que renvoie l’expression suivante ?
+
+console.log(0 || ""Hello"");";"0, Hello, undefined, false";"2"
+"49";"Laquelle de ces affirmations est correcte ?";"slice() modifie le tableau d’origine, splice() renvoie toujours un nouveau tableau sans rien modifier, slice() crée une copie du tableau, splice() ne fonctionne que sur des chaînes";"3"
+"50";"Que se passe-t-il ?
+
+if (true) { let x = 5; } console.log(x);";"5, undefined, ReferenceError, null";"3"
+"51";"Quelle commande permet d’extraire des données d’une table ?
+
+";"UPDATE, SELECT, INSERT, COMMIT";"2"
+"52";"Quel outil permet de gérer graphiquement les bases SQL Anywhere 12 ?";"Sybase Central, SQL Workbench, Oracle Studio, Data Manager X";"1"
+"53";"Laquelle de ces requêtes retourne uniquement les lignes où “age” > 30 ?";"SELECT * FROM personne HAVING age > 30;, SELECT * FROM personne WHERE age > 30;, SELECT age > 30 FROM personne;, FILTER * FROM personne (age > 30);";"2"
+"54";"Quel est le rôle d’une clé primaire ?";"Augmenter la vitesse de tri, Identifier de façon unique chaque ligne, Calculer les totaux automatiquement, Autoriser plusieurs valeurs NULL";"2"
+"55";"Quelle commande insère une nouvelle ligne dans une table ?";"ADD, APPEND, INSERT INTO, NEW ROW";"3"
+"56";"Dans Sybase Central, quelle action permet de visualiser la structure d’une table (colonnes, types) ?";"Ouvrir “Properties”, Lancer un trigger, Exécuter un backup, Rafraîchir le serveur";"1"
+"57";"Quelle requête permet de trier les résultats par ordre décroissant ?";"SELECT * FROM produit SORT DOWN;, SELECT * FROM produit ORDER BY prix DESC;, SELECT * FROM produit BY prix REVERSE;, SELECT * FROM produit ORDER prix DOWN;";"2"
+"58";"Quel fichier contient la base de données SQL Anywhere 12 ?";".sdb, .db, .sqlite, .mdb";"2"
+"59";"Comment compter le nombre de lignes dans une table “employee” ?";"SELECT COUNT ALL FROM employee;, SELECT NUMBER(*) FROM employee;, SELECT COUNT(*) FROM employee;, LIST employee SIZE;";"3"
+"60";"Que fait une contrainte FOREIGN KEY ?";"Elle crée une nouvelle table liée automatiquement, Elle garantit qu’une colonne correspond à une valeur existante dans une autre table, Elle empêche toute suppression de ligne, Elle chiffre les données pour la sécurité";"2"
