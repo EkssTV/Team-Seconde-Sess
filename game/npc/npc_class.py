@@ -2,34 +2,51 @@
 ===============================================
  EPHEC QUEST - npc_class.py
 -----------------------------------------------
- Description : création du class npc
+ Description : création of the NPC class
  Auteur      : STEFAN TROCH
  Date        : 2025
 ===============================================
 
 """
 class InvalidNpcException(Exception):
-    """Erreur levée lorsqu'un NPC du fichier CSV est invalide."""
+    """Exception levée lorsqu’une entrée PNJ dans le fichier CSV est invalide."""
     pass
 
 
-#Definition de la class Npc
+#NPC class Definition
 class Npc:
+    """
+   Classe représentant un PNJ (Personnage Non Joueur).
 
-    def __init__(self,id :str, nom: str,description : str,idQuestion:int):
+   Attributes:
+       id (str) : identifiant unique du PNJ
+       name (str) : nom du PNJ
+       description (str) : description du PNJ
+       idQuestion (list[int]) : liste des IDs de questions associées au PNJ
+       State (int) : état du PNJ. Defini si une interaction est possible ou non
+        Badge(int) : Defini l'id du badge si réussite de l'interaction
+    """
+
+    def __init__(self,id :str, name: str,description : str,idQuestion:int, state:int, badge: int):
         """
-         Initialisation de l'objet NPC.
-         Args:
-              id(str) :l'identifiant NPC
-              nom(str):nom du NPC
-              description(stp) :description du npc
-              idQuestion(int) : n de question liée au NPC
-          """
+       Initialise un objet PNJ.
+
+       Args:
+           id (str) : identifiant du PNJ
+           name (str) : nom du PNJ
+           description (str) : description du PNJ
+           idQuestion (list[int]) : liste des IDs de questions liées au PNJ
+           State (int) : état du PNJ. Defini si une interaction est possible ou non
+           Badge(int) : Défini l'id du badge si réussite de l'interaction
+        """
+
         self.id = id
-        self.nom = nom
+        self.name = name
         self.description = description
         self.idQuestion = idQuestion
+        self.state = state
+        self.badge = badge
 
     def __str__(self):
-        """Retourne nom + description du NPC"""
-        return f"le NPC a qui tu parles : \n{self.nom} {self.description}"
+        """Return nom & la description du PNJ."""
+        return f"le NPC a qui tu parles : \n{self.name} {self.description}"

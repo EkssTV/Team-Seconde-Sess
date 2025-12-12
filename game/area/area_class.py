@@ -36,10 +36,15 @@
  Date   : 2025
 ===============================================
 """
+import re
 
 class CreaArea:
     """Représentation des Areas"""
     def __init__(self,ident : str,name : str,list_npc : str,near_area : str,simple_desc : str,long_desc : str):
+        """ Vérifie le format des IDs d'Area"""
+        if not re.match(r"^[A-Z0-9]+$", ident):
+            raise ValueError(f"ID d'area invalide : {ident}")
+
         self.__ident = ident
         self.__name = name
         self.list_npc = list_npc
