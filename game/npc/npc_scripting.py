@@ -11,7 +11,7 @@
 import os
 from game.npc.npc_class  import Npc, InvalidNpcException
 import csv
-from game.npc.npc_logger import logger
+from .npc_logger import logger
 def load_csv_npc():
 
     """
@@ -61,7 +61,7 @@ def load_csv_npc():
                         name = line[1],
                         description=line[2],
                         idQuestion=idQuestion,
-                        state =line[4],
+                        state =int(line[4]),
                         badge=line[5]
                     )
 

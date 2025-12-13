@@ -38,7 +38,6 @@ def load_csv_object():
                 raise InvalidObjectException(f"Erreur lors de la création de l'objet {row[0]} : {e}")
     return objects
 
-print(load_csv_object())
 
 
 

@@ -46,7 +46,3 @@ class Npc:
         self.idQuestion = idQuestion
         self.state = state
         self.badge = badge
-
-    def __str__(self):
-        """Return nom & la description du PNJ."""
-        return f"le NPC a qui tu parles : \n{self.name} {self.description}"

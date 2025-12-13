@@ -24,7 +24,7 @@ class Player:
         current_script (str): The current script or scenario.
     """
 
-    def __init__(self, name: str = 'student', inv: list = None, health: int = 5,
+    def __init__(self, name: str = 'student', inv: list = None, badges: set = None, health: int = 5,
                  current_area: str = 'PLACEEPHEC', current_script: str = 'script_debut', save_path=None):
         """
         Initializes a new player with base attributes and creates a save file if it doesn't exist.
@@ -32,11 +32,13 @@ class Player:
         Args:
             name (str): The player's name.
             inv (list): Optional starting inventory.
+            badges (set) : Badges won by the player.
             health (int): Initial health points.
             current_area (str): Starting area.
             current_script (str): Initial script.
         """
         self.inv = inv if inv is not None else []
+        self.badges = badges if badges is not None else set()
         self.__name = name
         self.health = health
         self.current_area = current_area

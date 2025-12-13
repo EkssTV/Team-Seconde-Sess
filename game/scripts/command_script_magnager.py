@@ -1,3 +1,5 @@
+from IPython.core.display_functions import display
+
 from .area_deplacement import area_deplacement
 from .loading_saves import loading_saves, step
 from .speak_script import speak_script
@@ -29,9 +31,16 @@ def handle_command_from_gui(command: str, gui):
     if current_handler:
         try:
             result = current_handler(gui, command)
+            # Si le result est speak
             if result and result.startswith("speak_script"):
                 _, npc_id = result.split()
                 current_handler = lambda g, c: speak_script(g, c, npc_id)
+                current_handler(gui,None)
+            # Si le result est fight
+            if result and result.startswith("fight_script"):
+                _, npc_id = result.split()
+                current_handler = lambda g, c: fight_script(g, c, npc_id)
+                current_handler(gui, None)
             # Si le handler renvoie une transition valide
             if result in HANDLER_MAP:
                 current_handler = HANDLER_MAP[result]
@@ -47,6 +56,8 @@ def handle_command_from_gui(command: str, gui):
         current_handler = loading_saves
         current_handler(gui, None)
         return
+
+
 
     if command == "help":
         gui.display("Tape 'start' pour commencer")

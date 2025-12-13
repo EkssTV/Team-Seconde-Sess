@@ -11,7 +11,7 @@
 from game.question.question_class import Question
 import csv
 import os
-from game.question.question_logger import logger
+from .question_logger import logger
 
 def load_csv_question():
     """

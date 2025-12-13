@@ -14,4 +14,3 @@ debug_handler.setLevel(logging.DEBUG)
 debug_handler.setFormatter(formatter)
 
 logger.addHandler(debug_handler)
-

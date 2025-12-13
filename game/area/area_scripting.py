@@ -75,6 +75,3 @@ def load_csv_area():
 
 
 
-
-
-

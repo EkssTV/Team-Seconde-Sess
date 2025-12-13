@@ -26,12 +26,23 @@ def area_deplacement(gui, command):
 
     global step
     try:
+        #charge dictionnaire de la map
         world = load_csv_area()
+        #charge dictionnaire de tous les npc
+        people = load_csv_npc()
     except InvalidAreaException as e:
         gui.display(f"[ERREUR CSV] {e}")
         return None
 
+    #pièce actuelle
     area = world[player.current_area]
+    npc_id = None
+    #si personnage  dans la pièce on récupère tout l'objet du npc
+    if area.list_npc and len(area.list_npc) > 0:
+        npc_id = area.list_npc[0]
+        npc = people.get(npc_id)
+    else:
+        npc = None
     # Découpage propre de la commande
     parts = command.split()
     cmd = parts[0].lower() if parts else ""
@@ -40,7 +51,6 @@ def area_deplacement(gui, command):
         gui.clear_output()
         gui.display(area.simple_desc)
         step = 1
-        return None
     if step == 1 :
 
         # Regex pour expression régulière (move, go, aller, avancer)
@@ -65,33 +75,23 @@ def area_deplacement(gui, command):
 
         if cmd == 'look' :
             gui.display(area.long_desc)
+
+            if npc :
+                gui.display(f"Quelqu'un se trouve dans {area.name}")
+                if npc.state == 2 :
+                    return f"speak_script {npc_id}"
+                if npc.state == 1 :
+                    return f"fight_script {npc_id}"
+
             text =" Tu peux aller :\n"
             for el in area.near_area :
                 text += f"{world[el].name} [{el}]\n"
             gui.display(text)
-            return None
+            if npc and npc.state == 2 :
+                return f"speak_script {npc_id}"
+            if npc and npc.state == 1 :
+                return f"fight_script {npc_id}"
 
-        # INTERACT
-
-        elif cmd == 'interact':
-            if isinstance(area.list_npc, list) and len(area.list_npc):
-                text = ""
-                npc_data = load_csv_npc()
-                for el in area.list_npc:
-                    npc = npc_data[el]
-                    text += f"[{el}]\n{npc.description}\n"
-                gui.display(text)
-            else:
-                gui.display("Tu ne remarques pas de personne ou chose avec lesquelles tu pourrais interagir")
-            return None
-
-        #SPEAK
-        elif cmd == 'speak':
-            gui.display("tu es en route pour intéragir avec quelqu'un \n [continue]")
-            if arg in area.list_npc:
-                return f"speak_script {arg}"
-            else:
-                gui.display("Tu n'observes pas de personne portant ce nom")
             return None
 
         # SAVE
