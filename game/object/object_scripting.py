@@ -20,7 +20,7 @@ def load_csv_object():
     objects = {} #dictionnaire objects
 
     with open(file_path,'r',encoding="utf-8") as csv_file:
-        reader = csv.reader(csv_file,delimiter=",")
+        reader = csv.reader(csv_file,delimiter=";")
 
         next(reader) #saute la première ligne
 

@@ -11,7 +11,7 @@
 import os
 from game.npc.npc_class  import Npc, InvalidNpcException
 import csv
-from npc_logger import logger
+from game.npc.npc_logger import logger
 def load_csv_npc():
 
     """
