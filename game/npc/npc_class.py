@@ -27,7 +27,7 @@ class Npc:
         Badge(int) : Defini l'id du badge si réussite de l'interaction
     """
 
-    def __init__(self,id :str, name: str,description : str,idQuestion:int, state:int, badge: int):
+    def __init__(self,id :str, name: str,description : str,idQuestion:int,role : str, badge: int):
         """
        Initialise un objet PNJ.
 
@@ -44,5 +44,5 @@ class Npc:
         self.name = name
         self.description = description
         self.idQuestion = idQuestion
-        self.state = state
+        self.role = role
         self.badge = badge

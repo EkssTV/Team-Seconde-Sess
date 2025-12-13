@@ -143,6 +143,29 @@ class GameGUI:
     def quit_game(self):
         """Called when game must be quit"""
         self.root.destroy()
+
+    def flash_screen(self, times=3, delay=120):
+        """
+        Fait clignoter l'écran
+        """
+
+        def flash(count):
+            if count <= 0:
+                self.root.configure(bg="black")
+                self.output_frame.configure(bg="black")
+                self.input_frame.configure(bg="gray20")
+                self.info_frame.configure(bg="gray15")
+                return
+
+            # alterne rouge / noir
+            color = "red" if count % 2 == 0 else "black"
+            self.root.configure(bg=color)
+            self.output_frame.configure(bg=color)
+
+            self.root.after(delay, flash, count - 1)
+
+        flash(times * 2)
+
     def starting_game(self):
         intro_logo = intro_logo = '''
           ▄████████    ▄███████▄    ▄█    █▄       ▄████████  ▄████████      

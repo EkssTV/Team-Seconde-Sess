@@ -24,26 +24,26 @@ class Player:
         current_script (str): The current script or scenario.
     """
 
-    def __init__(self, name: str = 'student', inv: list = None, badges: set = None, health: int = 5,
-                 current_area: str = 'PLACEEPHEC', current_script: str = 'script_debut', save_path=None):
-        """
-        Initializes a new player with base attributes and creates a save file if it doesn't exist.
-
-        Args:
-            name (str): The player's name.
-            inv (list): Optional starting inventory.
-            badges (set) : Badges won by the player.
-            health (int): Initial health points.
-            current_area (str): Starting area.
-            current_script (str): Initial script.
-        """
+    def __init__(
+        self,
+        name: str = "student",
+        inv: list = None,
+        badges: set = None,
+        npc_states: dict = None,
+        health: int = 5,
+        current_area: str = "PLACEEPHEC",
+        current_script: str = "script_debut",
+        save_path=None
+    ):
         self.inv = inv if inv is not None else []
         self.badges = badges if badges is not None else set()
+        self.npc_states = npc_states if npc_states is not None else {}
+
         self.__name = name
         self.health = health
         self.current_area = current_area
         self.current_script = current_script
-        self.save_path = f'saves/{name}.json'
+        self.save_path = f"saves/{name}.json"
 
         Path('saves').mkdir(exist_ok=True)
     def add_inv(self, id_obj: str):
@@ -163,7 +163,9 @@ class Player:
                 "inv": self.inv,
                 "current_area": self.current_area,
                 "current_script": self.current_script,
-                "save_path": self.save_path
+                "save_path": self.save_path,
+                "npc_states": self.npc_states,
+                "badges": list(self.badges)
             }
             json.dump(data, f, indent=4)
 
@@ -179,6 +181,8 @@ class Player:
             self.inv = data["inv"]
             self.current_area = data["current_area"]
             self.current_script = data["current_script"]
+            self.npc_states = data.get("npc_states", {})
+            self.badges = set(data.get("badges", []))
         except FileNotFoundError:
             print(f'Loading failed: file not found → {self.save_path}')
         except json.JSONDecodeError:
@@ -186,3 +190,8 @@ class Player:
         except IOError:
             print('I/O error occurred while loading.')
 
+    def set_npc_state(self, npc_id: str, state: str):
+        self.npc_states[npc_id] = state
+
+    def get_npc_state(self, npc_id: str):
+        return self.npc_states.get(npc_id)
