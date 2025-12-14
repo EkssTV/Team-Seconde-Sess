@@ -76,13 +76,28 @@ def area_deplacement(gui, command):
 
         npc_state = player.get_npc_state(npc_id) if npc_id else None
 
+        #si npc amical et si il y a un npc dans la pièce
         if npc and npc_state is None and npc.role == "friendly":
-            gui.display(f"👤 {npc.name} est ici.")
-            gui.display("💬 Tape [talk] pour lui parler.\n")
+            #si déjà parlé avec le npc
+            if npc_state == "spoken":
+                gui.display(f"👋 {npc.name} te salue poliment.\n")
+            #si pas encore parlé avec le npc
+            else :
+                gui.display(f"👤 {npc.name} est ici.")
+                gui.display("💬 Tape [talk] pour lui parler.\n")
 
-        if npc and npc_state == "spoken":
-            gui.display(f"👋 {npc.name} te salue poliment.\n")
+        #si c'est un prof
+        if npc and npc_state is None and npc.role == "hostile":
+            #si déjà parlé avec le prof
+            if npc_state == "spoken":
+                gui.display(f"👋 {npc.name} te regarde sans rien dire.\n")
+            #si pas encore parlé avec le prof
+            else :
+                gui.display(f"👤 {npc.name} est ici.")
+                gui.display("💬 Tape [talk] pour lui parler.\n")
 
+
+        #affiche les destination possible depuis la pièce actuelle
         text = "Tu peux aller :\n"
         for el in area.near_area:
             text += f"- {world[el].name} [{el}]\n"
@@ -95,11 +110,30 @@ def area_deplacement(gui, command):
     # ==================================================
     # ==================================================
     if cmd == "talk":
-        if npc and player.get_npc_state(npc_id) is None:
-            return f"speak_script {npc_id}"
-        else:
+        if not npc:
             gui.display("Il n’y a personne à qui parler ici.")
-        return None
+            return None
+
+        npc_state = player.get_npc_state(npc_id)
+
+        # NPC gentil
+        if npc.role == "friendly":
+            if npc_state is None:
+                return f"speak_script {npc_id}"
+            else:
+                gui.display(f"{npc.name} n’a plus rien à te dire.")
+                return None
+
+        # NPC hostile (combat)
+        if npc.role == "hostile":
+            if npc_state is None:
+                return f"fight_script {npc_id}"
+            elif npc_state == "defeated":
+                gui.display(f"{npc.name} a déjà été vaincu.")
+                return None
+            else:
+                gui.display(f"{npc.name} te fixe en silence.")
+                return None
 
     # =================================================
     # ====================== SAVE =====================
