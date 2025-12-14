@@ -57,7 +57,6 @@ def area_deplacement(gui, command):
         dest = regex_command.group(2).upper()
         if dest in area.near_area:
             player.move_area(dest)
-            step = 0
             new_area = world[player.current_area]
             gui.display("Tu te déplaces...\n")
             gui.display(new_area.simple_desc)
