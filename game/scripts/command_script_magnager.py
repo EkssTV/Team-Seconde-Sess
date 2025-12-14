@@ -3,6 +3,7 @@ from IPython.core.display_functions import display
 from .area_deplacement import area_deplacement
 from .loading_saves import loading_saves, step
 from .speak_script import speak_script
+from .fight_script import fight_script
 
 """
 ===============================================
@@ -17,7 +18,6 @@ from .speak_script import speak_script
 # Mapping des transitions possibles
 HANDLER_MAP = {
     "area_deplacement": area_deplacement,
-    "speak_script": speak_script,
     "loading_saves": loading_saves,
 }
 
@@ -34,13 +34,16 @@ def handle_command_from_gui(command: str, gui):
             # Si le result est speak
             if result and result.startswith("speak_script"):
                 _, npc_id = result.split()
-                current_handler = lambda g, c: speak_script(g, c, npc_id)
-                current_handler(gui,None)
+                speak_handler = lambda g, c: speak_script(g, c, npc_id)
+                speak_result = speak_handler(gui,None)
+                if speak_result in HANDLER_MAP:
+                    current_handler = HANDLER_MAP[speak_result]
             # Si le result est fight
             if result and result.startswith("fight_script"):
                 _, npc_id = result.split()
                 current_handler = lambda g, c: fight_script(g, c, npc_id)
                 current_handler(gui, None)
+                result = "area_deplacement"
             # Si le handler renvoie une transition valide
             if result in HANDLER_MAP:
                 current_handler = HANDLER_MAP[result]

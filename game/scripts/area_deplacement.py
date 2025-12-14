@@ -57,6 +57,7 @@ def area_deplacement(gui, command):
         dest = regex_command.group(2).upper()
         if dest in area.near_area:
             player.move_area(dest)
+            step = 0
             new_area = world[player.current_area]
             gui.display("Tu te déplaces...\n")
             gui.display(new_area.simple_desc)
@@ -76,30 +77,29 @@ def area_deplacement(gui, command):
 
         npc_state = player.get_npc_state(npc_id) if npc_id else None
 
-        # --- NPC GENTIL ---
-        if npc and npc.role == "friendly" and npc_state != "spoken":
+        if npc and npc_state is None and npc.role == "friendly":
             gui.display(f"👤 {npc.name} est ici.")
-            gui.display("💬 Il semble vouloir te parler.\n")
-            return f"speak_script {npc_id}"
+            gui.display("💬 Tape [talk] pour lui parler.\n")
 
-        # --- NPC HOSTILE ---
-        if npc and npc.role == "hostile" and npc_state != "defeated":
-            gui.display(f"⚔️ {npc.name} te barre la route.\n")
-            return f"fight_script {npc_id}"
+        if npc and npc_state == "spoken":
+            gui.display(f"👋 {npc.name} te salue poliment.\n")
 
-        # --- SORTIES ---
         text = "Tu peux aller :\n"
         for el in area.near_area:
             text += f"- {world[el].name} [{el}]\n"
         gui.display(text)
 
-        # --- NPC DÉJÀ TRAITÉ ---
-        if npc and npc_state == "spoken":
-            gui.display(f"👋 {npc.name} te salue poliment.")
+        return None
 
-        if npc and npc_state == "defeated":
-            gui.display(f"💀 {npc.name} t’observe en silence.")
-
+    # ==================================================
+    # =====================TALK=========================
+    # ==================================================
+    # ==================================================
+    if cmd == "talk":
+        if npc and player.get_npc_state(npc_id) is None:
+            return f"speak_script {npc_id}"
+        else:
+            gui.display("Il n’y a personne à qui parler ici.")
         return None
 
     # =================================================
