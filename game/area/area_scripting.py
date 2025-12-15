@@ -70,7 +70,6 @@ def load_csv_area():
                 world[row[0]] = area
             except Exception as e:
                 raise InvalidAreaException(f"Erreur lors de la création de l'area {row[0]} : {e}")
-
     return world
 
 

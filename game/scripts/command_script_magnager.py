@@ -1,4 +1,4 @@
-from IPython.core.display_functions import display
+
 
 from .area_deplacement import area_deplacement
 from .loading_saves import loading_saves, step
@@ -30,20 +30,20 @@ def handle_command_from_gui(command: str, gui):
     # Si un handler est actif → on lui délègue la commande
     if current_handler:
         try:
+
             result = current_handler(gui, command)
+
             # Si le result est speak
             if result and result.startswith("speak_script"):
                 _, npc_id = result.split()
-                speak_handler = lambda g, c: speak_script(g, c, npc_id)
-                speak_result = speak_handler(gui,None)
-                if speak_result in HANDLER_MAP:
-                    current_handler = HANDLER_MAP[speak_result]
-            # Si le result est fight
+                current_handler = lambda g, c: speak_script(g, c, npc_id)
+
             if result and result.startswith("fight_script"):
+
                 _, npc_id = result.split()
                 current_handler = lambda g, c: fight_script(g, c, npc_id)
-                current_handler(gui, None)
-                result = "area_deplacement"
+
+
             # Si le handler renvoie une transition valide
             if result in HANDLER_MAP:
                 current_handler = HANDLER_MAP[result]

@@ -28,17 +28,12 @@ class Player:
         self,
         name: str = "student",
         inv: list = None,
-        badges: set = None,
-        npc_states: dict = None,
         health: int = 5,
         current_area: str = "PLACEEPHEC",
         current_script: str = "script_debut",
         save_path=None
     ):
         self.inv = inv if inv is not None else [] #force la création d'une liste si aucune valeur n'est mise de base
-        self.badges = badges if badges is not None else set() #force la création d'un ensemble si aucune valeur n'est mise de base (ensemble pour empécher d'avoir des doublons de badges)
-        self.npc_states = npc_states if npc_states is not None else {} #force la création d'un dictionnaire si aucune valeur n'est mise de base
-
         self.__name = name
         self.health = health
         self.current_area = current_area
@@ -149,8 +144,8 @@ class Player:
         else :
             str_of_name_object = ""
             for i in self.inv:
-                str_of_name_object+= f'{load_csv_object()[i].nom}[{i}] : {load_csv_object()[i].descri}\n{load_csv_object()[i].utilite}'
-            bag = f'Dans ton sac il y a :\n{str_of_name_object}'
+                str_of_name_object+= f'{load_csv_object()[i].nom}[{i}] : {load_csv_object()[i].descri}\nUtilité : {load_csv_object()[i].utilite}'
+            bag = f'Dans ton sac il y a :\n{str_of_name_object}\n'
         return bag
     def save(self):
         """
@@ -164,8 +159,6 @@ class Player:
                 "current_area": self.current_area,
                 "current_script": self.current_script,
                 "save_path": self.save_path,
-                "npc_states": self.npc_states,
-                "badges": list(self.badges)
             }
             json.dump(data, f, indent=4)
 
@@ -181,19 +174,9 @@ class Player:
             self.inv = data["inv"]
             self.current_area = data["current_area"]
             self.current_script = data["current_script"]
-            self.npc_states = data.get("npc_states", {})
-            self.badges = set(data.get("badges", []))
         except FileNotFoundError:
             print(f'Loading failed: file not found → {self.save_path}')
         except json.JSONDecodeError:
             print("Failed to read: invalid JSON format.")
         except IOError:
             print('I/O error occurred while loading.')
-
-    #setter état npc
-    def set_npc_state(self, npc_id: str, state: str):
-        self.npc_states[npc_id] = state
-
-    #getter état npc
-    def get_npc_state(self, npc_id: str):
-        return self.npc_states.get(npc_id)

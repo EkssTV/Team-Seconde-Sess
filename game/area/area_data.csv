@@ -116,7 +116,7 @@ L’écho du hall résonne doucement depuis en bas."
 SALPROF;Salle des profs;PROFSQL,PROFANGL,PROFSIGN;1ANCIAILE;la salle des profs;"Un espace calme où règnent l’odeur du café et le murmure des conversations.
 Des bureaux équipés d’ordinateurs occupent la pièce, accompagnés d’un canapé usé par le temps.
 C’est ici que les professeurs préparent leurs cours ou discutent entre collègues."
-RDCLOCAUX;Locaux du RDC;MKT01,MKT02;RDCANCIAILE;les locaux du RDC;"Un alignement de salles de classe s’étend dans un couloir au sol clair.
+RDCLOCAUX;Locaux du RDC;MKT01,MKT02;RDCANCIAILE,LR01,LR02;les locaux du RDC;"Un alignement de salles de classe s’étend dans un couloir au sol clair.
 Chaque pièce est équipée d’un rétroprojecteur suspendu, d’un tableau vert à craies et de trois rangées de bancs de trois places.
 Un petit podium surélevé attend le professeur, tandis qu’un vieux projecteur fait face au tableau.
 Les bruits d’écriture, les pages qu’on tourne et le cliquetis des stylos forment la bande-son familière du travail quotidien."

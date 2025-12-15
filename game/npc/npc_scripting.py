@@ -47,13 +47,16 @@ def load_csv_npc():
 
                 idQuestion = []
                 """Creer la liste des Questions. On split sur les ','"""
-                for x in line[3].split(','):
-                    try:
-                        x = x.strip()
-                        x = int(x)
-                        idQuestion.append(x)
-                    except ValueError:
-                        logger.error(f"ligne {line_number}, idQuestion {x} invalide")
+                if len(line[3]) == 1 :
+                    idQuestion = [line[3]]
+                else :
+                    for x in line[3].split(','):
+                        try:
+                            x = x.strip()
+                            x = int(x)
+                            idQuestion.append(x)
+                        except ValueError:
+                            logger.error(f"ligne {line_number}, idQuestion {x} invalide")
 
                 try:
                     npc = Npc(

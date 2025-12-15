@@ -53,16 +53,19 @@ class GameGUI:
         self.input_zone.bind("<Return>", self.handle_command)
 
         # === PLAYER INFO PANEL ===
-        self.name_player = tk.Label(self.info_frame, text=f"Name: {player.name}", fg="white", bg="gray15",
+        self.name_player = tk.Label(self.info_frame, text=f"👤: {player.name}", fg="white", bg="gray15",
                                     font=("Arial", 12))
-        self.health_player = tk.Label(self.info_frame, text=f"Health: {player.health}", fg="white", bg="gray15",
+        self.health_player = tk.Label(self.info_frame, text=f"❤️: {player.health}", fg="white", bg="gray15",
                                       font=("Arial", 12))
-        self.area_player = tk.Label(self.info_frame, text=f"Area: {player.current_area}", fg="white", bg="gray15",
+        self.area_player = tk.Label(self.info_frame, text=f"🏠: {player.current_area}", fg="white", bg="gray15",
+                                    font=("Arial", 12))
+        self.inventory = tk.Label(self.info_frame, text=f"====Sac à dos 🎒====\n {', '.join(player.inv) if player.inv else 'Empty'}\n", fg="white", bg="gray15",
                                     font=("Arial", 12))
 
         self.name_player.pack(anchor="w", padx=10, pady=5)
         self.health_player.pack(anchor="w", padx=10, pady=5)
         self.area_player.pack(anchor="w", padx=10, pady=5)
+        self.inventory.pack(anchor="w", padx=10, pady=5)
 
         # === FRAME PLACEMENT ===
         self.info_frame.pack(side="left", fill="y",)
@@ -131,9 +134,10 @@ class GameGUI:
         """
         Called when the info must be updated
         """
-        self.name_player.config(text=f"Name: {player.name}")
-        self.health_player.config(text=f"Health: {player.health}")
-        self.area_player.config(text=f"Area: {player.current_area}")
+        self.name_player.config(text=f"👤: {player.name}")
+        self.health_player.config(text=f"❤️: {player.health}")
+        self.area_player.config(text=f"🏠: {player.current_area}")
+        self.inventory.config(text=f"====Sac à dos 🎒====\n {', '.join(player.inv) if player.inv else 'Empty'}\n")
 
     def clear_output(self):
         """Called when output must be cleared"""
@@ -143,24 +147,6 @@ class GameGUI:
     def quit_game(self):
         """Called when game must be quit"""
         self.root.destroy()
-
-    def flash_screen(self, flashes=3, color="red", delay=100):
-        original_bg = self.root["bg"]
-
-        def flash(count):
-            if count == 0:
-                self.root.config(bg=original_bg)
-                return
-
-            self.root.config(bg=color)
-            self.root.after(delay, lambda: restore(count))
-
-        def restore(count):
-            self.root.config(bg=original_bg)
-            self.root.after(delay, lambda: flash(count - 1))
-
-        flash(flashes)
-
     def starting_game(self):
         intro_logo = intro_logo = '''
           ▄████████    ▄███████▄    ▄█    █▄       ▄████████  ▄████████      

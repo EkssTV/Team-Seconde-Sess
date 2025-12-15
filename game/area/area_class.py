@@ -40,7 +40,7 @@ import re
 
 class CreaArea:
     """Représentation des Areas"""
-    def __init__(self,ident : str,name : str,list_npc : str,near_area : str,simple_desc : str,long_desc : str):
+    def __init__(self,ident : str,name : str,list_npc : list,near_area : list,simple_desc : str,long_desc : str):
         """ Vérifie le format des IDs d'Area"""
         if not re.match(r"^[A-Z0-9]+$", ident):
             raise ValueError(f"ID d'area invalide : {ident}")
