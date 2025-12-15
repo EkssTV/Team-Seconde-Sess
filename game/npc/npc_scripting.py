@@ -62,7 +62,7 @@ def load_csv_npc():
                         description=line[2],
                         idQuestion=idQuestion,
                         role =line[4],
-                        badge=line[5]
+                        badge=int(line[5])
                     )
 
 
