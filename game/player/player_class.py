@@ -35,9 +35,9 @@ class Player:
         current_script: str = "script_debut",
         save_path=None
     ):
-        self.inv = inv if inv is not None else []
-        self.badges = badges if badges is not None else set()
-        self.npc_states = npc_states if npc_states is not None else {}
+        self.inv = inv if inv is not None else [] #force la création d'une liste si aucune valeur n'est mise de base
+        self.badges = badges if badges is not None else set() #force la création d'un ensemble si aucune valeur n'est mise de base (ensemble pour empécher d'avoir des doublons de badges)
+        self.npc_states = npc_states if npc_states is not None else {} #force la création d'un dictionnaire si aucune valeur n'est mise de base
 
         self.__name = name
         self.health = health
@@ -190,8 +190,10 @@ class Player:
         except IOError:
             print('I/O error occurred while loading.')
 
+    #setter état npc
     def set_npc_state(self, npc_id: str, state: str):
         self.npc_states[npc_id] = state
 
+    #getter état npc
     def get_npc_state(self, npc_id: str):
         return self.npc_states.get(npc_id)
