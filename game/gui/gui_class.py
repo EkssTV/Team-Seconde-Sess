@@ -39,27 +39,27 @@ class GameGUI:
         self.root.title("EPHEC QUEST")
 
         # === MAIN FRAMES ===
-        self.output_frame = tk.Frame(self.root, bg="black")
-        self.input_frame = tk.Frame(self.root, bg="gray20")
-        self.info_frame = tk.Frame(self.root, bg="gray15")
+        self.output_frame = tk.Frame(self.root, bg="#8c6239")
+        self.input_frame = tk.Frame(self.root, bg="#B08d57")
+        self.info_frame = tk.Frame(self.root, bg="#3A5F0B")
 
         # === OUTPUT ZONE ===
-        self.output_zone = tk.Text(self.output_frame, bg="black", fg="white", font=("Courier", 12), state="disabled")
+        self.output_zone = tk.Text(self.output_frame,bd=5, bg="#EAD7B7", fg="#1a1a1a", font=("Courier", 12), state="disabled")
         self.output_zone.pack(fill="both", expand=True)
 
         # === INPUT ZONE ===
-        self.input_zone = tk.Entry(self.input_frame, bg="white", fg="black", font=("Courier", 12))
+        self.input_zone = tk.Entry(self.input_frame, bd=5,bg="#EAD7B7", fg="#1a1a1a", font=("Courier", 12))
         self.input_zone.pack(fill="x", padx=10, pady=10)
         self.input_zone.bind("<Return>", self.handle_command)
 
         # === PLAYER INFO PANEL ===
-        self.name_player = tk.Label(self.info_frame, text=f"👤: {player.name}", fg="white", bg="gray15",
+        self.name_player = tk.Label(self.info_frame, text=f"👤: {player.name}", fg="#f5f5f5", bg="#3A5F0B",
                                     font=("Arial", 12))
-        self.health_player = tk.Label(self.info_frame, text=f"❤️: {player.health}", fg="white", bg="gray15",
+        self.health_player = tk.Label(self.info_frame, text=f"❤️: {player.health}", fg="#f5f5f5", bg="#3A5F0B",
                                       font=("Arial", 12))
-        self.area_player = tk.Label(self.info_frame, text=f"🏠: {player.current_area}", fg="white", bg="gray15",
+        self.area_player = tk.Label(self.info_frame, text=f"🏠: {player.current_area}", fg="#f5f5f5", bg="#3A5F0B",
                                     font=("Arial", 12))
-        self.inventory = tk.Label(self.info_frame, text=f"====Sac à dos 🎒====\n {', '.join(player.inv) if player.inv else 'Empty'}\n", fg="white", bg="gray15",
+        self.inventory = tk.Label(self.info_frame, text=f"====Sac à dos 🎒====\n {'\n '.join(player.inv) if player.inv else 'Empty'}\n", fg="#f5f5f5", bg="#5D7052",
                                     font=("Arial", 12))
 
         self.name_player.pack(anchor="w", padx=10, pady=5)
@@ -137,7 +137,7 @@ class GameGUI:
         self.name_player.config(text=f"👤: {player.name}")
         self.health_player.config(text=f"❤️: {player.health}")
         self.area_player.config(text=f"🏠: {player.current_area}")
-        self.inventory.config(text=f"====Sac à dos 🎒====\n {', '.join(player.inv) if player.inv else 'Empty'}\n")
+        self.inventory.config(text=f"====Sac à dos 🎒====\n {'\n'.join(player.inv) if player.inv else 'Empty'}\n")
 
     def clear_output(self):
         """Called when output must be cleared"""
@@ -147,6 +147,10 @@ class GameGUI:
     def quit_game(self):
         """Called when game must be quit"""
         self.root.destroy()
+    def display_force(self,text):
+        self.output_zone.config(state="normal")
+        self.output_zone.insert("end", text)
+        self.output_zone.config(state="disabled")
     def starting_game(self):
         intro_logo = intro_logo = '''
           ▄████████    ▄███████▄    ▄█    █▄       ▄████████  ▄████████      
@@ -195,4 +199,4 @@ class GameGUI:
         
         Entre [start]
         '''
-        self.display(intro_logo + "\n" + intro_text,1)
+        self.display_force(intro_logo + "\n" + intro_text)
