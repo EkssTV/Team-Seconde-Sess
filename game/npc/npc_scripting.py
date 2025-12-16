@@ -84,4 +84,4 @@ def load_csv_npc():
 if __name__ == "__main__":
     d = load_csv_npc()
     for k, v in d.items():
-        print(k, v.name,v.idQuestion,v.description,v.badge,v.state)
+        print(k, v.name,v.idQuestion,v.description,v.badge,v.role)
