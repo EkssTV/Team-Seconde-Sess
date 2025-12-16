@@ -16,31 +16,31 @@ import re
 
 step = 0
 
+try:
+    world = load_csv_area()
+    people = load_csv_npc()
+except InvalidAreaException as e:
+    print(f"[ERREUR CSV] {e}")
+
 
 def area_deplacement(gui, command):
     global step
 
-    try:
-        world = load_csv_area()
-        people = load_csv_npc()
-    except InvalidAreaException as e:
-        gui.display(f"[ERREUR CSV] {e}")
-        return None
 
-    # Zone actuelle
+    # Zone actuel
+
     area = world[player.current_area]
-
-    # NPC dans la zone (1 seul pour l’instant)
-    npc_id = area.list_npc[0] if area.list_npc else None
-    npc = people.get(npc_id) if npc_id else None
+    # NPC Actuel
+    npcs = area.list_npc
 
     # Découpage commande
-    if command:
-        parts = command.split()
-        cmd = parts[0].lower()
-    else:
-        cmd = ""
-
+    if command == '':
+        gui.display("N'oublie pas d'écrire une commande")
+        return None
+    parts = command.split()
+    cmd = parts[0].lower()
+    if len(parts)>1 :
+        param = parts[1].upper()
     # --- STEP 0 : affichage automatique à l’entrée ---
     if step == 0:
         gui.clear_output()
@@ -51,7 +51,7 @@ def area_deplacement(gui, command):
     # =================================================
     # =================== DEPLACEMENT =================
     # =================================================
-    regex_command = re.match(r"(move|go|aller|avancer)\s+([A-Za-z0-9]+)", cmd + " " + (command.split()[1] if len(command.split()) > 1 else ""))
+    regex_command = re.match(r"(move|go|aller|avancer)\s+([A-Za-z0-9]+)", cmd + " " + (param if len(command.split()) > 1 else ""))
 
     if regex_command:
         dest = regex_command.group(2).upper()
@@ -69,32 +69,14 @@ def area_deplacement(gui, command):
     # =================================================
     # ====================== LOOK =====================
     # =================================================
-    if cmd == "look":
+    elif cmd == "look":
         gui.display("\n---")
         gui.display(area.long_desc)
         gui.display("---\n")
 
-        npc_state = player.get_npc_state(npc_id) if npc_id else None
-
-        #si npc amical et si il y a un npc dans la pièce
-        if npc and npc_state is None and npc.role == "friendly":
-            #si déjà parlé avec le npc
-            if npc_state == "spoken":
-                gui.display(f"👋 {npc.name} te salue poliment.\n")
-            #si pas encore parlé avec le npc
-            else :
-                gui.display(f"👤 {npc.name} est ici.")
-                gui.display("💬 Tape [talk] pour lui parler.\n")
-
-        #si c'est un prof
-        if npc and npc_state is None and npc.role == "hostile":
-            #si déjà parlé avec le prof
-            if npc_state == "spoken":
-                gui.display(f"👋 {npc.name} te regarde sans rien dire.\n")
-            #si pas encore parlé avec le prof
-            else :
-                gui.display(f"👤 {npc.name} est ici.")
-                gui.display("💬 Tape [talk] pour lui parler.\n")
+        for npc in npcs:
+            gui.display(f"👤 {people[npc].name} est ici. [{people[npc].id}]\n")
+        gui.display("💬 Tape [talk] [ID] pour lui parler.\n")
 
 
         #affiche les destination possible depuis la pièce actuelle
@@ -109,36 +91,20 @@ def area_deplacement(gui, command):
     # =====================TALK=========================
     # ==================================================
     # ==================================================
-    if cmd == "talk":
-        if not npc:
+    elif cmd == "talk":
+        if not npcs:
             gui.display("Il n’y a personne à qui parler ici.")
             return None
-
-        npc_state = player.get_npc_state(npc_id)
-
-        # NPC gentil
-        if npc.role == "friendly":
-            if npc_state is None:
-                return f"speak_script {npc_id}"
-            else:
-                gui.display(f"{npc.name} n’a plus rien à te dire.")
-                return None
-
-        # NPC hostile (combat)
-        if npc.role == "hostile":
-            if npc_state is None:
-                return f"fight_script {npc_id}"
-            elif npc_state == "defeated":
-                gui.display(f"{npc.name} a déjà été vaincu.")
-                return None
-            else:
-                gui.display(f"{npc.name} te fixe en silence.")
-                return None
+        if param in npcs :
+            return f"speak_script {param}"
+        else :
+            gui.display("Il n'y a personne avec ce nom ici")
+            return None
 
     # =================================================
     # ====================== SAVE =====================
     # =================================================
-    if cmd == "save":
+    elif cmd == "save":
         player.save()
         gui.display("Partie sauvegardée.")
         gui.update_info(player)
@@ -147,16 +113,67 @@ def area_deplacement(gui, command):
     # =================================================
     # ===================== AUTRES ====================
     # =================================================
-    if cmd == "who":
+    elif cmd == "who":
         gui.display(str(player))
         return None
 
-    if cmd == "help":
-        gui.display("Commandes disponibles : look, move <zone>, save, who, quit")
+    elif cmd == 'help':
+        help_text = """
+            ===============================================
+             EPHEC QUEST - Manuel des Commandes
+            -----------------------------------------------
+
+             Commandes générales :
+               - look
+                   Affiche la description détaillée de la zone
+                   et liste les zones accessibles.
+               - move <zone_id>
+                   Déplace le joueur vers une zone voisine.
+               - help
+                   Affiche ce manuel des commandes.
+               - clear
+                   Nettoie l'affichage.
+               - quit
+                   Quitte le jeu.
+
+             Commandes liées au joueur :
+               - who
+                   Affiche les statistiques actuelles du joueur.
+               - inventory
+                   Montre le contenu de l'inventaire.
+               - save
+                    Sauvegarde la partie et affiche les stats.
+
+            Commandes liées aux PNJ :
+                - interact
+                    Liste les PNJ présents dans la zone avec leur description.
+                - speak <npc_id>
+                    Permet de parler à un PNJ (fonctionnalité en cours de dev).
+
+        ===============================================
+        """
+        gui.display(help_text,1)
         return None
 
-    if cmd == "quit":
-        gui.quit_game()
+    # INVENTORY
 
-    gui.display("Commande inconnue dans ce contexte.")
+    elif cmd == 'inventory' :
+        gui.display(f'Voici ce que tu as dans ton inventaire:\n{player.show_inv()}')
+        return None
+
+    # CHEAT
+    elif cmd =='UIA': #code de triche (pour test l'inventory)
+        player.add_inv("CARETU")
+        player.save()
+        return None
+    #clear
+    elif cmd == "clear" :
+        gui.clear_output()
+        return None
+    #quit
+    elif cmd == "quit":
+        gui.quit_game()
+        return None
+    else :
+        gui.display("Commande inconnue dans ce contexte.")
     return None
