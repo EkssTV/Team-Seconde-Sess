@@ -144,7 +144,7 @@ class Player:
         else :
             str_of_name_object = ""
             for i in self.inv:
-                str_of_name_object+= f'{load_csv_object()[i].nom}[{i}] : {load_csv_object()[i].descri}\nUtilité : {load_csv_object()[i].utilite}'
+                str_of_name_object+= f'\n{load_csv_object()[i].nom}[{i}] : {load_csv_object()[i].descri}\nUtilité : {load_csv_object()[i].utilite}\n'
             bag = f'Dans ton sac il y a :\n{str_of_name_object}\n'
         return bag
     def save(self):

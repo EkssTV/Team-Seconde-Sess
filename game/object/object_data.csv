@@ -1,5 +1,4 @@
 id;nom;description;utilite
-id;nom;description;utilite
 CARTEETU;Carte étudiant;Voici votre carte d'étudiant, elle sert à vous identifier auprès des professeur pour accéder à toutes les zones de l'EPHEC. Gardez la précieusement !;Permet d'accéder à plus de zone de l'EPHEC
 BADGELEC;Badge Electricité;Ce badge est ta récompense pour avoir reussi le quizz du professeur Ohmlette !;Aucune
 BADGANG;Badge Anglais;Ce badge est ta récompense pour avoir reussi le quizz du professeur Bytespeech !;Aucune
@@ -12,3 +11,4 @@ BADGSIGN;Bagde Signaux;Ce badge est ta récompense pour avoir réussi le quizz d
 BADGMATH;Badge Mathématique;Ce badge est ta récompense pour avoir réussi le quizz du professeur Modulo !;Aucune
 BADGLEG;Badge Legendaire;Ce badge est ta récompense pour avoir réussi l'énigme du vieux compileur!;Aucune
 BADGDISTRO;Badge Sytème d'opération;Ce badge est ta récompense pour avoir réussi le quizz du professeur Kernelov Distrovitch !;Aucune
+MARMOUT;La fameuse et l'unique marmout;Une gaufre au chocolat exceptionnelle, croustillante dehors et fondante dedans, offre une explosion intense et veloutée de cacao à chaque bouchée.;+1 en vie !

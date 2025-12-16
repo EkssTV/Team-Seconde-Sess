@@ -1,6 +1,7 @@
 from ..area.area_scripting import load_csv_area
 from ..area.exceptions import InvalidAreaException
 from ..npc.npc_scripting import load_csv_npc
+from ..object.object_scripting import load_csv_object
 from .loading_saves import player
 import re
 
@@ -19,6 +20,7 @@ step = 0
 try:
     world = load_csv_area()
     people = load_csv_npc()
+    objs = load_csv_object()
 except InvalidAreaException as e:
     print(f"[ERREUR CSV] {e}")
 
@@ -101,6 +103,26 @@ def area_deplacement(gui, command):
             gui.display("Il n'y a personne avec ce nom ici")
             return None
 
+    elif cmd == "use":
+        obj = param
+
+        if not obj in player.inv :
+            gui.display("Tu n'as pas ceci dans ton sac ! ")
+            return None
+        else :
+            thing = objs[obj]
+            if thing.utilite == "Aucune" :
+                gui.display(f"======Tu regardes ton objet : {thing.nom} =======")
+            else :
+                gui.display("======Tu utilise un object ! =======")
+                if obj == "CAFE" or obj == "MARMOUT" :
+                    gui.display(thing.utilite)
+                    player.add_health(1)
+                    player.supp_inv(obj)
+                    gui.update_info(player)
+
+            return None
+
     # =================================================
     # ====================== SAVE =====================
     # =================================================
@@ -162,8 +184,10 @@ def area_deplacement(gui, command):
         return None
 
     # CHEAT
-    elif cmd =='UIA': #code de triche (pour test l'inventory)
-        player.add_inv("CARETU")
+    elif cmd =='uia': #code de triche (pour test l'inventory)
+        gui.display("Tu as rentré un code de triche honte a toi")
+        for i in objs:
+            player.add_inv(i)
         player.save()
         return None
     #clear

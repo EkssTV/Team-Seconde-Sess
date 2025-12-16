@@ -12,7 +12,7 @@ import csv
 import os
 from game.object.object_exceptions import InvalidObjectException
 from game.object.object_class import CreaObject
-from object_logger import  logger
+from ..object.object_logger import  logger
 
 def load_csv_object():
     base_path = os.path.dirname(__file__) #dossier courant
