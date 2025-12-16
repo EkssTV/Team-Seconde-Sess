@@ -1,5 +1,5 @@
 from ..npc.npc_scripting import load_csv_npc
-from ..scripts.area_deplacement import player,people,world,objs
+from ..scripts.area_deplacement import player,people,world,objs,questions
 
 def speak_script(gui, command, npc_id):
     npc =  people[npc_id]

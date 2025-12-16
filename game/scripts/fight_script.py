@@ -1,6 +1,6 @@
 import random
 
-from ..scripts.speak_script import people,player,world,objs
+from ..scripts.speak_script import people,player,world,objs,questions
 from ..question.question_scripting import load_csv_question
 
 step = 0
@@ -19,7 +19,7 @@ BADGES = {
 }
 for_leg = {  "BADGSUDO","BADGELEC","BADGDISTRO","BADGTECH","BADGWEB","BADGANG","BADGSQL","BADGSIGN","BADGMATH"}
 def fight_script(gui, command, npc_id):
-    global step,question,question_ans,correct_answer,BADGES
+    global step,question,question_ans,correct_answer,BADGES,questions
     if "CARTEETU" not in player.inv :
         gui.display("🚫 Tu n'as pas de carte étudiante et tu oses me défier ? Quelle honte...")
         gui.display("➡️ Retourne d’où tu viens !")
@@ -38,7 +38,6 @@ def fight_script(gui, command, npc_id):
         return "area_deplacement"
     cmd = command
     prof = people[npc_id]
-    questions = load_csv_question()
     profs_question = prof.idQuestion
 
 

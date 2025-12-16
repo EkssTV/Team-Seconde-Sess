@@ -1,5 +1,6 @@
 from ..area.area_scripting import load_csv_area
 from ..area.exceptions import InvalidAreaException
+from ..question.question_scripting import load_csv_question
 from ..npc.npc_scripting import load_csv_npc
 from ..object.object_scripting import load_csv_object
 from .loading_saves import player
@@ -21,6 +22,7 @@ try:
     world = load_csv_area()
     people = load_csv_npc()
     objs = load_csv_object()
+    questions = load_csv_question()
 except InvalidAreaException as e:
     print(f"[ERREUR CSV] {e}")
 

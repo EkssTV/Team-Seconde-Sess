@@ -14,7 +14,7 @@ Il se déplace par lignes droites, parle par champs, et supporte très mal les v
 PROFSIGN;Porteuse;"Le professeur Porteuse ne transmet jamais l’information directement.
 Il parle autour du sujet, module le ton, change de fréquence… et attend que les étudiants extraient le message eux-mêmes.
 Ses explications semblent claires, mais personne ne sait exactement ce qui était le signal et ce qui était le support.
-Il prétend que comprendre, c’est savoir démêler l’utile du bruit.";2;hostile;1
+Il prétend que comprendre, c’est savoir démêler l’utile du bruit.";2,1,3,4;hostile;1
 PROFMATH;Modulo;"Le Professeur Modulo enseigne que toute réponse est correcte… jusqu’à ce qu’on enlève ce qu’il y a en trop.
 Il aime les cycles, les pièges simples et les résultats qui retombent toujours au même endroit.
 Ses contrôles sont réputés : peu importe le calcul, tout finit par avoir le même reste.";1;hostile;1
