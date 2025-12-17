@@ -1,36 +1,36 @@
-id;nom;description;idQuestion
-PROFOHM;Ohmlette;On dit qu'il peut allumer une ampoule rien qu'en fron�ant les sourcils. Personne ne l'a jamais vu d�brancher un c�ble sans murmurer � que le courant soit avec toi �.;"1,2,3,4,5,6,7,8,9,10"
-PROFDISTRO;Kernelov Distrovich;Il change de distribution Linux aussi souvent qu'il change d'humeur. Certains pensent qu'il a un dual-boot dans sa t�te.;"31,32,33,34,35,36,37,38,39,40"
-PROFSUDO;Rootella Sudoqueen;Personne ne l'a jamais vue se connecter sans être en root. Elle accorde ou refuse les permissions dans un silence glacial, sauf quand quelqu'un écrit chmod 777.;"21,22,23,24,25,26,27,28,29,30"
+id;nom;description;idQuestion;role;badge
+PROFOHM;Ohmlette;On dit qu'il peut allumer une ampoule rien qu'en fronçant les sourcils. Personne ne l'a jamais vu débrancher un câble sans murmurer : que le courant soit avec toi !.;"1,2,3,4,5,6,7,8,9,10";hostile;1
+PROFDISTRO;Kernelov Distrovich;Il change de distribution Linux aussi souvent qu'il change d'humeur. Certains pensent qu'il a un dual-boot dans sa tête.;"31,32,33,34,35,36,37,38,39,40";hostile;2
+PROFSUDO;Rootella Sudoqueen;Personne ne l'a jamais vue se connecter sans être en root. Elle accorde ou refuse les permissions dans un silence glacial, sauf quand quelqu'un écrit chmod 777.;"21,22,23,24,25,26,27,28,29,30";hostile;3
 PROFTECH;Cacheline;"Il apparaît toujours juste avant que tu aies besoin de lui, comme s’il anticipait tes pensées. Personne ne l’a jamais vu chercher quoi que ce soit : il sait déjà où tout se trouve, et surtout où ça devrait être.
 Quand il t’explique un concept, c’est tellement rapide que certains élèves pensent avoir halluciné.
-On raconte que s’il t’ignore, c’est simplement parce que tu n’étais pas… dans sa ligne.";1;1;4
-PROFANGL;Bytespeech;Chaque mot qu'elle prononce semble compressé;"11,12,13,14,15,16,17,18,19,20";1;5
+On raconte que s’il t’ignore, c’est simplement parce que tu n’étais pas… dans sa ligne.";"81,82,83,84,85,86,87,88,89,90";hostile;1
+PROFANGL;Bytespeech;Chaque mot qu'elle prononce semble compressé;"11,12,13,14,15,16,17,18,19,20";hostile;1
 PROFWEB;Hypertext;"Elle relie absolument tout. Tu lui donnes n’importe quel sujet, elle te renvoie vers trois autres, comme si ta vie entière n’était qu’un gigantesque maillage de liens cliquables.
 Elle déteste qu’on parle sans contexte : elle exige toujours une structure, une hiérarchie, et surtout une bonne balise d’ouverture.
-Quand elle entre dans une pièce, les élèves jurent sentir une connexion immédiate… parfois même un peu trop profonde.";"41,42,43,44,45,46,47,48,49,50"
+Quand elle entre dans une pièce, les élèves jurent sentir une connexion immédiate… parfois même un peu trop profonde.";"41,42,43,44,45,46,47,48,49,50";hostile;6
 PROFSQL;Tupleman;"Le professeur Tuple considère que chaque étudiant n’est qu’un enregistrement temporaire dans sa salle de classe.
-Il se déplace par lignes droites, parle par champs, et supporte très mal les valeurs NULL. Il pose toujours ses questions dans un ordre précis, et si tu réponds hors schéma, il te regarde comme une donnée non conforme.";"51,52,53,54,55,56,57,58,59,60"
+Il se déplace par lignes droites, parle par champs, et supporte très mal les valeurs NULL. Il pose toujours ses questions dans un ordre précis, et si tu réponds hors schéma, il te regarde comme une donnée non conforme.";"51,52,53,54,55,56,57,58,59,60";hostile;7
 PROFSIGN;Porteuse;"Le professeur Porteuse ne transmet jamais l’information directement.
 Il parle autour du sujet, module le ton, change de fréquence… et attend que les étudiants extraient le message eux-mêmes.
 Ses explications semblent claires, mais personne ne sait exactement ce qui était le signal et ce qui était le support.
-Il prétend que comprendre, c’est savoir démêler l’utile du bruit.";2;1;8
+Il prétend que comprendre, c’est savoir démêler l’utile du bruit.";"71,72,73,74,75,76,77,78,79,80";hostile;1
 PROFMATH;Modulo;"Le Professeur Modulo enseigne que toute réponse est correcte… jusqu’à ce qu’on enlève ce qu’il y a en trop.
 Il aime les cycles, les pièges simples et les résultats qui retombent toujours au même endroit.
-Ses contrôles sont réputés : peu importe le calcul, tout finit par avoir le même reste.";1;1;9
+Ses contrôles sont réputés : peu importe le calcul, tout finit par avoir le même reste.";"61,62,63,64,65,66,67,68,69,70";hostile;1
 PROFLEG;Le Vieux Compileur;"Né avant Internet, le Vieux Compileur écrivait déjà du code quand les machines n’avaient pas d’écran.
 Il a appris à programmer quand chaque erreur coûtait une nuit entière.
 On dit qu’il n’aide jamais personne.
-C’est faux : il aide seulement les élèves qui ont déjà essayé.";2;4;0
+C’est faux : il aide seulement les élèves qui ont déjà essayé.";2;hostile;1
 ELEVLEG;Gildas Pythonus;"L’année dernière, malgré la bataille contre l’administration et une secrétaire impossible à cerner, Gildas Pythonus s’est battu pour continuer en tant qu’élève libre.
 Rarement vu dans les couloirs, il semble tomber du ciel dès qu’un problème dépasse les autres élèves.
-Prodige de la programmation, discret mais toujours prêt à aider, il guide ceux qui sont motivés et curieux.";0;4;0
-PROFSECR;Sally Server;Toujours debout, elle supporte toutes les charges de travail sans jamais se plaindre. Son bureau est un véritable centre de données miniature, rempli de piles de dossiers parfaitement organisées. Même quand le chaos s’empare du service, Sally garde un calme olympien et trouve toujours la solution la plus efficace. Les rumeurs disent qu’elle peut traiter plusieurs demandes à la fois, lire des emails et répondre au téléphone en même temps, tout en préparant le café des autres. Personne ne sait vraiment comment elle fait, mais tous s’accordent à dire que son esprit est plus rapide qu’un processeur dernier cri.;6;1;10
-IT01;Lucas Loop;Toujours coincé dans sa boucle infinie… mais trouve toujours la solution avant tout le monde.;0;2;0
-IT02;Emma Exception;Rien ne la perturbe, sauf quand le code plante… alors elle panique légèrement, mais s’en sort toujours.;0;2;0
-IT03;Alex Array;Organisé et méthodique, capable de ranger tous ses fichiers et pensées… parfois un peu trop méticuleusement.;0;2;0
-MKT01;Maxime Meme;Toujours en train de créer des idées hilarantes qui deviennent des campagnes mémorables.;0;2;0
-MKT02;Sofia Swipe;Capable de convaincre un client rien qu’avec un sourire et un diaporama bien ficelé.;0;2;0
-EB01;Laura Ledger;Toujours prête à analyser les chiffres, anticiper les tendances et faire des paris gagnants.;0;2;0
-DISTRIBUTEUR;SugarByte;chaque morceau de chocolat est un “bit” de bonheur.;0;3;0
-CAFE;Java Jolt;“réveillez-vous, le code n’attend pas !”;0;3;0
+Prodige de la programmation, discret mais toujours prêt à aider, il guide ceux qui sont motivés et curieux.";0;friendly;1
+PROFSECR;Sally Server;Toujours debout, elle supporte toutes les charges de travail sans jamais se plaindre. Son bureau est un véritable centre de données miniature, rempli de piles de dossiers parfaitement organisées. Même quand le chaos s’empare du service, Sally garde un calme olympien et trouve toujours la solution la plus efficace. Les rumeurs disent qu’elle peut traiter plusieurs demandes à la fois, lire des emails et répondre au téléphone en même temps, tout en préparant le café des autres. Personne ne sait vraiment comment elle fait, mais tous s’accordent à dire que son esprit est plus rapide qu’un processeur dernier cri.;6;friendly;1
+IT01;Lucas Loop;Toujours coincé dans sa boucle infinie… mais trouve toujours la solution avant tout le monde.;0;friendly;1
+IT02;Emma Exception;Rien ne la perturbe, sauf quand le code plante… alors elle panique légèrement, mais s’en sort toujours.;0;friendly;1
+IT03;Alex Array;Organisé et méthodique, capable de ranger tous ses fichiers et pensées… parfois un peu trop méticuleusement.;0;friendly;1
+MKT01;Maxime Meme;Toujours en train de créer des idées hilarantes qui deviennent des campagnes mémorables.;0;friendly;1
+MKT02;Sofia Swipe;Capable de convaincre un client rien qu’avec un sourire et un diaporama bien ficelé.;0;friendly;1
+EB01;Laura Ledger;Toujours prête à analyser les chiffres, anticiper les tendances et faire des paris gagnants.;0;friendly;1
+DISTRIBUTEUR;SugarByte;chaque morceau de chocolat est un “bit” de bonheur.;0;neutral;1
+CAFE;Java Jolt;“réveillez-vous, le code n’attend pas !”;0;neutral;1
