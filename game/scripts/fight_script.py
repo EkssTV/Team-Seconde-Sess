@@ -76,7 +76,7 @@ def fight_script(gui, command, npc_id):
             gui.display("✅ Bonne réponse !")
             gui.display(f"🏆 Score actuel : {correct_answer} / {score_a_faire}")
             gui.display("👉 [ENTER] pour la prochaine question")
-            if correct_answer == 5:
+            if correct_answer == score_a_faire:
                 gui.display("🎉 Tu as répondu correctement à toutes les questions !")
                 gui.display("👉 [ENTER]")
                 step = 5
@@ -89,7 +89,7 @@ def fight_script(gui, command, npc_id):
             return None
 
     # --- Fin du quiz ---
-    if step == score_a_faire:
+    if step == 5:
         gui.display("✨ Bien joué ! Tu as réussi le défi ✨")
         if prof.id in BADGES :
             badge = BADGES[prof.id]
