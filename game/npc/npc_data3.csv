@@ -21,7 +21,7 @@ Ses contrôles sont réputés : peu importe le calcul, tout finit par avoir le m
 PROFLEG;Le Vieux Compileur;"Né avant Internet, le Vieux Compileur écrivait déjà du code quand les machines n’avaient pas d’écran.
 Il a appris à programmer quand chaque erreur coûtait une nuit entière.
 On dit qu’il n’aide jamais personne.
-C’est faux : il aide seulement les élèves qui ont déjà essayé.";2;hostile;1
+C’est faux : il aide seulement les élèves qui ont déjà essayé.";1,2,3,4,5,6,7,8,9,11,12,61,62,63,64,65,66,67,68,69,70,41,71,72,73,74,75,76,77,78,79,80,42,43,44,45,46,47,48,49,50,13,14,15,16,17,18,19,20,10,21,81,82,83,84,85,86,87,88,89,90,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40;hostile;1
 ELEVLEG;Gildas Pythonus;"L’année dernière, malgré la bataille contre l’administration et une secrétaire impossible à cerner, Gildas Pythonus s’est battu pour continuer en tant qu’élève libre.
 Rarement vu dans les couloirs, il semble tomber du ciel dès qu’un problème dépasse les autres élèves.
 Prodige de la programmation, discret mais toujours prêt à aider, il guide ceux qui sont motivés et curieux.";0;friendly;1
