@@ -22,7 +22,7 @@ L’odeur du café provenant de la Cafétéria se mêle à celle, plus âcre, de
 Un courant d’air passe par la Zone distributeur, transportant la fraîcheur du couloir qui mène aux Locaux du RDC.
 
 Derrière une cloison vitrée, le Learning Lab attire le regard. À l’intérieur, quelques silhouettes studieuses travaillent dans une atmosphère feutrée."
-RDCNOUVAILE;Nouvelle aile RDC;PROFWEB;LA01,LA02,LOGBOIS,ESCALIERSECOND,HALLENTREE;le RDC de la nouvelle aile;"Tu pénètres dans le rez-de-chaussée de la nouvelle aile de l’EPHEC. L’odeur de peinture fraîche flotte encore dans l’air, légère et entêtante. Le soleil s’invite par les grandes fenêtres, dessinant des carrés de lumière sur le sol clair et poli.
+RDCNOUVAILE;Nouvelle aile RDC;PROFWEB;LA01,LA02,LOGBOIS,ESCALIERSECOND,HALLENTREE,SECRETA;le RDC de la nouvelle aile;"Tu pénètres dans le rez-de-chaussée de la nouvelle aile de l’EPHEC. L’odeur de peinture fraîche flotte encore dans l’air, légère et entêtante. Le soleil s’invite par les grandes fenêtres, dessinant des carrés de lumière sur le sol clair et poli.
 
 Le couloir s’étend devant toi, long et lumineux. Sur la droite, la porte vitrée du Secrétariat laisse entrevoir quelques bureaux bien ordonnés.
 Plus loin, deux grandes salles s’alignent : LA01 et LA02, vastes et prêtes à accueillir les cours.
@@ -57,7 +57,7 @@ Face à toi, un immense mur blanc trône, prêt à accueillir les projections qu
 L’air y est calme, figé, presque trop silencieux.
 En ressortant par la porte latérale, tu rejoins la Nouvelle aile RDC
 ."
-LA02;LA02;PROFSECR;RDCNOUVAILE;le LA02;"Tu entres dans le LA02, et une fraîcheur saisissante t’enveloppe aussitôt. L’espace est vaste, moderne, avec des murs aux couleurs sobres et actuelles qui amplifient le moindre son : un sac posé, un pas, un chuchotement.
+LA02;LA02;PROFLEG;RDCNOUVAILE;le LA02;"Tu entres dans le LA02, et une fraîcheur saisissante t’enveloppe aussitôt. L’espace est vaste, moderne, avec des murs aux couleurs sobres et actuelles qui amplifient le moindre son : un sac posé, un pas, un chuchotement.
 Face à toi, un immense mur blanc trône, prêt à accueillir les projections qui illuminent d’habitude la salle. Les gradins descendent doucement, et l’écho discret donne une ambiance presque solennelle, comme si chaque cours ici devenait important par nature.
 L’air y est calme, figé, presque trop silencieux.
 En ressortant par la porte latérale, tu rejoins la Nouvelle aile RDC
@@ -116,7 +116,7 @@ L’écho du hall résonne doucement depuis en bas."
 SALPROF;Salle des profs;PROFSQL,PROFANGL,PROFSIGN;1ANCIAILE;la salle des profs;"Un espace calme où règnent l’odeur du café et le murmure des conversations.
 Des bureaux équipés d’ordinateurs occupent la pièce, accompagnés d’un canapé usé par le temps.
 C’est ici que les professeurs préparent leurs cours ou discutent entre collègues."
-RDCLOCAUX;Locaux du RDC;MKT01,MKT02;RDCANCIAILE;les locaux du RDC;"Un alignement de salles de classe s’étend dans un couloir au sol clair.
+RDCLOCAUX;Locaux du RDC;MKT01,MKT02;RDCANCIAILE,LR01,LR02;les locaux du RDC;"Un alignement de salles de classe s’étend dans un couloir au sol clair.
 Chaque pièce est équipée d’un rétroprojecteur suspendu, d’un tableau vert à craies et de trois rangées de bancs de trois places.
 Un petit podium surélevé attend le professeur, tandis qu’un vieux projecteur fait face au tableau.
 Les bruits d’écriture, les pages qu’on tourne et le cliquetis des stylos forment la bande-son familière du travail quotidien."

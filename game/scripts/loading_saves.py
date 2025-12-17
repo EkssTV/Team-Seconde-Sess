@@ -47,12 +47,12 @@ def loading_saves(gui, command=None):
         player.save_path = f'saves/{command}.json'
         player.save()
         player.load(player.save_path)
+        gui.player = player
         gui.update_info(player)
         gui.display(f" Enchanté, {command} ! L’aventure commence maintenant.")
         gui.display(f"Voici tes stats actuelles : \n{player} ")
         gui.clear_output()
         player.change_script('area_deplacement')
-        gui.display(f"Chargement du script : {player.current_script}",300)
         gui.display("Tape [continue]")
         return 'area_deplacement'
     if step == 2:
@@ -60,11 +60,11 @@ def loading_saves(gui, command=None):
             player.name = command
             player.save_path = f'saves/{command}.json'
             player.load(player.save_path)
+            gui.player = player
             gui.update_info(player)
             gui.display(f" Bienvenue dans ta partie sauvegardée {player.name}. Voici tes stats actuelles : \n{player} ")
             gui.clear_output()
             player.change_script('area_deplacement')
-            gui.display(f"Chargement du script : {player.current_script}",300)
             gui.display("Tape [continue]")
             return 'area_deplacement'
         else :

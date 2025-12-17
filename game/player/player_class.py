@@ -24,24 +24,21 @@ class Player:
         current_script (str): The current script or scenario.
     """
 
-    def __init__(self, name: str = 'student', inv: list = None, health: int = 5,
-                 current_area: str = 'PLACEEPHEC', current_script: str = 'script_debut', save_path=None):
-        """
-        Initializes a new player with base attributes and creates a save file if it doesn't exist.
-
-        Args:
-            name (str): The player's name.
-            inv (list): Optional starting inventory.
-            health (int): Initial health points.
-            current_area (str): Starting area.
-            current_script (str): Initial script.
-        """
-        self.inv = inv if inv is not None else []
+    def __init__(
+        self,
+        name: str = "student",
+        inv: list = None,
+        health: int = 5,
+        current_area: str = "PLACEEPHEC",
+        current_script: str = "script_debut",
+        save_path=None
+    ):
+        self.inv = inv if inv is not None else [] #force la création d'une liste si aucune valeur n'est mise de base
         self.__name = name
         self.health = health
         self.current_area = current_area
         self.current_script = current_script
-        self.save_path = f'saves/{name}.json'
+        self.save_path = f"saves/{name}.json"
 
         Path('saves').mkdir(exist_ok=True)
     def add_inv(self, id_obj: str):
@@ -147,8 +144,8 @@ class Player:
         else :
             str_of_name_object = ""
             for i in self.inv:
-                str_of_name_object+= f'{load_csv_object()[i].nom}[{i}] : {load_csv_object()[i].descri}\n{load_csv_object()[i].utilite}'
-            bag = f'Dans ton sac il y a :\n{str_of_name_object}'
+                str_of_name_object+= f'\n{load_csv_object()[i].nom}[{i}] : {load_csv_object()[i].descri}\nUtilité : {load_csv_object()[i].utilite}\n'
+            bag = f'Dans ton sac il y a :\n{str_of_name_object}\n'
         return bag
     def save(self):
         """
@@ -161,7 +158,7 @@ class Player:
                 "inv": self.inv,
                 "current_area": self.current_area,
                 "current_script": self.current_script,
-                "save_path": self.save_path
+                "save_path": self.save_path,
             }
             json.dump(data, f, indent=4)
 
@@ -183,4 +180,3 @@ class Player:
             print("Failed to read: invalid JSON format.")
         except IOError:
             print('I/O error occurred while loading.')
-

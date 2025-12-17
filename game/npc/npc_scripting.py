@@ -11,7 +11,7 @@
 import os
 from game.npc.npc_class  import Npc, InvalidNpcException
 import csv
-from npc_logger import logger
+from .npc_logger import logger
 def load_csv_npc():
 
     """
@@ -47,13 +47,16 @@ def load_csv_npc():
 
                 idQuestion = []
                 """Creer la liste des Questions. On split sur les ','"""
-                for x in line[3].split(','):
-                    try:
-                        x = x.strip()
-                        x = int(x)
-                        idQuestion.append(x)
-                    except ValueError:
-                        logger.error(f"ligne {line_number}, idQuestion {x} invalide")
+                if len(line[3]) == 1 :
+                    idQuestion = [line[3]]
+                else :
+                    for x in line[3].split(','):
+                        try:
+                            x = x.strip()
+                            x = int(x)
+                            idQuestion.append(x)
+                        except ValueError:
+                            logger.error(f"ligne {line_number}, idQuestion {x} invalide")
 
                 try:
                     npc = Npc(
@@ -61,8 +64,8 @@ def load_csv_npc():
                         name = line[1],
                         description=line[2],
                         idQuestion=idQuestion,
-                        state =line[4],
-                        badge=line[5]
+                        role =line[4],
+                        badge=int(line[5])
                     )
 
 
@@ -81,4 +84,4 @@ def load_csv_npc():
 if __name__ == "__main__":
     d = load_csv_npc()
     for k, v in d.items():
-        print(k, v.name,v.idQuestion,v.description,v.badge,v.state)
+        print(k, v.name,v.idQuestion,v.description,v.badge,v.role)
