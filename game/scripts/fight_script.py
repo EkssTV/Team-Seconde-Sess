@@ -39,10 +39,12 @@ def fight_script(gui, command, npc_id):
     cmd = command
     prof = people[npc_id]
     profs_question = prof.idQuestion
-
-
+    score_a_faire = 5
+    if npc_id == "PROFLEG" :
+        score_a_faire = 10
     # --- Début du quiz ---
     if step == 0:
+
         gui.display("═══════════════════════════════")
         gui.display(" ⚔️  LE QUIZZ COMMENCE ! ⚔️ ")
         gui.display("═══════════════════════════════")
@@ -72,9 +74,9 @@ def fight_script(gui, command, npc_id):
             correct_answer += 1
             step = 1
             gui.display("✅ Bonne réponse !")
-            gui.display(f"🏆 Score actuel : {correct_answer} / 5")
+            gui.display(f"🏆 Score actuel : {correct_answer} / {score_a_faire}")
             gui.display("👉 [ENTER] pour la prochaine question")
-            if correct_answer == 5:
+            if correct_answer == score_a_faire:
                 gui.display("🎉 Tu as répondu correctement à toutes les questions !")
                 gui.display("👉 [ENTER]")
                 step = 5
