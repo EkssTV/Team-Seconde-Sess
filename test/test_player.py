@@ -90,3 +90,17 @@ def test_show_inv(monkeypatch):
     assert "Clé" in result
     assert "Une clé" in result
     assert "Ouvre une porte" in result
+
+def test_change_script():
+    player = Player(name="test")
+
+    player.change_script("script_boss")
+
+    assert player.current_script == "script_boss"
+
+def test_supp_health_min_zero():
+    player = Player(name="test", health=3)
+
+    player.supp_health(10)
+
+    assert player.health == 0
