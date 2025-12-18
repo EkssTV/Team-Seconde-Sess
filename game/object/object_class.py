@@ -22,8 +22,15 @@ class CreaObject:
     def id(self):
         return self.__id
 
+
+
     @property
     def nom(self):
         return self.__nom
 
+
+    def nom(self, new_nom):
+        if not new_nom or not new_nom.strip():
+            raise ValueError("Le nom de l'objet ne peut pas être vide.")
+        self.__nom = new_nom
     
