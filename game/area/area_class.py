@@ -60,3 +60,9 @@ class CreaArea:
     def name(self):
         """Retourne le nom de l'area"""
         return self.__name
+
+    @name.setter
+    def name(self,nom):
+        if not isinstance(nom, str):
+            raise ValueError("Le nom n'est pas une chaine de caractère")
+        self.__name = nom
